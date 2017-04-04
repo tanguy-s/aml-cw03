@@ -5,6 +5,8 @@ import pickle
 import logging
 import argparse
 
+import numpy as np
+
 import gym
 
 from models.models import AtariModel
