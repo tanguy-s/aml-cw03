@@ -23,7 +23,6 @@ def evaluate(env,
                 prediction_op, 
                 states_pl, 
                 num_episodes, 
-                len_episodes, 
                 gamma, 
                 silent=False):
 
@@ -31,16 +30,18 @@ def evaluate(env,
 
     res = np.zeros([num_episodes, 2])
     for i_episode in range(num_episodes):
+        #Observation Buffer
+        observation_buffer = list()
 
         # Reset environement variables
         observation = env.reset()
         done = False
         retval = 0 # Value function
+        score = 0
+        t = 0
 
-        for t in range(len_episodes):
-
-            #Observation Buffer
-            observation_buffer = list()
+        while not done:
+            t += 1            
 
             # Stack observations in buffer of 4
             if len(observation_buffer) < FRAME_BUFFER_SIZE:
@@ -57,7 +58,7 @@ def evaluate(env,
                 # Stack observation buffer
                 state = np.stack(observation_buffer, axis=-1)
 
-                action = sess.run(prediction, feed_dict={
+                action = sess.run(prediction_op, feed_dict={
                     states_pl: state.reshape(
                         [-1, FRAME_WIDTH, FRAME_HEIGHT, FRAME_BUFFER_SIZE]).astype('float32')
                 })
@@ -72,19 +73,21 @@ def evaluate(env,
                 retval += pow(gamma, t)*r
                 score += r
 
-            if done:
-                res[i_episode][0] = retval
-                res[i_episode][1] = score
-                break
+                observation_buffer.append(
+                    do_obs_processing(observation, FRAME_WIDTH, FRAME_HEIGHT))
+                observation_buffer[0:1] = []
+
+        res[i_episode][0] = retval
+        res[i_episode][1] = score
 
     means = np.mean(res, axis=0)
     stds = np.std(res, axis=0)
 
     if not silent:
         print('# Evaluation of policy')
-        print('- Episode return stats:\n Mean: %f std: %f' % 
+        print('- Return stats:\n Mean: %f std: %f' % 
             (means[0], stds[0]))
-        print('- Return from initial stats:\n Mean: %f std: %f' % 
+        print('- Scores stats:\n Mean: %f std: %f' % 
             (means[1], stds[1]))
 
     return means

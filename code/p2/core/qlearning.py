@@ -136,7 +136,7 @@ def do_online_qlearning(env,
 
                 # If replay buffer is ready:
                 #if replay_buffer.ready:
-                if len(replay_buffer.transitions) > 28:
+                if len(replay_buffer.transitions) > replay_buffer.batch_size:
                     # Train model on replay buffer
                     transitions = replay_buffer.get_rand_transitions()
 
@@ -147,10 +147,9 @@ def do_online_qlearning(env,
                     terminal_state_batch = np.stack([transitions[i][4] for i in range(len(transitions))], axis=0)
 
                     # Run training on batch
-                    q_out = sess.run([q_target_net], feed_dict={
+                    q_out = sess.run(q_target_net, feed_dict={
                             states_pl: next_state_batch
                         })
-
                     q_out_max = np.amax(q_out, axis=1)
                     q_target = r_batch + GAMMA * (1 - terminal_state_batch) * q_out_max
 
@@ -178,7 +177,7 @@ def do_online_qlearning(env,
             losses.append(loss)
 
             if step % LOG_STEPS == 0:
-                print("")
+                print('')
                 print(time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()))
                 print("Steps {} to {} done, took {:.2f}s".format(max(0,step+1-LOG_STEPS),step,time.time()-start_time))
                 print(" Train loss: {:.4f}".format(loss))
@@ -187,11 +186,15 @@ def do_online_qlearning(env,
             if step % EVAL_STEPS == 0:
                 silent = (step % LOG_STEPS != 0)
                 cur_means, cur_stds = evaluate(test_env, sess, prediction, 
-                                        states_pl, 4, 300, GAMMA, silent)
+                                        states_pl, 5, GAMMA, silent)
 
                 # Save means
                 means.append(cur_means)
 
+            # Save models
+            if dpaths is not None:
+                saver.save(sess, dpaths, global_step=step)
+             
     # Save models
     if dpaths is not None:
         saver.save(sess, dpaths)
