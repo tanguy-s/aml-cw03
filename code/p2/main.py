@@ -51,10 +51,10 @@ if __name__ == '__main__':
         os.mkdir(dumps_dir)
 
     losses_file = os.path.join(
-        dumps_dir, 'losses.csv' % (model.name))
+        dumps_dir, 'losses.csv')
 
     results_file = os.path.join(
-            dumps_dir, 'results.csv' % (model.name))
+            dumps_dir, 'results.csv')
 
     learning_rates = [0.00001, 0.0001, 0.001, 0.01, 0.1, 0.5]
 
