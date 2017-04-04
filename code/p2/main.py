@@ -50,6 +50,12 @@ if __name__ == '__main__':
     if not os.path.exists(dumps_dir):
         os.mkdir(dumps_dir)
 
+    losses_file = os.path.join(
+        dumps_dir, 'losses.csv' % (model.name))
+
+    results_file = os.path.join(
+            dumps_dir, 'results.csv' % (model.name))
+
     learning_rates = [0.00001, 0.0001, 0.001, 0.01, 0.1, 0.5]
 
     #learning_rates = [0.01, 0.1]
@@ -64,6 +70,10 @@ if __name__ == '__main__':
                             learning_rate=0.0001,
                             epsilon_s=epsilon_s, 
                             target_model=AtariModel(env.action_space.n, varscope='target'),
-                            replay_buffer=ExperienceReplayBuffer(500000, 64))
+                            replay_buffer=ExperienceReplayBuffer(500000, 64),
+                            dpaths=dumps_dir)
+
+        np.savetxt(losses_file, loss, delimiter=',')
+        np.savetxt(results_file, means, delimiter=',')
 
 

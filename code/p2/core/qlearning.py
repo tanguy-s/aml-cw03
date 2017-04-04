@@ -1,3 +1,4 @@
+import sys
 import time
 
 import numpy as np
@@ -6,9 +7,10 @@ import tensorflow as tf
 from core.utils import evaluate, reward_value, do_obs_processing, reward_clip
 
 GAMMA = 0.99
-TRAINING_STEPS = 1000000
+TRAINING_STEPS = 10000
 LOG_STEPS = 1000
 EVAL_STEPS = 50000
+SAVE_STEPS = 50000
 TARGET_UPDATE = 5000
 FRAME_WIDTH = 84
 FRAME_HEIGHT = 84
@@ -68,8 +70,12 @@ def do_online_qlearning(env,
     # init all variables
     init_op = tf.global_variables_initializer()
 
+    # Limit memory usage for multiple training at same time
+    config = tf.ConfigProto(allow_soft_placement=True)
+    config.gpu_options.per_process_gpu_memory_fraction = 0.33
+
     # Start Session
-    with tf.Session() as sess:
+    with tf.Session(config=config) as sess:
         sess.run(init_op)
 
         start_time = time.time()
@@ -183,6 +189,9 @@ def do_online_qlearning(env,
                 print(" Train loss: {:.4f}".format(loss))
                 start_time = time.time()
 
+                # Force flush for nohup
+                sys.stdout.flush()
+
             if step % EVAL_STEPS == 0:
                 silent = (step % LOG_STEPS != 0)
                 cur_means, cur_stds = evaluate(test_env, sess, prediction, 
@@ -192,7 +201,7 @@ def do_online_qlearning(env,
                 means.append(cur_means)
 
             # Save models
-            if dpaths is not None:
+            if dpaths is not None and step % SAVE_STEPS == 0:
                 saver.save(sess, dpaths, global_step=step)
              
     # Save models
