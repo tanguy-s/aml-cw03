@@ -23,47 +23,50 @@ def do_online_qlearning(env,
                         model, 
                         learning_rate, 
                         epsilon_s,
+                        gpu_device,
                         target_model=None, 
                         replay_buffer=None,
                         dpaths=None):
 
     tf.reset_default_graph()
 
-    # Create placeholders
-    states_pl = tf.placeholder(tf.float32, 
-        shape=(None, FRAME_WIDTH, FRAME_HEIGHT, 4), name='states')
-    actions_pl= tf.placeholder(tf.int32, shape=(None), name='actions')
-    targets_pl = tf.placeholder(tf.float32, shape=(None), name='targets')
+    with tf.device(gpu_device):
 
-    # Value function approximator network
-    q_output = model.graph(states_pl)
+        # Create placeholders
+        states_pl = tf.placeholder(tf.float32, 
+            shape=(None, FRAME_WIDTH, FRAME_HEIGHT, 4), name='states')
+        actions_pl= tf.placeholder(tf.int32, shape=(None), name='actions')
+        targets_pl = tf.placeholder(tf.float32, shape=(None), name='targets')
 
-    # Build target network
-    q_target_net = target_model.graph(states_pl)
+        # Value function approximator network
+        q_output = model.graph(states_pl)
 
-    trainvars = tf.trainable_variables()
-    ntrainvars = len(trainvars)
-    target_net_vars = []
-    for idx,var in enumerate(trainvars[0:ntrainvars//2]):
-        target_net_vars.append(trainvars[idx+ntrainvars//2].assign(var.value()))
+        # Build target network
+        q_target_net = target_model.graph(states_pl)
 
-    # Compute Q from current q_output and one hot actions
-    Q = tf.reduce_sum(
-            tf.multiply(q_output, 
-                tf.one_hot(actions_pl, env.action_space.n, dtype=tf.float32)
-            ), axis=1)
+        trainvars = tf.trainable_variables()
+        ntrainvars = len(trainvars)
+        target_net_vars = []
+        for idx,var in enumerate(trainvars[0:ntrainvars//2]):
+            target_net_vars.append(trainvars[idx+ntrainvars//2].assign(var.value()))
 
-    # Loss operation 
-    loss_op = tf.reduce_mean(tf.square(targets_pl - Q) / 2)
+        # Compute Q from current q_output and one hot actions
+        Q = tf.reduce_sum(
+                tf.multiply(q_output, 
+                    tf.one_hot(actions_pl, env.action_space.n, dtype=tf.float32)
+                ), axis=1)
 
-    # Optimizer Op
-    optimizer = tf.train.RMSPropOptimizer(learning_rate=learning_rate)
+        # Loss operation 
+        loss_op = tf.reduce_mean(tf.square(targets_pl - Q) / 2)
 
-    # Training Op
-    train_op = optimizer.minimize(loss_op)
+        # Optimizer Op
+        optimizer = tf.train.RMSPropOptimizer(learning_rate=learning_rate)
 
-    # Prediction Op
-    prediction = tf.argmax(q_output, 1)
+        # Training Op
+        train_op = optimizer.minimize(loss_op)
+
+        # Prediction Op
+        prediction = tf.argmax(q_output, 1)
 
     # Model Saver
     saver = tf.train.Saver()

@@ -18,15 +18,18 @@ from core.qlearning import do_online_qlearning
 ENVS = {
     'pong': {
         'gym_name': 'Pong-v3',
-        'learning_rate': 0.0001,
+        'learning_rate': 0.0004,
+        'gpu_device': '/gpu:0'
     },
     'pacman': {
         'gym_name': 'MsPacman-v3',
-        'learning_rate': 0.0001, 
+        'learning_rate': 0.0004, 
+        'gpu_device': '/gpu:1'
     },
     'boxing': {
         'gym_name': 'Boxing-v3',
-        'learning_rate': 0.0001,
+        'learning_rate': 0.0004,
+        'gpu_device': '/gpu:2'
     }
 }
 
@@ -69,8 +72,9 @@ if __name__ == '__main__':
         epsilon_s = { 'start': 0.5, 'end': 0.005, 'decay': 2000 }
         loss, means = do_online_qlearning(env, test_env,
                             model=AtariModel(env.action_space.n), 
-                            learning_rate=0.0001,
+                            learning_rate=tenv.learning_rate,
                             epsilon_s=epsilon_s, 
+                            gpu_device=tenv.gpu_device,
                             target_model=AtariModel(env.action_space.n, varscope='target'),
                             replay_buffer=ExperienceReplayBuffer(500000, 64),
                             dpaths=dumps_dir)
