@@ -72,9 +72,9 @@ if __name__ == '__main__':
         epsilon_s = { 'start': 0.5, 'end': 0.005, 'decay': 2000 }
         loss, means = do_online_qlearning(env, test_env,
                             model=AtariModel(env.action_space.n), 
-                            learning_rate=tenv.learning_rate,
+                            learning_rate=tenv['learning_rate'],
                             epsilon_s=epsilon_s, 
-                            gpu_device=tenv.gpu_device,
+                            gpu_device=tenv['gpu_device'],
                             target_model=AtariModel(env.action_space.n, varscope='target'),
                             replay_buffer=ExperienceReplayBuffer(500000, 64),
                             dpaths=dumps_dir)
