@@ -204,9 +204,9 @@ def do_online_qlearning(env,
             if dpaths is not None and step % SAVE_STEPS == 0:
                 saver.save(sess, dpaths, global_step=step)
              
-    # Save models
-    if dpaths is not None:
-        saver.save(sess, dpaths)
+        # Save models
+        if dpaths is not None:
+            saver.save(sess, dpaths)
 
     # Return Q-learning Experience results
     return losses, means
