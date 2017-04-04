@@ -60,10 +60,10 @@ def evaluate(env,
                 action = sess.run(prediction, feed_dict={
                     states_pl: state.reshape(
                         [-1, FRAME_WIDTH, FRAME_HEIGHT, FRAME_BUFFER_SIZE]).astype('float32')
-                })[0]
+                })
 
                 # action for next observation
-                observation, reward, done, info  = env.step(action)
+                observation, reward, done, info  = env.step(action[0])
 
                 # Clip reward
                 r = reward_clip(reward)

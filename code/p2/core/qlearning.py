@@ -6,11 +6,10 @@ import tensorflow as tf
 from core.utils import evaluate, reward_value, do_obs_processing, reward_clip
 
 GAMMA = 0.99
-TRAINING_STEPS = 10000
-NUM_EPOCHS = 201
-LOG_STEPS = 100
-EVAL_STEPS = 3
-TARGET_UPDATE = 5
+TRAINING_STEPS = 1000000
+LOG_STEPS = 1000
+EVAL_STEPS = 50000
+TARGET_UPDATE = 5000
 FRAME_WIDTH = 84
 FRAME_HEIGHT = 84
 FRAME_BUFFER_SIZE = 4
@@ -30,14 +29,14 @@ def do_online_qlearning(env,
     # Create placeholders
     states_pl = tf.placeholder(tf.float32, 
         shape=(None, FRAME_WIDTH, FRAME_HEIGHT, 4), name='states')
-    actions_pl= tf.placeholder(tf.int32, shape=(None,), name='actions')
-    targets_pl = tf.placeholder(tf.float32, shape=(None,), name='targets')
+    actions_pl= tf.placeholder(tf.int32, shape=(None), name='actions')
+    targets_pl = tf.placeholder(tf.float32, shape=(None), name='targets')
 
     # Value function approximator network
     q_output = model.graph(states_pl)
 
     # Build target network
-    q_target = target_model.graph(states_pl)
+    q_target_net = target_model.graph(states_pl)
 
     trainvars = tf.trainable_variables()
     ntrainvars = len(trainvars)
@@ -109,7 +108,7 @@ def do_online_qlearning(env,
                 if epsilon > np.random.rand(1):
                     # Exploration
                     # Use uniformly sampled action from env
-                    action = np.array(env.action_space.sample(), dtype=np.int32).reshape([-1])
+                    action = np.array(env.action_space.sample(), dtype=np.int32).reshape((-1))
                 else:
                     # Exploitation 
                     # Use model predicted action 
@@ -133,11 +132,11 @@ def do_online_qlearning(env,
                 action = action.reshape([-1]).astype('int32')
 
                 # Add transition to replay buffer
-                replay_buffer.add([state, action, reward, next_state, done])
+                replay_buffer.add((state, action, r, next_state, done))
 
                 # If replay buffer is ready:
                 #if replay_buffer.ready:
-                if len(replay_buffer.transitions) > 100:
+                if len(replay_buffer.transitions) > 28:
                     # Train model on replay buffer
                     transitions = replay_buffer.get_rand_transitions()
 
@@ -148,18 +147,18 @@ def do_online_qlearning(env,
                     terminal_state_batch = np.stack([transitions[i][4] for i in range(len(transitions))], axis=0)
 
                     # Run training on batch
-                    q_out = sess.run(q_target, feed_dict={
+                    q_out = sess.run([q_target_net], feed_dict={
                             states_pl: next_state_batch
                         })
 
                     q_out_max = np.amax(q_out, axis=1)
-                    q_target = r_batch + (1 - terminal_state_batch) * GAMMA * q_out_max
+                    q_target = r_batch + GAMMA * (1 - terminal_state_batch) * q_out_max
 
                     # Run training Op on batch of replay experience
                     loss, _ = sess.run([loss_op, train_op], 
                         feed_dict={
                             states_pl: states_batch,
-                            actions_pl: actions_batch.reshape([-1]),
+                            actions_pl: actions_batch,
                             targets_pl: q_target.astype('float32')
                         })
     
@@ -188,7 +187,7 @@ def do_online_qlearning(env,
             if step % EVAL_STEPS == 0:
                 silent = (step % LOG_STEPS != 0)
                 cur_means, cur_stds = evaluate(test_env, sess, prediction, 
-                                        states_pl, 20, 300, GAMMA, silent)
+                                        states_pl, 4, 300, GAMMA, silent)
 
                 # Save means
                 means.append(cur_means)

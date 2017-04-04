@@ -43,7 +43,7 @@ if __name__ == '__main__':
     #do_batch_qlearning(env, history_buffer, model, 0.0001)
 
 
-    epsilon_s = { 'start': 0.5, 'end': 0.005, 'decay': 2000 }
+    epsilon_s = { 'start': 0.1, 'end': 0.005, 'decay': 2000 }
     # model = HiddenValueFunctionApprox(4, 2, 100)
 
 
@@ -53,9 +53,9 @@ if __name__ == '__main__':
 
     do_online_qlearning(env, test_env,
                         model=AtariModel(env.action_space.n), 
-                        learning_rate=0.0001,
+                        learning_rate=0.001,
                         epsilon_s=epsilon_s, 
                         target_model=AtariModel(env.action_space.n, varscope='target'),
-                        replay_buffer=ExperienceReplayBuffer(500000, 100))
+                        replay_buffer=ExperienceReplayBuffer(500000, 32))
 
 
