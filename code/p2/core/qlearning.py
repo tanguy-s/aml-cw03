@@ -9,6 +9,7 @@ from core.utils import evaluate, reward_value, do_obs_processing, reward_clip
 GAMMA = 0.99
 TRAINING_STEPS = 1500000
 LOG_STEPS = 5000
+LOSS_STEPS = 1000
 EVAL_STEPS = 50000
 SAVE_STEPS = 50000
 TARGET_UPDATE = 5000
@@ -179,8 +180,9 @@ def do_online_qlearning(env,
                 for var in target_net_vars:
                     sess.run(var)
 
-            # Save loss
-            losses.append(loss)
+            if step % LOSS_STEPS == 0:
+                # Save loss
+                losses.append(loss)
 
             if step % LOG_STEPS == 0:
                 print('')
