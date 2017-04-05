@@ -4,8 +4,8 @@ I tensorflow/stream_executor/dso_loader.cc:135] successfully opened CUDA library
 I tensorflow/stream_executor/dso_loader.cc:135] successfully opened CUDA library libcufft.so.8.0 locally
 I tensorflow/stream_executor/dso_loader.cc:135] successfully opened CUDA library libcuda.so.1 locally
 I tensorflow/stream_executor/dso_loader.cc:135] successfully opened CUDA library libcurand.so.8.0 locally
-[2017-04-04 18:45:59,721] Making new env: MsPacman-v3
-[2017-04-04 18:45:59,756] Making new env: MsPacman-v3
+[2017-04-05 08:25:31,929] Making new env: MsPacman-v3
+[2017-04-05 08:25:31,965] Making new env: MsPacman-v3
 W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE3 instructions, but these are available on your machine and could speed up CPU computations.
 W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.1 instructions, but these are available on your machine and could speed up CPU computations.
 W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.2 instructions, but these are available on your machine and could speed up CPU computations.
@@ -18,21 +18,21 @@ major: 6 minor: 0 memoryClockRate (GHz) 1.4805
 pciBusID 0000:05:00.0
 Total memory: 15.89GiB
 Free memory: 9.98GiB
-W tensorflow/stream_executor/cuda/cuda_driver.cc:590] creating context when one is currently active; existing: 0x2ce2880
+W tensorflow/stream_executor/cuda/cuda_driver.cc:590] creating context when one is currently active; existing: 0x427a170
 I tensorflow/core/common_runtime/gpu/gpu_device.cc:885] Found device 1 with properties: 
 name: Tesla P100-SXM2-16GB
 major: 6 minor: 0 memoryClockRate (GHz) 1.4805
 pciBusID 0000:06:00.0
 Total memory: 15.89GiB
 Free memory: 10.09GiB
-W tensorflow/stream_executor/cuda/cuda_driver.cc:590] creating context when one is currently active; existing: 0x2ce6700
+W tensorflow/stream_executor/cuda/cuda_driver.cc:590] creating context when one is currently active; existing: 0x427dfb0
 I tensorflow/core/common_runtime/gpu/gpu_device.cc:885] Found device 2 with properties: 
 name: Tesla P100-SXM2-16GB
 major: 6 minor: 0 memoryClockRate (GHz) 1.4805
 pciBusID 0000:84:00.0
 Total memory: 15.89GiB
 Free memory: 10.09GiB
-W tensorflow/stream_executor/cuda/cuda_driver.cc:590] creating context when one is currently active; existing: 0x2d0ae80
+W tensorflow/stream_executor/cuda/cuda_driver.cc:590] creating context when one is currently active; existing: 0x4281e30
 I tensorflow/core/common_runtime/gpu/gpu_device.cc:885] Found device 3 with properties: 
 name: Tesla P100-SXM2-16GB
 major: 6 minor: 0 memoryClockRate (GHz) 1.4805
@@ -48,1353 +48,611 @@ I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow devi
 I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:1) -> (device: 1, name: Tesla P100-SXM2-16GB, pci bus id: 0000:06:00.0)
 I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:2) -> (device: 2, name: Tesla P100-SXM2-16GB, pci bus id: 0000:84:00.0)
 I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:3) -> (device: 3, name: Tesla P100-SXM2-16GB, pci bus id: 0000:85:00.0)
+Running MsPacman-v3 run 1/5 ...
 
-2017-04-04 18:46:02
+2017-04-05 08:25:34
 Steps 0 to 0 done, took 0.02s
  Train loss: 0.0000
 # Evaluation of policy
 - Return stats:
- Mean: 6.956322 std: 1.047826
+ Mean: 2.156941 std: 0.042414
 - Scores stats:
- Mean: 62.600000 std: 5.678028
+ Mean: 9.000000 std: 0.000000
 
-2017-04-04 18:48:17
-Steps 1 to 5000 done, took 135.14s
- Train loss: 0.0319
+2017-04-05 08:27:53
+Steps 1 to 5000 done, took 138.54s
+ Train loss: 0.0115
 
-2017-04-04 18:50:20
-Steps 5001 to 10000 done, took 122.62s
- Train loss: 0.0088
+2017-04-05 08:30:08
+Steps 5001 to 10000 done, took 135.00s
+ Train loss: 0.0374
 
-2017-04-04 18:52:25
-Steps 10001 to 15000 done, took 125.32s
- Train loss: 0.0268
+2017-04-05 08:32:22
+Steps 10001 to 15000 done, took 133.93s
+ Train loss: 0.0233
 
-2017-04-04 18:54:31
-Steps 15001 to 20000 done, took 126.48s
- Train loss: 0.0225
+2017-04-05 08:34:36
+Steps 15001 to 20000 done, took 134.71s
+ Train loss: 0.0378
 
-2017-04-04 18:56:37
-Steps 20001 to 25000 done, took 125.65s
- Train loss: 0.0248
+2017-04-05 08:36:51
+Steps 20001 to 25000 done, took 134.60s
+ Train loss: 0.0264
 
-2017-04-04 18:58:42
-Steps 25001 to 30000 done, took 124.83s
- Train loss: 0.0437
+2017-04-05 08:39:05
+Steps 25001 to 30000 done, took 133.63s
+ Train loss: 0.0358
 
-2017-04-04 19:00:47
-Steps 30001 to 35000 done, took 125.33s
- Train loss: 0.0386
+2017-04-05 08:41:18
+Steps 30001 to 35000 done, took 133.53s
+ Train loss: 0.0243
 
-2017-04-04 19:02:53
-Steps 35001 to 40000 done, took 125.55s
- Train loss: 0.0200
+2017-04-05 08:43:36
+Steps 35001 to 40000 done, took 137.92s
+ Train loss: 0.0331
 
-2017-04-04 19:04:59
-Steps 40001 to 45000 done, took 125.82s
- Train loss: 0.0334
+2017-04-05 08:45:50
+Steps 40001 to 45000 done, took 134.07s
+ Train loss: 0.0424
 
-2017-04-04 19:07:06
-Steps 45001 to 50000 done, took 126.93s
- Train loss: 0.0317
+2017-04-05 08:47:53
+Steps 45001 to 50000 done, took 123.26s
+ Train loss: 0.0241
 # Evaluation of policy
 - Return stats:
- Mean: 4.458836 std: 0.569951
+ Mean: 5.410867 std: 0.750794
 - Scores stats:
- Mean: 49.000000 std: 15.594871
+ Mean: 49.400000 std: 7.337575
 
-2017-04-04 19:09:26
-Steps 50001 to 55000 done, took 140.63s
- Train loss: 0.0325
+2017-04-05 08:50:09
+Steps 50001 to 55000 done, took 135.96s
+ Train loss: 0.0313
 
-2017-04-04 19:11:33
-Steps 55001 to 60000 done, took 126.41s
- Train loss: 0.0477
+2017-04-05 08:52:09
+Steps 55001 to 60000 done, took 119.57s
+ Train loss: 0.0247
 
-2017-04-04 19:13:39
-Steps 60001 to 65000 done, took 126.18s
- Train loss: 0.0363
+2017-04-05 08:54:09
+Steps 60001 to 65000 done, took 120.34s
+ Train loss: 0.0411
 
-2017-04-04 19:15:44
-Steps 65001 to 70000 done, took 125.43s
- Train loss: 0.0971
+2017-04-05 08:56:08
+Steps 65001 to 70000 done, took 118.74s
+ Train loss: 0.0581
 
-2017-04-04 19:17:48
-Steps 70001 to 75000 done, took 123.90s
- Train loss: 0.0453
+2017-04-05 08:58:08
+Steps 70001 to 75000 done, took 120.60s
+ Train loss: 0.0345
 
-2017-04-04 19:19:54
-Steps 75001 to 80000 done, took 125.58s
- Train loss: 0.0670
+2017-04-05 09:00:09
+Steps 75001 to 80000 done, took 120.49s
+ Train loss: 0.0327
 
-2017-04-04 19:22:00
-Steps 80001 to 85000 done, took 126.05s
+2017-04-05 09:02:08
+Steps 80001 to 85000 done, took 119.36s
+ Train loss: 0.0433
+
+2017-04-05 09:04:07
+Steps 85001 to 90000 done, took 118.99s
+ Train loss: 0.0317
+
+2017-04-05 09:06:08
+Steps 90001 to 95000 done, took 120.54s
+ Train loss: 0.0455
+
+2017-04-05 09:08:05
+Steps 95001 to 100000 done, took 116.90s
+ Train loss: 0.0552
+# Evaluation of policy
+- Return stats:
+ Mean: 5.466491 std: 0.983357
+- Scores stats:
+ Mean: 54.800000 std: 13.466997
+
+2017-04-05 09:10:22
+Steps 100001 to 105000 done, took 137.53s
+ Train loss: 0.0582
+
+2017-04-05 09:12:21
+Steps 105001 to 110000 done, took 118.77s
+ Train loss: 0.0580
+
+2017-04-05 09:14:20
+Steps 110001 to 115000 done, took 118.46s
+ Train loss: 0.0391
+
+2017-04-05 09:16:19
+Steps 115001 to 120000 done, took 119.26s
+ Train loss: 0.0448
+
+2017-04-05 09:18:17
+Steps 120001 to 125000 done, took 118.62s
+ Train loss: 0.0378
+
+2017-04-05 09:20:16
+Steps 125001 to 130000 done, took 118.50s
+ Train loss: 0.0536
+
+2017-04-05 09:22:14
+Steps 130001 to 135000 done, took 117.93s
+ Train loss: 0.0701
+
+2017-04-05 09:24:11
+Steps 135001 to 140000 done, took 117.42s
+ Train loss: 0.2407
+
+2017-04-05 09:26:07
+Steps 140001 to 145000 done, took 115.39s
+ Train loss: 0.0472
+
+2017-04-05 09:28:03
+Steps 145001 to 150000 done, took 116.73s
+ Train loss: 0.0648
+# Evaluation of policy
+- Return stats:
+ Mean: 4.947101 std: 0.710586
+- Scores stats:
+ Mean: 56.600000 std: 9.891410
+
+2017-04-05 09:30:15
+Steps 150001 to 155000 done, took 131.66s
+ Train loss: 0.2480
+
+2017-04-05 09:32:12
+Steps 155001 to 160000 done, took 116.59s
+ Train loss: 0.3109
+
+2017-04-05 09:34:07
+Steps 160001 to 165000 done, took 115.56s
+ Train loss: 0.0665
+
+2017-04-05 09:36:03
+Steps 165001 to 170000 done, took 115.94s
+ Train loss: 0.0528
+
+2017-04-05 09:37:59
+Steps 170001 to 175000 done, took 116.03s
+ Train loss: 0.0651
+
+2017-04-05 09:39:56
+Steps 175001 to 180000 done, took 117.01s
+ Train loss: 0.0568
+
+2017-04-05 09:41:52
+Steps 180001 to 185000 done, took 116.07s
+ Train loss: 0.0332
+
+2017-04-05 09:43:50
+Steps 185001 to 190000 done, took 117.28s
+ Train loss: 0.0723
+
+2017-04-05 09:45:46
+Steps 190001 to 195000 done, took 116.31s
+ Train loss: 0.0594
+
+2017-04-05 09:47:42
+Steps 195001 to 200000 done, took 116.59s
+ Train loss: 0.0635
+# Evaluation of policy
+- Return stats:
+ Mean: 5.497106 std: 0.479064
+- Scores stats:
+ Mean: 68.200000 std: 22.426770
+
+2017-04-05 09:50:00
+Steps 200001 to 205000 done, took 137.38s
+ Train loss: 0.0787
+
+2017-04-05 09:51:57
+Steps 205001 to 210000 done, took 117.01s
+ Train loss: 0.0544
+
+2017-04-05 09:53:53
+Steps 210001 to 215000 done, took 116.31s
+ Train loss: 0.1616
+
+2017-04-05 09:55:51
+Steps 215001 to 220000 done, took 117.63s
+ Train loss: 0.0617
+
+2017-04-05 09:57:46
+Steps 220001 to 225000 done, took 115.43s
+ Train loss: 0.0599
+
+2017-04-05 09:59:44
+Steps 225001 to 230000 done, took 118.30s
+ Train loss: 0.0564
+
+2017-04-05 10:01:42
+Steps 230001 to 235000 done, took 117.54s
+ Train loss: 0.0731
+
+2017-04-05 10:03:38
+Steps 235001 to 240000 done, took 116.36s
+ Train loss: 0.0617
+
+2017-04-05 10:05:35
+Steps 240001 to 245000 done, took 117.07s
+ Train loss: 0.0900
+
+2017-04-05 10:07:32
+Steps 245001 to 250000 done, took 116.78s
+ Train loss: 0.0660
+# Evaluation of policy
+- Return stats:
+ Mean: 5.741905 std: 0.796715
+- Scores stats:
+ Mean: 58.600000 std: 17.095029
+
+2017-04-05 10:09:44
+Steps 250001 to 255000 done, took 132.05s
+ Train loss: 0.0402
+
+2017-04-05 10:11:41
+Steps 255001 to 260000 done, took 116.62s
+ Train loss: 0.1403
+
+2017-04-05 10:13:37
+Steps 260001 to 265000 done, took 115.93s
+ Train loss: 0.0518
+
+2017-04-05 10:15:33
+Steps 265001 to 270000 done, took 116.22s
+ Train loss: 0.0765
+
+2017-04-05 10:17:29
+Steps 270001 to 275000 done, took 116.13s
+ Train loss: 0.0624
+
+2017-04-05 10:19:25
+Steps 275001 to 280000 done, took 116.26s
+ Train loss: 0.0879
+
+2017-04-05 10:21:23
+Steps 280001 to 285000 done, took 117.12s
+ Train loss: 0.0860
+
+2017-04-05 10:23:20
+Steps 285001 to 290000 done, took 117.01s
+ Train loss: 0.0826
+
+2017-04-05 10:25:15
+Steps 290001 to 295000 done, took 115.89s
+ Train loss: 0.0602
+
+2017-04-05 10:27:13
+Steps 295001 to 300000 done, took 117.29s
+ Train loss: 0.0987
+# Evaluation of policy
+- Return stats:
+ Mean: 5.129986 std: 1.000626
+- Scores stats:
+ Mean: 60.200000 std: 18.475930
+
+2017-04-05 10:29:24
+Steps 300001 to 305000 done, took 131.05s
+ Train loss: 0.0799
+
+2017-04-05 10:31:22
+Steps 305001 to 310000 done, took 117.94s
+ Train loss: 0.0972
+
+2017-04-05 10:33:19
+Steps 310001 to 315000 done, took 117.76s
  Train loss: 0.0579
 
-2017-04-04 19:24:06
-Steps 85001 to 90000 done, took 126.56s
- Train loss: 0.0483
+2017-04-05 10:35:17
+Steps 315001 to 320000 done, took 117.04s
+ Train loss: 0.1219
 
-2017-04-04 19:26:13
-Steps 90001 to 95000 done, took 127.21s
- Train loss: 0.0419
+2017-04-05 10:37:12
+Steps 320001 to 325000 done, took 114.98s
+ Train loss: 0.3042
 
-2017-04-04 19:28:20
-Steps 95001 to 100000 done, took 126.06s
- Train loss: 0.0500
+2017-04-05 10:39:07
+Steps 325001 to 330000 done, took 115.83s
+ Train loss: 0.0459
+
+2017-04-05 10:41:04
+Steps 330001 to 335000 done, took 116.51s
+ Train loss: 0.0713
+
+2017-04-05 10:43:01
+Steps 335001 to 340000 done, took 117.26s
+ Train loss: 0.0591
+
+2017-04-05 10:44:59
+Steps 340001 to 345000 done, took 117.94s
+ Train loss: 0.1045
+
+2017-04-05 10:46:57
+Steps 345001 to 350000 done, took 118.25s
+ Train loss: 0.3775
 # Evaluation of policy
 - Return stats:
- Mean: 4.283871 std: 0.795272
+ Mean: 5.252944 std: 0.723331
 - Scores stats:
- Mean: 48.000000 std: 19.318385
+ Mean: 66.800000 std: 17.881834
 
-2017-04-04 19:30:43
-Steps 100001 to 105000 done, took 143.53s
- Train loss: 0.0650
+2017-04-05 10:49:12
+Steps 350001 to 355000 done, took 134.33s
+ Train loss: 0.0604
 
-2017-04-04 19:32:47
-Steps 105001 to 110000 done, took 124.38s
- Train loss: 0.0559
+2017-04-05 10:51:09
+Steps 355001 to 360000 done, took 117.58s
+ Train loss: 0.0853
 
-2017-04-04 19:34:54
-Steps 110001 to 115000 done, took 126.26s
- Train loss: 0.0927
+2017-04-05 10:53:07
+Steps 360001 to 365000 done, took 118.27s
+ Train loss: 0.1290
 
-2017-04-04 19:37:01
-Steps 115001 to 120000 done, took 127.28s
- Train loss: 0.0477
+2017-04-05 10:55:06
+Steps 365001 to 370000 done, took 118.29s
+ Train loss: 0.4289
 
-2017-04-04 19:39:09
-Steps 120001 to 125000 done, took 127.79s
- Train loss: 0.0415
+2017-04-05 10:57:06
+Steps 370001 to 375000 done, took 119.78s
+ Train loss: 0.0968
 
-2017-04-04 19:41:15
-Steps 125001 to 130000 done, took 126.35s
- Train loss: 0.0588
+2017-04-05 10:59:02
+Steps 375001 to 380000 done, took 116.43s
+ Train loss: 0.1399
 
-2017-04-04 19:43:22
-Steps 130001 to 135000 done, took 127.20s
- Train loss: 0.1004
+2017-04-05 11:01:01
+Steps 380001 to 385000 done, took 118.54s
+ Train loss: 0.0731
 
-2017-04-04 19:45:28
-Steps 135001 to 140000 done, took 125.63s
- Train loss: 0.0583
+2017-04-05 11:03:00
+Steps 385001 to 390000 done, took 119.04s
+ Train loss: 0.1254
 
-2017-04-04 19:47:32
-Steps 140001 to 145000 done, took 124.43s
- Train loss: 0.0532
+2017-04-05 11:04:57
+Steps 390001 to 395000 done, took 117.83s
+ Train loss: 0.1038
 
-2017-04-04 19:49:36
-Steps 145001 to 150000 done, took 123.77s
- Train loss: 0.0762
+2017-04-05 11:06:54
+Steps 395001 to 400000 done, took 116.86s
+ Train loss: 0.0890
 # Evaluation of policy
 - Return stats:
- Mean: 5.839284 std: 0.787927
+ Mean: 6.347566 std: 0.816958
 - Scores stats:
- Mean: 53.600000 std: 16.644519
+ Mean: 65.600000 std: 23.482760
 
-2017-04-04 19:51:58
-Steps 150001 to 155000 done, took 142.06s
- Train loss: 0.0739
+2017-04-05 11:09:13
+Steps 400001 to 405000 done, took 138.46s
+ Train loss: 0.6543
 
-2017-04-04 19:53:59
-Steps 155001 to 160000 done, took 121.23s
- Train loss: 0.0633
+2017-04-05 11:11:11
+Steps 405001 to 410000 done, took 118.08s
+ Train loss: 0.1622
 
-2017-04-04 19:56:04
-Steps 160001 to 165000 done, took 124.25s
- Train loss: 0.0494
+2017-04-05 11:13:10
+Steps 410001 to 415000 done, took 119.65s
+ Train loss: 0.0988
 
-2017-04-04 19:58:09
-Steps 165001 to 170000 done, took 125.32s
- Train loss: 0.0935
+2017-04-05 11:15:09
+Steps 415001 to 420000 done, took 118.82s
+ Train loss: 0.0736
 
-2017-04-04 20:00:15
-Steps 170001 to 175000 done, took 125.70s
- Train loss: 0.1017
+2017-04-05 11:17:09
+Steps 420001 to 425000 done, took 119.77s
+ Train loss: 0.0644
 
-2017-04-04 20:02:20
-Steps 175001 to 180000 done, took 124.94s
- Train loss: 0.0917
+2017-04-05 11:19:09
+Steps 425001 to 430000 done, took 119.53s
+ Train loss: 0.0828
 
-2017-04-04 20:04:24
-Steps 180001 to 185000 done, took 124.53s
- Train loss: 0.2592
+2017-04-05 11:21:05
+Steps 430001 to 435000 done, took 116.54s
+ Train loss: 0.1844
 
-2017-04-04 20:06:30
-Steps 185001 to 190000 done, took 125.79s
- Train loss: 0.2746
+2017-04-05 11:23:03
+Steps 435001 to 440000 done, took 117.93s
+ Train loss: 0.1374
 
-2017-04-04 20:08:35
-Steps 190001 to 195000 done, took 124.60s
- Train loss: 0.0907
+2017-04-05 11:25:03
+Steps 440001 to 445000 done, took 120.44s
+ Train loss: 0.2091
 
-2017-04-04 20:10:40
-Steps 195001 to 200000 done, took 125.22s
- Train loss: 0.1565
+2017-04-05 11:27:00
+Steps 445001 to 450000 done, took 116.26s
+ Train loss: 0.4003
 # Evaluation of policy
 - Return stats:
- Mean: 6.237019 std: 0.535876
+ Mean: 5.965010 std: 0.422303
 - Scores stats:
- Mean: 57.400000 std: 6.916647
+ Mean: 62.800000 std: 15.841717
 
-2017-04-04 20:13:02
-Steps 200001 to 205000 done, took 142.38s
- Train loss: 0.0766
+2017-04-05 11:29:16
+Steps 450001 to 455000 done, took 136.32s
+ Train loss: 0.0884
 
-2017-04-04 20:15:05
-Steps 205001 to 210000 done, took 122.82s
- Train loss: 0.2566
+2017-04-05 11:31:15
+Steps 455001 to 460000 done, took 118.49s
+ Train loss: 0.0802
 
-2017-04-04 20:17:08
-Steps 210001 to 215000 done, took 122.77s
- Train loss: 0.4938
+2017-04-05 11:33:15
+Steps 460001 to 465000 done, took 120.06s
+ Train loss: 0.0973
 
-2017-04-04 20:19:12
-Steps 215001 to 220000 done, took 124.53s
- Train loss: 0.3605
+2017-04-05 11:35:12
+Steps 465001 to 470000 done, took 117.88s
+ Train loss: 0.0942
 
-2017-04-04 20:21:17
-Steps 220001 to 225000 done, took 124.76s
- Train loss: 0.0953
+2017-04-05 11:37:12
+Steps 470001 to 475000 done, took 119.15s
+ Train loss: 0.1430
 
-2017-04-04 20:23:22
-Steps 225001 to 230000 done, took 125.22s
- Train loss: 0.0745
+2017-04-05 11:39:10
+Steps 475001 to 480000 done, took 118.03s
+ Train loss: 0.5007
 
-2017-04-04 20:25:26
-Steps 230001 to 235000 done, took 124.21s
- Train loss: 0.3586
+2017-04-05 11:41:09
+Steps 480001 to 485000 done, took 119.11s
+ Train loss: 0.1167
 
-2017-04-04 20:27:30
-Steps 235001 to 240000 done, took 123.61s
- Train loss: 0.0688
+2017-04-05 11:43:05
+Steps 485001 to 490000 done, took 116.25s
+ Train loss: 0.0948
 
-2017-04-04 20:29:34
-Steps 240001 to 245000 done, took 123.72s
- Train loss: 0.5159
+2017-04-05 11:45:03
+Steps 490001 to 495000 done, took 118.00s
+ Train loss: 0.1079
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:0) -> (device: 0, name: Tesla P100-SXM2-16GB, pci bus id: 0000:05:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:1) -> (device: 1, name: Tesla P100-SXM2-16GB, pci bus id: 0000:06:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:2) -> (device: 2, name: Tesla P100-SXM2-16GB, pci bus id: 0000:84:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:3) -> (device: 3, name: Tesla P100-SXM2-16GB, pci bus id: 0000:85:00.0)
+Running MsPacman-v3 run 2/5 ...
 
-2017-04-04 20:31:38
-Steps 245001 to 250000 done, took 124.33s
- Train loss: 0.4880
+2017-04-05 11:47:04
+Steps 0 to 0 done, took 0.02s
+ Train loss: 0.0000
 # Evaluation of policy
 - Return stats:
- Mean: 6.128268 std: 0.787331
+ Mean: 2.603984 std: 0.244185
 - Scores stats:
- Mean: 61.800000 std: 12.023311
+ Mean: 16.800000 std: 1.600000
 
-2017-04-04 20:34:02
-Steps 250001 to 255000 done, took 144.17s
- Train loss: 0.0897
+2017-04-05 11:49:07
+Steps 1 to 5000 done, took 123.21s
+ Train loss: 0.0432
 
-2017-04-04 20:36:06
-Steps 255001 to 260000 done, took 124.13s
- Train loss: 0.0909
+2017-04-05 11:51:04
+Steps 5001 to 10000 done, took 116.34s
+ Train loss: 0.0172
 
-2017-04-04 20:38:08
-Steps 260001 to 265000 done, took 121.13s
- Train loss: 0.3098
+2017-04-05 11:53:00
+Steps 10001 to 15000 done, took 116.07s
+ Train loss: 0.0463
 
-2017-04-04 20:40:12
-Steps 265001 to 270000 done, took 124.58s
- Train loss: 0.7897
+2017-04-05 11:54:56
+Steps 15001 to 20000 done, took 116.03s
+ Train loss: 0.0184
 
-2017-04-04 20:42:18
-Steps 270001 to 275000 done, took 125.88s
- Train loss: 0.0975
+2017-04-05 11:56:53
+Steps 20001 to 25000 done, took 117.09s
+ Train loss: 0.0242
 
-2017-04-04 20:44:22
-Steps 275001 to 280000 done, took 124.36s
- Train loss: 0.0835
+2017-04-05 11:58:50
+Steps 25001 to 30000 done, took 117.33s
+ Train loss: 0.0226
 
-2017-04-04 20:46:26
-Steps 280001 to 285000 done, took 123.72s
- Train loss: 0.1510
+2017-04-05 12:00:46
+Steps 30001 to 35000 done, took 116.25s
+ Train loss: 0.0308
 
-2017-04-04 20:48:30
-Steps 285001 to 290000 done, took 124.14s
- Train loss: 0.0797
+2017-04-05 12:02:44
+Steps 35001 to 40000 done, took 117.91s
+ Train loss: 0.0353
 
-2017-04-04 20:50:36
-Steps 290001 to 295000 done, took 125.84s
- Train loss: 0.2287
+2017-04-05 12:04:42
+Steps 40001 to 45000 done, took 117.37s
+ Train loss: 0.0337
 
-2017-04-04 20:52:41
-Steps 295001 to 300000 done, took 125.19s
- Train loss: 0.4844
+2017-04-05 12:06:40
+Steps 45001 to 50000 done, took 118.19s
+ Train loss: 0.0225
 # Evaluation of policy
 - Return stats:
- Mean: 4.237430 std: 0.604143
+ Mean: 4.191323 std: 0.610532
 - Scores stats:
- Mean: 29.200000 std: 8.565045
+ Mean: 33.600000 std: 13.690873
 
-2017-04-04 20:54:59
-Steps 300001 to 305000 done, took 137.29s
- Train loss: 0.7039
+2017-04-05 12:08:48
+Steps 50001 to 55000 done, took 128.38s
+ Train loss: 0.0391
 
-2017-04-04 20:57:04
-Steps 305001 to 310000 done, took 125.06s
- Train loss: 0.1952
+2017-04-05 12:10:45
+Steps 55001 to 60000 done, took 117.10s
+ Train loss: 0.0400
 
-2017-04-04 20:59:05
-Steps 310001 to 315000 done, took 120.94s
- Train loss: 0.1532
+2017-04-05 12:12:42
+Steps 60001 to 65000 done, took 117.16s
+ Train loss: 0.0842
 
-2017-04-04 21:01:09
-Steps 315001 to 320000 done, took 124.18s
- Train loss: 0.0744
+2017-04-05 12:14:39
+Steps 65001 to 70000 done, took 116.98s
+ Train loss: 0.0265
 
-2017-04-04 21:03:13
-Steps 320001 to 325000 done, took 124.49s
- Train loss: 0.1501
+2017-04-05 12:16:38
+Steps 70001 to 75000 done, took 118.94s
+ Train loss: 0.0956
 
-2017-04-04 21:05:17
-Steps 325001 to 330000 done, took 124.15s
- Train loss: 0.8080
+2017-04-05 12:18:34
+Steps 75001 to 80000 done, took 115.88s
+ Train loss: 0.0540
 
-2017-04-04 21:07:22
-Steps 330001 to 335000 done, took 124.61s
- Train loss: 0.1798
+2017-04-05 12:20:32
+Steps 80001 to 85000 done, took 117.77s
+ Train loss: 0.0299
 
-2017-04-04 21:09:26
-Steps 335001 to 340000 done, took 124.06s
- Train loss: 0.1695
+2017-04-05 12:22:29
+Steps 85001 to 90000 done, took 117.15s
+ Train loss: 0.0367
 
-2017-04-04 21:11:31
-Steps 340001 to 345000 done, took 124.72s
- Train loss: 0.2192
+2017-04-05 12:24:27
+Steps 90001 to 95000 done, took 117.88s
+ Train loss: 0.0401
 
-2017-04-04 21:13:36
-Steps 345001 to 350000 done, took 125.10s
- Train loss: 0.1617
+2017-04-05 12:26:25
+Steps 95001 to 100000 done, took 117.71s
+ Train loss: 0.0459
 # Evaluation of policy
 - Return stats:
- Mean: 5.579601 std: 0.213865
+ Mean: 5.057746 std: 1.155241
 - Scores stats:
- Mean: 49.600000 std: 6.086050
+ Mean: 62.000000 std: 19.616320
 
-2017-04-04 21:15:57
-Steps 350001 to 355000 done, took 141.04s
- Train loss: 0.1648
+2017-04-05 12:28:38
+Steps 100001 to 105000 done, took 132.95s
+ Train loss: 0.1673
 
-2017-04-04 21:18:03
-Steps 355001 to 360000 done, took 126.14s
- Train loss: 0.1680
+2017-04-05 12:30:34
+Steps 105001 to 110000 done, took 116.24s
+ Train loss: 0.0552
 
-2017-04-04 21:20:08
-Steps 360001 to 365000 done, took 124.76s
- Train loss: 0.2555
+2017-04-05 12:32:31
+Steps 110001 to 115000 done, took 116.95s
+ Train loss: 0.0575
 
-2017-04-04 21:22:10
-Steps 365001 to 370000 done, took 121.82s
- Train loss: 0.5159
+2017-04-05 12:34:28
+Steps 115001 to 120000 done, took 116.64s
+ Train loss: 0.0324
 
-2017-04-04 21:24:15
-Steps 370001 to 375000 done, took 125.44s
- Train loss: 0.4364
+2017-04-05 12:36:25
+Steps 120001 to 125000 done, took 117.97s
+ Train loss: 0.0520
 
-2017-04-04 21:26:20
-Steps 375001 to 380000 done, took 124.74s
- Train loss: 0.1990
+2017-04-05 12:38:23
+Steps 125001 to 130000 done, took 117.42s
+ Train loss: 0.0440
 
-2017-04-04 21:28:25
-Steps 380001 to 385000 done, took 125.32s
- Train loss: 0.2695
+2017-04-05 12:40:23
+Steps 130001 to 135000 done, took 120.28s
+ Train loss: 0.0621
 
-2017-04-04 21:30:29
-Steps 385001 to 390000 done, took 124.09s
- Train loss: 0.8654
+2017-04-05 12:42:22
+Steps 135001 to 140000 done, took 119.22s
+ Train loss: 0.0381
 
-2017-04-04 21:32:33
-Steps 390001 to 395000 done, took 123.96s
- Train loss: 1.0424
+2017-04-05 12:44:21
+Steps 140001 to 145000 done, took 118.56s
+ Train loss: 0.0662
 
-2017-04-04 21:34:37
-Steps 395001 to 400000 done, took 123.69s
- Train loss: 0.1729
+2017-04-05 12:46:21
+Steps 145001 to 150000 done, took 119.87s
+ Train loss: 0.1699
 # Evaluation of policy
 - Return stats:
- Mean: 5.977608 std: 0.381355
+ Mean: 5.517032 std: 1.624595
 - Scores stats:
- Mean: 38.400000 std: 6.887670
-
-2017-04-04 21:36:59
-Steps 400001 to 405000 done, took 142.25s
- Train loss: 0.1557
-
-2017-04-04 21:39:04
-Steps 405001 to 410000 done, took 124.62s
- Train loss: 0.3831
-
-2017-04-04 21:41:08
-Steps 410001 to 415000 done, took 123.83s
- Train loss: 0.2756
-
-2017-04-04 21:43:09
-Steps 415001 to 420000 done, took 121.28s
- Train loss: 0.2899
-
-2017-04-04 21:45:15
-Steps 420001 to 425000 done, took 126.30s
- Train loss: 0.3695
-
-2017-04-04 21:47:21
-Steps 425001 to 430000 done, took 125.68s
- Train loss: 0.3237
-
-2017-04-04 21:49:26
-Steps 430001 to 435000 done, took 125.10s
- Train loss: 0.2108
-
-2017-04-04 21:51:31
-Steps 435001 to 440000 done, took 125.11s
- Train loss: 0.2373
-
-2017-04-04 21:53:35
-Steps 440001 to 445000 done, took 124.30s
- Train loss: 0.2524
-
-2017-04-04 21:55:42
-Steps 445001 to 450000 done, took 126.23s
- Train loss: 0.2207
-# Evaluation of policy
-- Return stats:
- Mean: 4.920846 std: 0.139876
-- Scores stats:
- Mean: 23.800000 std: 4.791659
-
-2017-04-04 21:57:55
-Steps 450001 to 455000 done, took 133.26s
- Train loss: 0.2402
-
-2017-04-04 22:00:00
-Steps 455001 to 460000 done, took 125.32s
- Train loss: 0.2087
-
-2017-04-04 22:02:06
-Steps 460001 to 465000 done, took 125.40s
- Train loss: 0.2623
-
-2017-04-04 22:04:09
-Steps 465001 to 470000 done, took 123.86s
- Train loss: 1.3714
-
-2017-04-04 22:06:12
-Steps 470001 to 475000 done, took 122.33s
- Train loss: 0.2078
-
-2017-04-04 22:08:17
-Steps 475001 to 480000 done, took 124.83s
- Train loss: 0.4292
-
-2017-04-04 22:10:22
-Steps 480001 to 485000 done, took 124.96s
- Train loss: 0.4803
-
-2017-04-04 22:12:29
-Steps 485001 to 490000 done, took 127.11s
- Train loss: 0.4197
-
-2017-04-04 22:14:33
-Steps 490001 to 495000 done, took 124.50s
- Train loss: 0.4844
-
-2017-04-04 22:16:38
-Steps 495001 to 500000 done, took 124.73s
- Train loss: 1.5709
-# Evaluation of policy
-- Return stats:
- Mean: 5.162288 std: 1.380831
-- Scores stats:
- Mean: 35.800000 std: 12.859238
-
-2017-04-04 22:18:59
-Steps 500001 to 505000 done, took 141.54s
- Train loss: 0.9244
-
-2017-04-04 22:21:07
-Steps 505001 to 510000 done, took 127.06s
- Train loss: 0.4175
-
-2017-04-04 22:23:13
-Steps 510001 to 515000 done, took 126.94s
- Train loss: 0.7433
-
-2017-04-04 22:25:20
-Steps 515001 to 520000 done, took 126.69s
- Train loss: 0.4151
-
-2017-04-04 22:27:24
-Steps 520001 to 525000 done, took 124.06s
- Train loss: 0.8629
-
-2017-04-04 22:29:31
-Steps 525001 to 530000 done, took 126.73s
- Train loss: 0.2979
-
-2017-04-04 22:31:39
-Steps 530001 to 535000 done, took 127.84s
- Train loss: 0.4880
-
-2017-04-04 22:33:46
-Steps 535001 to 540000 done, took 127.23s
- Train loss: 1.1837
-
-2017-04-04 22:35:54
-Steps 540001 to 545000 done, took 127.88s
- Train loss: 0.4542
-
-2017-04-04 22:38:01
-Steps 545001 to 550000 done, took 126.98s
- Train loss: 0.5584
-# Evaluation of policy
-- Return stats:
- Mean: 2.210594 std: 0.062549
-- Scores stats:
- Mean: 6.400000 std: 0.489898
-
-2017-04-04 22:40:17
-Steps 550001 to 555000 done, took 136.39s
- Train loss: 1.0532
-
-2017-04-04 22:42:25
-Steps 555001 to 560000 done, took 127.79s
- Train loss: 0.4680
-
-2017-04-04 22:44:33
-Steps 560001 to 565000 done, took 127.47s
- Train loss: 0.3536
-
-2017-04-04 22:46:40
-Steps 565001 to 570000 done, took 127.26s
- Train loss: 0.8355
-
-2017-04-04 22:48:44
-Steps 570001 to 575000 done, took 124.54s
- Train loss: 0.3751
-
-2017-04-04 22:50:51
-Steps 575001 to 580000 done, took 127.04s
- Train loss: 0.9499
-
-2017-04-04 22:52:59
-Steps 580001 to 585000 done, took 127.62s
- Train loss: 0.2344
-
-2017-04-04 22:55:06
-Steps 585001 to 590000 done, took 127.12s
- Train loss: 0.7165
-
-2017-04-04 22:57:14
-Steps 590001 to 595000 done, took 127.69s
- Train loss: 0.5243
-
-2017-04-04 22:59:21
-Steps 595001 to 600000 done, took 127.09s
- Train loss: 0.8394
-# Evaluation of policy
-- Return stats:
- Mean: 2.533469 std: 0.143877
-- Scores stats:
- Mean: 13.200000 std: 4.069398
-
-2017-04-04 23:01:43
-Steps 600001 to 605000 done, took 141.64s
- Train loss: 0.4878
-
-2017-04-04 23:03:49
-Steps 605001 to 610000 done, took 126.77s
- Train loss: 0.3602
-
-2017-04-04 23:05:57
-Steps 610001 to 615000 done, took 127.45s
- Train loss: 2.2023
-
-2017-04-04 23:08:03
-Steps 615001 to 620000 done, took 126.67s
- Train loss: 0.4795
-
-2017-04-04 23:10:10
-Steps 620001 to 625000 done, took 126.25s
- Train loss: 0.7703
-
-2017-04-04 23:12:15
-Steps 625001 to 630000 done, took 124.98s
- Train loss: 0.8301
-
-2017-04-04 23:14:23
-Steps 630001 to 635000 done, took 127.93s
- Train loss: 1.4573
-
-2017-04-04 23:16:30
-Steps 635001 to 640000 done, took 127.72s
- Train loss: 1.0876
-
-2017-04-04 23:18:38
-Steps 640001 to 645000 done, took 127.86s
- Train loss: 1.1293
-
-2017-04-04 23:20:45
-Steps 645001 to 650000 done, took 126.96s
- Train loss: 4.4897
-# Evaluation of policy
-- Return stats:
- Mean: 4.145979 std: 1.230674
-- Scores stats:
- Mean: 21.200000 std: 6.368673
-
-2017-04-04 23:23:08
-Steps 650001 to 655000 done, took 142.83s
- Train loss: 0.2424
-
-2017-04-04 23:25:16
-Steps 655001 to 660000 done, took 127.72s
- Train loss: 2.6082
-
-2017-04-04 23:27:23
-Steps 660001 to 665000 done, took 127.37s
- Train loss: 1.2542
-
-2017-04-04 23:29:30
-Steps 665001 to 670000 done, took 127.27s
- Train loss: 0.8806
-
-2017-04-04 23:31:39
-Steps 670001 to 675000 done, took 128.23s
- Train loss: 0.5549
-
-2017-04-04 23:33:43
-Steps 675001 to 680000 done, took 124.59s
- Train loss: 5.4269
-
-2017-04-04 23:35:51
-Steps 680001 to 685000 done, took 127.57s
- Train loss: 0.5835
-
-2017-04-04 23:37:58
-Steps 685001 to 690000 done, took 127.78s
- Train loss: 1.2317
-
-2017-04-04 23:40:06
-Steps 690001 to 695000 done, took 127.52s
- Train loss: 4.1868
-
-2017-04-04 23:42:13
-Steps 695001 to 700000 done, took 127.46s
- Train loss: 0.5398
-# Evaluation of policy
-- Return stats:
- Mean: 3.779455 std: 0.417374
-- Scores stats:
- Mean: 25.200000 std: 3.815757
-
-2017-04-04 23:44:35
-Steps 700001 to 705000 done, took 141.40s
- Train loss: 0.6782
-
-2017-04-04 23:46:42
-Steps 705001 to 710000 done, took 126.82s
- Train loss: 0.6658
-
-2017-04-04 23:48:49
-Steps 710001 to 715000 done, took 127.63s
- Train loss: 2.5076
-
-2017-04-04 23:50:56
-Steps 715001 to 720000 done, took 127.08s
- Train loss: 1.3980
-
-2017-04-04 23:53:04
-Steps 720001 to 725000 done, took 127.64s
- Train loss: 0.6199
-
-2017-04-04 23:55:09
-Steps 725001 to 730000 done, took 125.08s
- Train loss: 0.5611
-
-2017-04-04 23:57:16
-Steps 730001 to 735000 done, took 127.03s
- Train loss: 0.5735
-
-2017-04-04 23:59:24
-Steps 735001 to 740000 done, took 127.69s
- Train loss: 0.8218
-
-2017-04-05 00:01:31
-Steps 740001 to 745000 done, took 127.51s
- Train loss: 0.7518
-
-2017-04-05 00:03:40
-Steps 745001 to 750000 done, took 128.47s
- Train loss: 4.3973
-# Evaluation of policy
-- Return stats:
- Mean: 2.810251 std: 0.252910
-- Scores stats:
- Mean: 18.200000 std: 4.664762
-
-2017-04-05 00:06:04
-Steps 750001 to 755000 done, took 143.97s
- Train loss: 1.1108
-
-2017-04-05 00:08:11
-Steps 755001 to 760000 done, took 127.38s
- Train loss: 0.8639
-
-2017-04-05 00:10:20
-Steps 760001 to 765000 done, took 128.43s
- Train loss: 0.6549
-
-2017-04-05 00:12:27
-Steps 765001 to 770000 done, took 127.22s
- Train loss: 1.1188
-
-2017-04-05 00:14:35
-Steps 770001 to 775000 done, took 128.45s
- Train loss: 1.2001
-
-2017-04-05 00:16:43
-Steps 775001 to 780000 done, took 127.47s
- Train loss: 1.1544
-
-2017-04-05 00:18:47
-Steps 780001 to 785000 done, took 124.59s
- Train loss: 1.7996
-
-2017-04-05 00:20:55
-Steps 785001 to 790000 done, took 128.02s
- Train loss: 0.8338
-
-2017-04-05 00:23:03
-Steps 790001 to 795000 done, took 127.37s
- Train loss: 0.8257
-
-2017-04-05 00:25:10
-Steps 795001 to 800000 done, took 127.26s
- Train loss: 0.3990
-# Evaluation of policy
-- Return stats:
- Mean: 4.900802 std: 2.021453
-- Scores stats:
- Mean: 35.600000 std: 16.156732
-
-2017-04-05 00:27:32
-Steps 800001 to 805000 done, took 142.18s
- Train loss: 2.6726
-
-2017-04-05 00:29:40
-Steps 805001 to 810000 done, took 127.62s
- Train loss: 5.4246
-
-2017-04-05 00:31:47
-Steps 810001 to 815000 done, took 127.47s
- Train loss: 2.3547
-
-2017-04-05 00:33:55
-Steps 815001 to 820000 done, took 127.91s
- Train loss: 2.6511
-
-2017-04-05 00:36:02
-Steps 820001 to 825000 done, took 127.27s
- Train loss: 0.5060
-
-2017-04-05 00:38:11
-Steps 825001 to 830000 done, took 128.35s
- Train loss: 4.1966
-
-2017-04-05 00:40:16
-Steps 830001 to 835000 done, took 124.90s
- Train loss: 0.7910
-
-2017-04-05 00:42:24
-Steps 835001 to 840000 done, took 128.09s
- Train loss: 0.7288
-
-2017-04-05 00:44:31
-Steps 840001 to 845000 done, took 127.41s
- Train loss: 0.5268
-
-2017-04-05 00:46:39
-Steps 845001 to 850000 done, took 127.88s
- Train loss: 1.6098
-# Evaluation of policy
-- Return stats:
- Mean: 2.130826 std: 0.038898
-- Scores stats:
- Mean: 6.000000 std: 0.000000
-
-2017-04-05 00:48:57
-Steps 850001 to 855000 done, took 137.45s
- Train loss: 1.7625
-
-2017-04-05 00:51:04
-Steps 855001 to 860000 done, took 127.66s
- Train loss: 1.3151
-
-2017-04-05 00:53:12
-Steps 860001 to 865000 done, took 127.59s
- Train loss: 11.0253
-
-2017-04-05 00:55:19
-Steps 865001 to 870000 done, took 127.62s
- Train loss: 4.9619
-
-2017-04-05 00:57:27
-Steps 870001 to 875000 done, took 128.04s
- Train loss: 0.4623
-
-2017-04-05 00:59:35
-Steps 875001 to 880000 done, took 127.48s
- Train loss: 0.6931
-
-2017-04-05 01:01:41
-Steps 880001 to 885000 done, took 125.99s
- Train loss: 14.0278
-
-2017-04-05 01:03:47
-Steps 885001 to 890000 done, took 126.21s
- Train loss: 4.5834
-
-2017-04-05 01:05:54
-Steps 890001 to 895000 done, took 127.22s
- Train loss: 0.4051
-
-2017-04-05 01:08:01
-Steps 895001 to 900000 done, took 127.13s
- Train loss: 0.5778
-# Evaluation of policy
-- Return stats:
- Mean: 3.198545 std: 0.403895
-- Scores stats:
- Mean: 22.800000 std: 6.209670
-
-2017-04-05 01:10:25
-Steps 900001 to 905000 done, took 143.50s
- Train loss: 1.2309
-
-2017-04-05 01:12:32
-Steps 905001 to 910000 done, took 127.21s
- Train loss: 0.9394
-
-2017-04-05 01:14:40
-Steps 910001 to 915000 done, took 127.57s
- Train loss: 0.7974
-
-2017-04-05 01:16:47
-Steps 915001 to 920000 done, took 127.45s
- Train loss: 1.1732
-
-2017-04-05 01:18:55
-Steps 920001 to 925000 done, took 127.53s
- Train loss: 0.9979
-
-2017-04-05 01:21:03
-Steps 925001 to 930000 done, took 128.31s
- Train loss: 0.7510
-
-2017-04-05 01:23:11
-Steps 930001 to 935000 done, took 127.75s
- Train loss: 5.3673
-
-2017-04-05 01:25:15
-Steps 935001 to 940000 done, took 124.68s
- Train loss: 1.4319
-
-2017-04-05 01:27:22
-Steps 940001 to 945000 done, took 126.97s
- Train loss: 1.2844
-
-2017-04-05 01:29:30
-Steps 945001 to 950000 done, took 127.08s
- Train loss: 0.7136
-# Evaluation of policy
-- Return stats:
- Mean: 2.317046 std: 0.110861
-- Scores stats:
- Mean: 11.800000 std: 3.429286
-
-2017-04-05 01:31:54
-Steps 950001 to 955000 done, took 144.06s
- Train loss: 0.8529
-
-2017-04-05 01:34:01
-Steps 955001 to 960000 done, took 127.92s
- Train loss: 1.0341
-
-2017-04-05 01:36:08
-Steps 960001 to 965000 done, took 126.71s
- Train loss: 2.0830
-
-2017-04-05 01:38:17
-Steps 965001 to 970000 done, took 128.94s
- Train loss: 1.4936
-
-2017-04-05 01:40:26
-Steps 970001 to 975000 done, took 128.66s
- Train loss: 0.6377
-
-2017-04-05 01:42:34
-Steps 975001 to 980000 done, took 127.83s
- Train loss: 0.9429
-
-2017-04-05 01:44:41
-Steps 980001 to 985000 done, took 127.15s
- Train loss: 2.6428
-
-2017-04-05 01:46:47
-Steps 985001 to 990000 done, took 125.90s
- Train loss: 0.5711
-
-2017-04-05 01:48:54
-Steps 990001 to 995000 done, took 127.57s
- Train loss: 1.0726
-
-2017-04-05 01:51:02
-Steps 995001 to 1000000 done, took 127.47s
- Train loss: 1.6785
-# Evaluation of policy
-- Return stats:
- Mean: 4.174592 std: 0.386751
-- Scores stats:
- Mean: 24.200000 std: 2.135416
-
-2017-04-05 01:53:27
-Steps 1000001 to 1005000 done, took 145.44s
- Train loss: 0.8274
-
-2017-04-05 01:55:34
-Steps 1005001 to 1010000 done, took 127.22s
- Train loss: 15.8537
-
-2017-04-05 01:57:43
-Steps 1010001 to 1015000 done, took 128.14s
- Train loss: 1.3023
-
-2017-04-05 01:59:50
-Steps 1015001 to 1020000 done, took 127.79s
- Train loss: 1.6323
-
-2017-04-05 02:01:59
-Steps 1020001 to 1025000 done, took 128.48s
- Train loss: 0.7073
-
-2017-04-05 02:04:07
-Steps 1025001 to 1030000 done, took 128.20s
- Train loss: 0.9105
-
-2017-04-05 02:06:15
-Steps 1030001 to 1035000 done, took 128.37s
- Train loss: 1.0038
-
-2017-04-05 02:08:22
-Steps 1035001 to 1040000 done, took 126.32s
- Train loss: 1.0202
-
-2017-04-05 02:10:28
-Steps 1040001 to 1045000 done, took 126.10s
- Train loss: 0.9698
-
-2017-04-05 02:12:35
-Steps 1045001 to 1050000 done, took 127.66s
- Train loss: 0.3407
-# Evaluation of policy
-- Return stats:
- Mean: 5.003577 std: 1.112518
-- Scores stats:
- Mean: 32.400000 std: 10.403845
-
-2017-04-05 02:14:59
-Steps 1050001 to 1055000 done, took 143.60s
- Train loss: 9.6169
-
-2017-04-05 02:17:08
-Steps 1055001 to 1060000 done, took 129.02s
- Train loss: 0.3897
-
-2017-04-05 02:19:16
-Steps 1060001 to 1065000 done, took 127.49s
- Train loss: 6.0221
-
-2017-04-05 02:21:22
-Steps 1065001 to 1070000 done, took 126.79s
- Train loss: 1.3545
-
-2017-04-05 02:23:30
-Steps 1070001 to 1075000 done, took 127.15s
- Train loss: 3.1962
-
-2017-04-05 02:25:37
-Steps 1075001 to 1080000 done, took 127.96s
- Train loss: 1.8677
-
-2017-04-05 02:27:46
-Steps 1080001 to 1085000 done, took 128.80s
- Train loss: 6.1207
-
-2017-04-05 02:29:55
-Steps 1085001 to 1090000 done, took 128.74s
- Train loss: 1.6405
-
-2017-04-05 02:32:01
-Steps 1090001 to 1095000 done, took 125.89s
- Train loss: 14.4363
-
-2017-04-05 02:34:10
-Steps 1095001 to 1100000 done, took 129.24s
- Train loss: 0.6582
-# Evaluation of policy
-- Return stats:
- Mean: 4.889066 std: 1.522331
-- Scores stats:
- Mean: 52.400000 std: 11.217843
-
-2017-04-05 02:36:34
-Steps 1100001 to 1105000 done, took 144.32s
- Train loss: 1.0140
-
-2017-04-05 02:38:43
-Steps 1105001 to 1110000 done, took 128.79s
- Train loss: 0.9832
-
-2017-04-05 02:40:52
-Steps 1110001 to 1115000 done, took 128.83s
- Train loss: 1.2688
-
-2017-04-05 02:43:02
-Steps 1115001 to 1120000 done, took 129.88s
- Train loss: 2.3015
-
-2017-04-05 02:45:11
-Steps 1120001 to 1125000 done, took 128.74s
- Train loss: 13.7671
-
-2017-04-05 02:47:21
-Steps 1125001 to 1130000 done, took 130.66s
- Train loss: 2.3075
-
-2017-04-05 02:49:31
-Steps 1130001 to 1135000 done, took 129.61s
- Train loss: 0.8538
-
-2017-04-05 02:51:40
-Steps 1135001 to 1140000 done, took 129.33s
- Train loss: 1.5284
-
-2017-04-05 02:53:45
-Steps 1140001 to 1145000 done, took 125.19s
- Train loss: 1.3314
-
-2017-04-05 02:55:54
-Steps 1145001 to 1150000 done, took 128.89s
- Train loss: 1.0810
-# Evaluation of policy
-- Return stats:
- Mean: 6.070468 std: 0.633098
-- Scores stats:
- Mean: 42.400000 std: 3.720215
-
-2017-04-05 02:58:19
-Steps 1150001 to 1155000 done, took 144.89s
- Train loss: 0.5957
-
-2017-04-05 03:00:28
-Steps 1155001 to 1160000 done, took 128.78s
- Train loss: 6.1291
-
-2017-04-05 03:02:37
-Steps 1160001 to 1165000 done, took 128.76s
- Train loss: 1.1377
-
-2017-04-05 03:04:48
-Steps 1165001 to 1170000 done, took 130.86s
- Train loss: 1.2375
-
-2017-04-05 03:06:57
-Steps 1170001 to 1175000 done, took 129.12s
- Train loss: 2.2395
-
-2017-04-05 03:09:07
-Steps 1175001 to 1180000 done, took 129.87s
- Train loss: 15.6526
-
-2017-04-05 03:11:16
-Steps 1180001 to 1185000 done, took 129.17s
- Train loss: 1.1602
-
-2017-04-05 03:13:26
-Steps 1185001 to 1190000 done, took 129.94s
- Train loss: 1.4866
-
-2017-04-05 03:15:32
-Steps 1190001 to 1195000 done, took 126.48s
- Train loss: 1.7335
-
-2017-04-05 03:17:42
-Steps 1195001 to 1200000 done, took 129.41s
- Train loss: 1.3011
-# Evaluation of policy
-- Return stats:
- Mean: 4.417660 std: 0.651860
-- Scores stats:
- Mean: 41.800000 std: 11.685889
-
-2017-04-05 03:20:07
-Steps 1200001 to 1205000 done, took 145.06s
- Train loss: 1.4748
-
-2017-04-05 03:22:16
-Steps 1205001 to 1210000 done, took 129.36s
- Train loss: 1.4852
-
-2017-04-05 03:24:25
-Steps 1210001 to 1215000 done, took 128.87s
- Train loss: 1.4224
-
-2017-04-05 03:26:34
-Steps 1215001 to 1220000 done, took 128.76s
- Train loss: 1.0866
-
-2017-04-05 03:28:43
-Steps 1220001 to 1225000 done, took 129.50s
- Train loss: 0.9410
-
-2017-04-05 03:30:52
-Steps 1225001 to 1230000 done, took 128.83s
- Train loss: 3.8554
-
-2017-04-05 03:33:02
-Steps 1230001 to 1235000 done, took 130.29s
- Train loss: 0.9672
-
-2017-04-05 03:35:12
-Steps 1235001 to 1240000 done, took 129.49s
- Train loss: 0.7943
-
-2017-04-05 03:37:22
-Steps 1240001 to 1245000 done, took 129.86s
- Train loss: 1.2586
-
-2017-04-05 03:39:31
-Steps 1245001 to 1250000 done, took 129.16s
- Train loss: 10.8276
-# Evaluation of policy
-- Return stats:
- Mean: 6.433258 std: 1.410251
-- Scores stats:
- Mean: 53.400000 std: 5.388877
-
-2017-04-05 03:41:55
-Steps 1250001 to 1255000 done, took 143.82s
- Train loss: 0.8290
-
-2017-04-05 03:44:03
-Steps 1255001 to 1260000 done, took 128.85s
- Train loss: 0.6656
-
-2017-04-05 03:46:12
-Steps 1260001 to 1265000 done, took 128.62s
- Train loss: 1.4936
-
-2017-04-05 03:48:21
-Steps 1265001 to 1270000 done, took 128.69s
- Train loss: 9.2854
-
-2017-04-05 03:50:30
-Steps 1270001 to 1275000 done, took 129.12s
- Train loss: 1.5701
-
-2017-04-05 03:52:38
-Steps 1275001 to 1280000 done, took 128.51s
- Train loss: 1.0330
-
-2017-04-05 03:54:49
-Steps 1280001 to 1285000 done, took 130.83s
- Train loss: 0.8288
-
-2017-04-05 03:56:58
-Steps 1285001 to 1290000 done, took 128.82s
- Train loss: 0.9551
-
-2017-04-05 03:59:08
-Steps 1290001 to 1295000 done, took 129.44s
- Train loss: 1.0842
-
-2017-04-05 04:01:15
-Steps 1295001 to 1300000 done, took 127.40s
- Train loss: 1.9419
-# Evaluation of policy
-- Return stats:
- Mean: 4.379911 std: 1.427545
-- Scores stats:
- Mean: 25.600000 std: 8.014986
-
-2017-04-05 04:03:36
-Steps 1300001 to 1305000 done, took 141.33s
- Train loss: 27.3882
-
-2017-04-05 04:05:47
-Steps 1305001 to 1310000 done, took 130.73s
- Train loss: 1.8217
-
-2017-04-05 04:07:57
-Steps 1310001 to 1315000 done, took 130.15s
- Train loss: 1.8748
-
-2017-04-05 04:10:08
-Steps 1315001 to 1320000 done, took 131.00s
- Train loss: 126.4667
-
-2017-04-05 04:12:17
-Steps 1320001 to 1325000 done, took 129.30s
- Train loss: 0.9821
-
-2017-04-05 04:14:26
-Steps 1325001 to 1330000 done, took 128.42s
- Train loss: 0.9645
-
-2017-04-05 04:16:36
-Steps 1330001 to 1335000 done, took 129.83s
- Train loss: 2.1374
-
-2017-04-05 04:18:45
-Steps 1335001 to 1340000 done, took 129.56s
- Train loss: 2.5504
-
-2017-04-05 04:20:54
-Steps 1340001 to 1345000 done, took 129.18s
- Train loss: 0.5647
-
-2017-04-05 04:23:02
-Steps 1345001 to 1350000 done, took 127.25s
- Train loss: 1.0371
-# Evaluation of policy
-- Return stats:
- Mean: 3.310198 std: 0.955062
-- Scores stats:
- Mean: 30.600000 std: 3.200000
-
-2017-04-05 04:25:28
-Steps 1350001 to 1355000 done, took 146.47s
- Train loss: 1.4289
-
-2017-04-05 04:27:39
-Steps 1355001 to 1360000 done, took 130.57s
- Train loss: 3.4949
-
-2017-04-05 04:29:50
-Steps 1360001 to 1365000 done, took 131.46s
- Train loss: 1.3718
-
-2017-04-05 04:32:01
-Steps 1365001 to 1370000 done, took 130.44s
- Train loss: 21.9459
-
-2017-04-05 04:34:11
-Steps 1370001 to 1375000 done, took 130.65s
- Train loss: 21.5405
-
-2017-04-05 04:36:21
-Steps 1375001 to 1380000 done, took 130.14s
- Train loss: 4.0645
-
-2017-04-05 04:38:32
-Steps 1380001 to 1385000 done, took 130.68s
- Train loss: 1.6604
-
-2017-04-05 04:40:42
-Steps 1385001 to 1390000 done, took 129.59s
- Train loss: 1.3245
-
-2017-04-05 04:42:51
-Steps 1390001 to 1395000 done, took 129.54s
- Train loss: 2.4585
-
-2017-04-05 04:44:58
-Steps 1395001 to 1400000 done, took 126.61s
- Train loss: 2.1377
-# Evaluation of policy
-- Return stats:
- Mean: 3.945865 std: 1.271378
-- Scores stats:
- Mean: 25.200000 std: 10.571660
-
-2017-04-05 04:47:22
-Steps 1400001 to 1405000 done, took 143.83s
- Train loss: 4.0685
-
-2017-04-05 04:49:32
-Steps 1405001 to 1410000 done, took 130.55s
- Train loss: 2.3613
-
-2017-04-05 04:51:41
-Steps 1410001 to 1415000 done, took 128.75s
- Train loss: 1.4849
-
-2017-04-05 04:53:50
-Steps 1415001 to 1420000 done, took 129.37s
- Train loss: 11.6177
-
-2017-04-05 04:56:00
-Steps 1420001 to 1425000 done, took 129.50s
- Train loss: 3.9623
-
-2017-04-05 04:58:11
-Steps 1425001 to 1430000 done, took 130.66s
- Train loss: 2.0449
-
-2017-04-05 05:00:21
-Steps 1430001 to 1435000 done, took 130.83s
- Train loss: 6.3008
-
-2017-04-05 05:02:32
-Steps 1435001 to 1440000 done, took 130.52s
- Train loss: 4.0518
-
-2017-04-05 05:04:41
-Steps 1440001 to 1445000 done, took 129.16s
- Train loss: 5.5401
-
-2017-04-05 05:06:49
-Steps 1445001 to 1450000 done, took 127.71s
- Train loss: 3.3089
-# Evaluation of policy
-- Return stats:
- Mean: 5.535740 std: 0.512456
-- Scores stats:
- Mean: 52.000000 std: 4.195235
-
-2017-04-05 05:09:17
-Steps 1450001 to 1455000 done, took 148.01s
- Train loss: 23.0321
-
-2017-04-05 05:11:26
-Steps 1455001 to 1460000 done, took 129.31s
- Train loss: 5.0747
-
-2017-04-05 05:13:36
-Steps 1460001 to 1465000 done, took 130.42s
- Train loss: 18.2844
-
-2017-04-05 05:15:46
-Steps 1465001 to 1470000 done, took 129.53s
- Train loss: 1.9860
-
-2017-04-05 05:17:58
-Steps 1470001 to 1475000 done, took 131.90s
- Train loss: 2.2724
-
-2017-04-05 05:20:09
-Steps 1475001 to 1480000 done, took 130.78s
- Train loss: 1.3280
-
-2017-04-05 05:22:18
-Steps 1480001 to 1485000 done, took 129.56s
- Train loss: 8.0110
-
-2017-04-05 05:24:30
-Steps 1485001 to 1490000 done, took 131.32s
- Train loss: 1.3513
-
-2017-04-05 05:26:46
-Steps 1490001 to 1495000 done, took 136.30s
- Train loss: 2.4279
+ Mean: 60.600000 std: 11.568924
+
+2017-04-05 12:48:37
+Steps 150001 to 155000 done, took 135.79s
+ Train loss: 0.1272
+
+2017-04-05 12:50:35
+Steps 155001 to 160000 done, took 118.60s
+ Train loss: 0.0533
