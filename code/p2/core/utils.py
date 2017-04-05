@@ -94,7 +94,7 @@ def evaluate(env,
 
 
 def do_obs_processing(frame, width, height):
-    # return rgb2gray(
-    #     resize(frame, [width, height], preserve_range=True)).astype('uint8')
-    return resize(rgb2gray(frame), (110, 84))[13:110 - 13, :]
+    with warnings.catch_warnings():
+        warnings.simplefilter('ignore')
+        return resize(rgb2gray(frame), (110, 84))[13:110 - 13, :]
 
