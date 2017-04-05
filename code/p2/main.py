@@ -15,21 +15,28 @@ from core.qlearning import do_online_qlearning
 
 #from core.running import run_multiple_trials
 
+NUM_RUNS = 5
+
 ENVS = {
     'pong': {
         'gym_name': 'Pong-v3',
-        'learning_rate': 0.0004,
+        'learning_rate': 0.0001,
         'gpu_device': '/gpu:0'
     },
     'pacman': {
         'gym_name': 'MsPacman-v3',
-        'learning_rate': 0.0004, 
+        'learning_rate': 0.0001, 
         'gpu_device': '/gpu:1'
     },
     'boxing': {
         'gym_name': 'Boxing-v3',
-        'learning_rate': 0.0004,
+        'learning_rate': 0.0001,
         'gpu_device': '/gpu:2'
+    },
+    'pong2': {
+        'gym_name': 'Pong-v3',
+        'learning_rate': 0.001,
+        'gpu_device': '/gpu:3'
     }
 }
 
@@ -50,10 +57,10 @@ if __name__ == '__main__':
         print('Env does not exist.')
         raise
 
-    dumps_dir = os.path.join(
+    main_dumps_dir = os.path.join(
         os.path.dirname(__file__), 'dumps', FLAGS.env)      
-    if not os.path.exists(dumps_dir):
-        os.mkdir(dumps_dir)
+    if not os.path.exists(main_dumps_dir):
+        os.mkdir(main_dumps_dir)
 
     losses_file = os.path.join(
         dumps_dir, 'losses.csv')
@@ -61,25 +68,34 @@ if __name__ == '__main__':
     results_file = os.path.join(
             dumps_dir, 'results.csv')
 
-    learning_rates = [0.00001, 0.0001, 0.001, 0.01, 0.1, 0.5]
-
-    #learning_rates = [0.01, 0.1]
-
     env = gym.make(tenv['gym_name'])
     test_env = gym.make(tenv['gym_name'])
+    epsilon_s = { 'start': 0.5, 'end': 0.005, 'decay': 2000 }
 
     if FLAGS.train:
-        epsilon_s = { 'start': 0.5, 'end': 0.005, 'decay': 2000 }
-        loss, means = do_online_qlearning(env, test_env,
-                            model=AtariModel(env.action_space.n), 
-                            learning_rate=tenv['learning_rate'],
-                            epsilon_s=epsilon_s, 
-                            gpu_device=tenv['gpu_device'],
-                            target_model=AtariModel(env.action_space.n, varscope='target'),
-                            replay_buffer=ExperienceReplayBuffer(500000, 64),
-                            dpaths=dumps_dir)
+        for i in range(NUM_RUNS):
+            print('Running %s run %d/%d ...' % (tenv['gym_name'], (i+1), NUM_RUNS))
 
-        np.savetxt(losses_file, loss, delimiter=',')
-        np.savetxt(results_file, means, delimiter=',')
+            dumps_dir = os.path.join(main_dumps_dir, '%01d' % (i+1))      
+            if not os.path.exists(dumps_dir):
+                os.mkdir(dumps_dir)
+
+            losses_file = os.path.join(
+                dumps_dir, 'losses.csv')
+
+            results_file = os.path.join(
+                    dumps_dir, 'results.csv')
+
+            loss, means = do_online_qlearning(env, test_env,
+                                model=AtariModel(env.action_space.n), 
+                                learning_rate=tenv['learning_rate'],
+                                epsilon_s=epsilon_s, 
+                                gpu_device=tenv['gpu_device'],
+                                target_model=AtariModel(env.action_space.n, varscope='target'),
+                                replay_buffer=ExperienceReplayBuffer(500000, 64),
+                                dpaths=os.path.join(dumps_dir, FLAGS.env))
+
+            np.savetxt(losses_file, loss, delimiter=',')
+            np.savetxt(results_file, means, delimiter=',')
 
 

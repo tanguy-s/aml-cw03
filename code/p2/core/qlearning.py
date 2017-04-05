@@ -7,7 +7,7 @@ import tensorflow as tf
 from core.utils import evaluate, reward_value, do_obs_processing, reward_clip
 
 GAMMA = 0.99
-TRAINING_STEPS = 1500000
+TRAINING_STEPS = 500000
 LOG_STEPS = 5000
 LOSS_STEPS = 1000
 EVAL_STEPS = 50000
@@ -144,9 +144,8 @@ def do_online_qlearning(env,
                 # Add transition to replay buffer
                 replay_buffer.add((state, action, r, next_state, done))
 
-                # If replay buffer is ready:
-                #if replay_buffer.ready:
-                if len(replay_buffer.transitions) > replay_buffer.batch_size:
+                # If replay buffer is ready to be sampled
+                if replay_buffer.ready:
                     # Train model on replay buffer
                     transitions = replay_buffer.get_rand_transitions()
 

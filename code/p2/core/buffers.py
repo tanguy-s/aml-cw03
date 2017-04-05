@@ -28,8 +28,12 @@ class ExperienceReplayBuffer(object):
         self.transitions.append(transition)
 
     @property
-    def ready(self):
+    def complete(self):
         return True if len(self.transitions) == self.buffer_size else False
+
+    @property
+    def ready(self):
+        return True if len(self.transitions) > self.batch_size else False
 
     def get_rand_transitions(self):
         return random.sample(self.transitions, self.batch_size)
