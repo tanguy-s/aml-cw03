@@ -7,7 +7,7 @@ import tensorflow as tf
 from core.utils import evaluate, reward_value, do_obs_processing, reward_clip
 
 GAMMA = 0.99
-TRAINING_STEPS = 500000
+TRAINING_STEPS = 1000000
 LOG_STEPS = 5000
 LOSS_STEPS = 1000
 EVAL_STEPS = 50000

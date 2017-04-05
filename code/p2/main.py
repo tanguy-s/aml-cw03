@@ -15,7 +15,7 @@ from core.qlearning import do_online_qlearning
 
 #from core.running import run_multiple_trials
 
-NUM_RUNS = 5
+NUM_RUNS = 1
 
 ENVS = {
     'pong': {
