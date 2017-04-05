@@ -60,7 +60,8 @@ def do_online_qlearning(env,
         loss_op = tf.reduce_mean(tf.square(targets_pl - Q) / 2)
 
         # Optimizer Op
-        optimizer = tf.train.RMSPropOptimizer(learning_rate=learning_rate)
+        #optimizer = tf.train.RMSPropOptimizer(learning_rate=learning_rate)
+        optimizer = tf.train.AdamOptimizer(learning_rate=learning_rate)
 
         # Training Op
         train_op = optimizer.minimize(loss_op)
