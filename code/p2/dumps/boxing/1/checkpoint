@@ -1,0 +1,6 @@
+model_checkpoint_path: "boxing"
+all_model_checkpoint_paths: "boxing-300000"
+all_model_checkpoint_paths: "boxing-350000"
+all_model_checkpoint_paths: "boxing-400000"
+all_model_checkpoint_paths: "boxing-450000"
+all_model_checkpoint_paths: "boxing"
