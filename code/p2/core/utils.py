@@ -90,7 +90,7 @@ def evaluate(env,
         print('- Scores stats:\n Mean: %f std: %f' % 
             (means[1], stds[1]))
 
-    return means
+    return means, stds
 
 
 def do_obs_processing(frame, width, height):
