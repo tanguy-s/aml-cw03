@@ -62,12 +62,6 @@ if __name__ == '__main__':
     if not os.path.exists(main_dumps_dir):
         os.mkdir(main_dumps_dir)
 
-    losses_file = os.path.join(
-        dumps_dir, 'losses.csv')
-
-    results_file = os.path.join(
-            dumps_dir, 'results.csv')
-
     env = gym.make(tenv['gym_name'])
     test_env = gym.make(tenv['gym_name'])
     epsilon_s = { 'start': 0.5, 'end': 0.005, 'decay': 2000 }
