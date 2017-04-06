@@ -24,13 +24,15 @@ def evaluate(env,
                 states_pl, 
                 num_episodes, 
                 gamma, 
-                silent=False):
+                silent=False,
+                render=False):
 
     
 
     res = np.zeros([num_episodes, 2])
     for i_episode in range(num_episodes):
-        print('Episode %d/%d' % (i_episode, num_episodes))
+        if not silent:
+            print('Episode %d/%d' % (i_episode, num_episodes))
         #Observation Buffer
         observation_buffer = list()
 
@@ -43,7 +45,7 @@ def evaluate(env,
 
         while not done:
             t += 1            
-
+            env.render()
             # Stack observations in buffer of 4
             if len(observation_buffer) < FRAME_BUFFER_SIZE:
 
@@ -80,6 +82,9 @@ def evaluate(env,
 
         res[i_episode][0] = retval
         res[i_episode][1] = score
+
+        if render:
+            break
 
     means = np.mean(res, axis=0)
     stds = np.std(res, axis=0)
