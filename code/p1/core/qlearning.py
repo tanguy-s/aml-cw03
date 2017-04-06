@@ -129,7 +129,7 @@ def do_online_qlearning(env,
 
     # Build target network
     if target_model:
-        q_target = target_model.graph(states_pl)
+        q_target_net = target_model.graph(states_pl)
 
         trainvars = tf.trainable_variables()
         ntrainvars = len(trainvars)
@@ -188,71 +188,52 @@ def do_online_qlearning(env,
                 if epsilon > np.random.rand(1):
                     # Exploration
                     # Use uniformly sampled action from env
-                    action = np.array(env.action_space.sample()).reshape([-1])
+                    actions = np.array(env.action_space.sample()).reshape([-1])
                 else:
                     # Exploitation 
                     # Use model predicted action 
                     actions = sess.run(prediction, feed_dict={
                         states_pl: state.reshape([-1,4]).astype('float32')
                     })
-                    action = actions[0]
 
                 # Run next step with action
-                next_state, _, done, info = env.step(action)
+                next_state, _, done, info = env.step(actions[0])
                 reward = reward_value(done)
                 #retval += pow(gamma, t)*reward
 
                 if replay_buffer:
                     state = state.reshape([-1,4]).astype('float32')
-                    action = action.reshape([-1])
+                    actions = actions.reshape([-1])
                     next_state = next_state.reshape([-1,4]).astype('float32')
 
                     # Use experience replay buffer to fill in buffer
-                    replay_buffer.add([state, action, reward, next_state])
+                    replay_buffer.add((state, actions, reward, next_state, done))
 
                     #print(next_state.shape)
 
                     # If replay buffer is ready do Online learning
                     if replay_buffer.ready:
                         # Train model on replay buffer
-                        transitions = replay_buffer.get_rand_transitions()
+                        b_states, b_actions, b_reward, b_next_state, b_term_state = replay_buffer.next_transitions()
 
-                        b_states = list()
-                        b_actions = list()
-                        b_q_target = list()
+                        if target_model:
+                            q_out = sess.run(q_target_net, feed_dict={
+                                    states_pl: b_next_state
+                                })
+                        else:
+                            q_out = sess.run(q_output, feed_dict={
+                                    states_pl: b_next_state
+                                })
 
-                        for transition in transitions:
-
-                            #print(transition[-1], type(transition[-1]))
-                            # transition: (Si, Ai, Ri+1, Si+1)
-                            if target_model:
-                                q_out = sess.run(q_target, feed_dict={
-                                        states_pl: transition[-1] # Next state
-                                    })
-                            else:
-                                q_out = sess.run(q_output, feed_dict={
-                                        states_pl: transition[-1] # Next state
-                                    })
-
-                            q_out_max = np.amax(q_out, axis=1)
-                            q_target = transition[2] + (1 + np.transpose(transition[2])) * GAMMA * q_out_max
-
-                            # Build batch of experience
-                            b_states.append(transition[0])
-                            b_actions.append(transition[1])
-                            b_q_target.append(q_target)
-
-                        b_states = np.stack(b_states, axis=0)
-                        b_actions = np.stack(b_actions, axis=0)
-                        b_q_target = np.stack(b_q_target, axis=0)
-                            
+                        q_out_max = np.amax(q_out, axis=1)
+                        b_q_target = b_reward + (1 + np.transpose(b_term_state)) * GAMMA * q_out_max
 
                         # Run training Op on batch of replay experience
                         loss, _ = sess.run([loss_op, train_op], 
                             feed_dict={
-                                states_pl: b_states.reshape([-1,4]),
-                                actions_pl: b_actions.reshape([-1]),
-                                targets_pl: b_q_target.reshape([-1]).astype('float32')
+                                states_pl: b_states,
+                                actions_pl: b_actions,
+                                targets_pl: b_q_target
                             })
 
 

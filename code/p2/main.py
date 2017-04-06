@@ -52,6 +52,9 @@ if __name__ == '__main__':
     parser.add_argument('--test', nargs='?', const=True, type=bool,
                       default=False,
                       help='If true, train model with fixed learning rate.')
+    parser.add_argument('--render', nargs='?', const=True, type=bool,
+                      default=False,
+                      help='If true, train model with fixed learning rate.')
 
     FLAGS, _ = parser.parse_known_args()
 
@@ -102,6 +105,7 @@ if __name__ == '__main__':
         do_testing(env,
                     model=AtariModel(env.action_space.n), 
                     target_model=AtariModel(env.action_space.n, varscope='target'),
-                    dpaths=dpaths)
+                    dpaths=dpaths, 
+                    render=FLAGS.render)
 
 
