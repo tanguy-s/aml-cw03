@@ -1,0 +1,1466 @@
+I tensorflow/stream_executor/dso_loader.cc:135] successfully opened CUDA library libcublas.so.8.0 locally
+I tensorflow/stream_executor/dso_loader.cc:135] successfully opened CUDA library libcudnn.so.5 locally
+I tensorflow/stream_executor/dso_loader.cc:135] successfully opened CUDA library libcufft.so.8.0 locally
+I tensorflow/stream_executor/dso_loader.cc:135] successfully opened CUDA library libcuda.so.1 locally
+I tensorflow/stream_executor/dso_loader.cc:135] successfully opened CUDA library libcurand.so.8.0 locally
+[2017-04-06 18:19:21,639] Making new env: CartPole-v0
+W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE3 instructions, but these are available on your machine and could speed up CPU computations.
+W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.1 instructions, but these are available on your machine and could speed up CPU computations.
+W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.2 instructions, but these are available on your machine and could speed up CPU computations.
+W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX instructions, but these are available on your machine and could speed up CPU computations.
+W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX2 instructions, but these are available on your machine and could speed up CPU computations.
+W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use FMA instructions, but these are available on your machine and could speed up CPU computations.
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:885] Found device 0 with properties: 
+name: Tesla P100-SXM2-16GB
+major: 6 minor: 0 memoryClockRate (GHz) 1.4805
+pciBusID 0000:05:00.0
+Total memory: 15.89GiB
+Free memory: 15.61GiB
+W tensorflow/stream_executor/cuda/cuda_driver.cc:590] creating context when one is currently active; existing: 0x23cb260
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:885] Found device 1 with properties: 
+name: Tesla P100-SXM2-16GB
+major: 6 minor: 0 memoryClockRate (GHz) 1.4805
+pciBusID 0000:06:00.0
+Total memory: 15.89GiB
+Free memory: 15.61GiB
+W tensorflow/stream_executor/cuda/cuda_driver.cc:590] creating context when one is currently active; existing: 0x23cebe0
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:885] Found device 2 with properties: 
+name: Tesla P100-SXM2-16GB
+major: 6 minor: 0 memoryClockRate (GHz) 1.4805
+pciBusID 0000:84:00.0
+Total memory: 15.89GiB
+Free memory: 15.61GiB
+W tensorflow/stream_executor/cuda/cuda_driver.cc:590] creating context when one is currently active; existing: 0x23d2560
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:885] Found device 3 with properties: 
+name: Tesla P100-SXM2-16GB
+major: 6 minor: 0 memoryClockRate (GHz) 1.4805
+pciBusID 0000:85:00.0
+Total memory: 15.89GiB
+Free memory: 15.61GiB
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:906] DMA: 0 1 2 3 
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:916] 0:   Y Y Y Y 
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:916] 1:   Y Y Y Y 
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:916] 2:   Y Y Y Y 
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:916] 3:   Y Y Y Y 
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:0) -> (device: 0, name: Tesla P100-SXM2-16GB, pci bus id: 0000:05:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:1) -> (device: 1, name: Tesla P100-SXM2-16GB, pci bus id: 0000:06:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:2) -> (device: 2, name: Tesla P100-SXM2-16GB, pci bus id: 0000:84:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:3) -> (device: 3, name: Tesla P100-SXM2-16GB, pci bus id: 0000:85:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:0) -> (device: 0, name: Tesla P100-SXM2-16GB, pci bus id: 0000:05:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:1) -> (device: 1, name: Tesla P100-SXM2-16GB, pci bus id: 0000:06:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:2) -> (device: 2, name: Tesla P100-SXM2-16GB, pci bus id: 0000:84:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:3) -> (device: 3, name: Tesla P100-SXM2-16GB, pci bus id: 0000:85:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:0) -> (device: 0, name: Tesla P100-SXM2-16GB, pci bus id: 0000:05:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:1) -> (device: 1, name: Tesla P100-SXM2-16GB, pci bus id: 0000:06:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:2) -> (device: 2, name: Tesla P100-SXM2-16GB, pci bus id: 0000:84:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:3) -> (device: 3, name: Tesla P100-SXM2-16GB, pci bus id: 0000:85:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:0) -> (device: 0, name: Tesla P100-SXM2-16GB, pci bus id: 0000:05:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:1) -> (device: 1, name: Tesla P100-SXM2-16GB, pci bus id: 0000:06:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:2) -> (device: 2, name: Tesla P100-SXM2-16GB, pci bus id: 0000:84:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:3) -> (device: 3, name: Tesla P100-SXM2-16GB, pci bus id: 0000:85:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:0) -> (device: 0, name: Tesla P100-SXM2-16GB, pci bus id: 0000:05:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:1) -> (device: 1, name: Tesla P100-SXM2-16GB, pci bus id: 0000:06:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:2) -> (device: 2, name: Tesla P100-SXM2-16GB, pci bus id: 0000:84:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:3) -> (device: 3, name: Tesla P100-SXM2-16GB, pci bus id: 0000:85:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:0) -> (device: 0, name: Tesla P100-SXM2-16GB, pci bus id: 0000:05:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:1) -> (device: 1, name: Tesla P100-SXM2-16GB, pci bus id: 0000:06:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:2) -> (device: 2, name: Tesla P100-SXM2-16GB, pci bus id: 0000:84:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:3) -> (device: 3, name: Tesla P100-SXM2-16GB, pci bus id: 0000:85:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:0) -> (device: 0, name: Tesla P100-SXM2-16GB, pci bus id: 0000:05:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:1) -> (device: 1, name: Tesla P100-SXM2-16GB, pci bus id: 0000:06:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:2) -> (device: 2, name: Tesla P100-SXM2-16GB, pci bus id: 0000:84:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:3) -> (device: 3, name: Tesla P100-SXM2-16GB, pci bus id: 0000:85:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:0) -> (device: 0, name: Tesla P100-SXM2-16GB, pci bus id: 0000:05:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:1) -> (device: 1, name: Tesla P100-SXM2-16GB, pci bus id: 0000:06:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:2) -> (device: 2, name: Tesla P100-SXM2-16GB, pci bus id: 0000:84:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:3) -> (device: 3, name: Tesla P100-SXM2-16GB, pci bus id: 0000:85:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:0) -> (device: 0, name: Tesla P100-SXM2-16GB, pci bus id: 0000:05:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:1) -> (device: 1, name: Tesla P100-SXM2-16GB, pci bus id: 0000:06:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:2) -> (device: 2, name: Tesla P100-SXM2-16GB, pci bus id: 0000:84:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:3) -> (device: 3, name: Tesla P100-SXM2-16GB, pci bus id: 0000:85:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:0) -> (device: 0, name: Tesla P100-SXM2-16GB, pci bus id: 0000:05:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:1) -> (device: 1, name: Tesla P100-SXM2-16GB, pci bus id: 0000:06:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:2) -> (device: 2, name: Tesla P100-SXM2-16GB, pci bus id: 0000:84:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:3) -> (device: 3, name: Tesla P100-SXM2-16GB, pci bus id: 0000:85:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:0) -> (device: 0, name: Tesla P100-SXM2-16GB, pci bus id: 0000:05:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:1) -> (device: 1, name: Tesla P100-SXM2-16GB, pci bus id: 0000:06:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:2) -> (device: 2, name: Tesla P100-SXM2-16GB, pci bus id: 0000:84:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:3) -> (device: 3, name: Tesla P100-SXM2-16GB, pci bus id: 0000:85:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:0) -> (device: 0, name: Tesla P100-SXM2-16GB, pci bus id: 0000:05:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:1) -> (device: 1, name: Tesla P100-SXM2-16GB, pci bus id: 0000:06:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:2) -> (device: 2, name: Tesla P100-SXM2-16GB, pci bus id: 0000:84:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:3) -> (device: 3, name: Tesla P100-SXM2-16GB, pci bus id: 0000:85:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:0) -> (device: 0, name: Tesla P100-SXM2-16GB, pci bus id: 0000:05:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:1) -> (device: 1, name: Tesla P100-SXM2-16GB, pci bus id: 0000:06:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:2) -> (device: 2, name: Tesla P100-SXM2-16GB, pci bus id: 0000:84:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:3) -> (device: 3, name: Tesla P100-SXM2-16GB, pci bus id: 0000:85:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:0) -> (device: 0, name: Tesla P100-SXM2-16GB, pci bus id: 0000:05:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:1) -> (device: 1, name: Tesla P100-SXM2-16GB, pci bus id: 0000:06:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:2) -> (device: 2, name: Tesla P100-SXM2-16GB, pci bus id: 0000:84:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:3) -> (device: 3, name: Tesla P100-SXM2-16GB, pci bus id: 0000:85:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:0) -> (device: 0, name: Tesla P100-SXM2-16GB, pci bus id: 0000:05:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:1) -> (device: 1, name: Tesla P100-SXM2-16GB, pci bus id: 0000:06:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:2) -> (device: 2, name: Tesla P100-SXM2-16GB, pci bus id: 0000:84:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:3) -> (device: 3, name: Tesla P100-SXM2-16GB, pci bus id: 0000:85:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:0) -> (device: 0, name: Tesla P100-SXM2-16GB, pci bus id: 0000:05:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:1) -> (device: 1, name: Tesla P100-SXM2-16GB, pci bus id: 0000:06:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:2) -> (device: 2, name: Tesla P100-SXM2-16GB, pci bus id: 0000:84:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:3) -> (device: 3, name: Tesla P100-SXM2-16GB, pci bus id: 0000:85:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:0) -> (device: 0, name: Tesla P100-SXM2-16GB, pci bus id: 0000:05:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:1) -> (device: 1, name: Tesla P100-SXM2-16GB, pci bus id: 0000:06:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:2) -> (device: 2, name: Tesla P100-SXM2-16GB, pci bus id: 0000:84:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:3) -> (device: 3, name: Tesla P100-SXM2-16GB, pci bus id: 0000:85:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:0) -> (device: 0, name: Tesla P100-SXM2-16GB, pci bus id: 0000:05:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:1) -> (device: 1, name: Tesla P100-SXM2-16GB, pci bus id: 0000:06:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:2) -> (device: 2, name: Tesla P100-SXM2-16GB, pci bus id: 0000:84:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:3) -> (device: 3, name: Tesla P100-SXM2-16GB, pci bus id: 0000:85:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:0) -> (device: 0, name: Tesla P100-SXM2-16GB, pci bus id: 0000:05:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:1) -> (device: 1, name: Tesla P100-SXM2-16GB, pci bus id: 0000:06:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:2) -> (device: 2, name: Tesla P100-SXM2-16GB, pci bus id: 0000:84:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:3) -> (device: 3, name: Tesla P100-SXM2-16GB, pci bus id: 0000:85:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:0) -> (device: 0, name: Tesla P100-SXM2-16GB, pci bus id: 0000:05:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:1) -> (device: 1, name: Tesla P100-SXM2-16GB, pci bus id: 0000:06:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:2) -> (device: 2, name: Tesla P100-SXM2-16GB, pci bus id: 0000:84:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:3) -> (device: 3, name: Tesla P100-SXM2-16GB, pci bus id: 0000:85:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:0) -> (device: 0, name: Tesla P100-SXM2-16GB, pci bus id: 0000:05:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:1) -> (device: 1, name: Tesla P100-SXM2-16GB, pci bus id: 0000:06:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:2) -> (device: 2, name: Tesla P100-SXM2-16GB, pci bus id: 0000:84:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:3) -> (device: 3, name: Tesla P100-SXM2-16GB, pci bus id: 0000:85:00.0)
+Replay buffer size 0
+Replay buffer size 500
+Replay buffer size 1000
+Replay buffer size 1500
+# Done building history buffer.
+- Buffer size is 44924 number of batches: 20
+
+
+###################################
+#### Learning rate 0.000010
+###################################
+
+## Run 1/10
+
+2017-04-06 18:19:27
+Epochs 1 to 1 done, took 0.267217s
+Training loss: 0.0316
+# Evaluation
+- Episode length stats:
+ Mean: 49.600000 std: 8.697126
+- Return from initial stats:
+ Mean: -0.615940 std: 0.054314
+
+2017-04-06 18:19:42
+Epochs 1 to 101 done, took 14.514754s
+Training loss: 0.0293
+
+2017-04-06 18:19:49
+Epochs 101 to 201 done, took 7.380594s
+Training loss: 0.0282
+
+## Run 2/10
+
+2017-04-06 18:19:49
+Epochs 1 to 1 done, took 0.048522s
+Training loss: 0.0326
+# Evaluation
+- Episode length stats:
+ Mean: 128.700000 std: 35.490985
+- Return from initial stats:
+ Mean: -0.293761 std: 0.093038
+
+2017-04-06 18:20:35
+Epochs 1 to 101 done, took 45.400693s
+Training loss: 0.0296
+
+2017-04-06 18:21:21
+Epochs 101 to 201 done, took 46.544224s
+Training loss: 0.0270
+
+## Run 3/10
+
+2017-04-06 18:21:21
+Epochs 1 to 1 done, took 0.044141s
+Training loss: 0.0286
+# Evaluation
+- Episode length stats:
+ Mean: 9.400000 std: 0.583095
+- Return from initial stats:
+ Mean: -0.919058 std: 0.005392
+
+2017-04-06 18:21:27
+Epochs 1 to 101 done, took 5.884267s
+Training loss: 0.0272
+
+2017-04-06 18:21:33
+Epochs 101 to 201 done, took 5.835483s
+Training loss: 0.0261
+
+## Run 4/10
+
+2017-04-06 18:21:33
+Epochs 1 to 1 done, took 0.044787s
+Training loss: 0.0315
+# Evaluation
+- Episode length stats:
+ Mean: 27.700000 std: 8.877500
+- Return from initial stats:
+ Mean: -0.767436 std: 0.060154
+
+2017-04-06 18:21:45
+Epochs 1 to 101 done, took 11.807634s
+Training loss: 0.0289
+
+2017-04-06 18:21:55
+Epochs 101 to 201 done, took 9.766221s
+Training loss: 0.0277
+
+## Run 5/10
+
+2017-04-06 18:21:55
+Epochs 1 to 1 done, took 0.044503s
+Training loss: 0.0410
+# Evaluation
+- Episode length stats:
+ Mean: 9.150000 std: 0.726292
+- Return from initial stats:
+ Mean: -0.921379 std: 0.006731
+
+2017-04-06 18:22:01
+Epochs 1 to 101 done, took 6.003043s
+Training loss: 0.0379
+
+2017-04-06 18:22:07
+Epochs 101 to 201 done, took 6.359885s
+Training loss: 0.0349
+
+## Run 6/10
+
+2017-04-06 18:22:08
+Epochs 1 to 1 done, took 0.044699s
+Training loss: 0.0327
+# Evaluation
+- Episode length stats:
+ Mean: 9.850000 std: 0.572276
+- Return from initial stats:
+ Mean: -0.914911 std: 0.005262
+
+2017-04-06 18:22:14
+Epochs 1 to 101 done, took 6.300133s
+Training loss: 0.0312
+
+2017-04-06 18:22:20
+Epochs 101 to 201 done, took 6.106825s
+Training loss: 0.0291
+
+## Run 7/10
+
+2017-04-06 18:22:20
+Epochs 1 to 1 done, took 0.043495s
+Training loss: 0.0323
+# Evaluation
+- Episode length stats:
+ Mean: 9.000000 std: 0.774597
+- Return from initial stats:
+ Mean: -0.922773 std: 0.007166
+
+2017-04-06 18:22:26
+Epochs 1 to 101 done, took 5.973369s
+Training loss: 0.0310
+
+2017-04-06 18:22:32
+Epochs 101 to 201 done, took 6.042509s
+Training loss: 0.0287
+
+## Run 8/10
+
+2017-04-06 18:22:32
+Epochs 1 to 1 done, took 0.044142s
+Training loss: 0.0346
+# Evaluation
+- Episode length stats:
+ Mean: 145.400000 std: 27.577890
+- Return from initial stats:
+ Mean: -0.243337 std: 0.066462
+
+2017-04-06 18:23:10
+Epochs 1 to 101 done, took 37.287295s
+Training loss: 0.0311
+
+2017-04-06 18:23:36
+Epochs 101 to 201 done, took 26.228652s
+Training loss: 0.0286
+
+## Run 9/10
+
+2017-04-06 18:23:36
+Epochs 1 to 1 done, took 0.045129s
+Training loss: 0.0289
+# Evaluation
+- Episode length stats:
+ Mean: 28.650000 std: 5.588157
+- Return from initial stats:
+ Mean: -0.758571 std: 0.042444
+
+2017-04-06 18:23:46
+Epochs 1 to 101 done, took 9.932715s
+Training loss: 0.0279
+
+2017-04-06 18:23:53
+Epochs 101 to 201 done, took 7.356275s
+Training loss: 0.0260
+
+## Run 10/10
+
+2017-04-06 18:23:54
+Epochs 1 to 1 done, took 0.042479s
+Training loss: 0.0323
+# Evaluation
+- Episode length stats:
+ Mean: 9.300000 std: 0.714143
+- Return from initial stats:
+ Mean: -0.919990 std: 0.006615
+
+2017-04-06 18:24:00
+Epochs 1 to 101 done, took 6.021755s
+Training loss: 0.0300
+
+2017-04-06 18:24:05
+Epochs 101 to 201 done, took 5.857966s
+Training loss: 0.0282
+(67, 4)
+
+
+###################################
+#### Learning rate 0.000100
+###################################
+
+## Run 1/10
+
+2017-04-06 18:24:06
+Epochs 1 to 1 done, took 0.045045s
+Training loss: 0.0298
+# Evaluation
+- Episode length stats:
+ Mean: 9.050000 std: 0.668954
+- Return from initial stats:
+ Mean: -0.922302 std: 0.006202
+
+2017-04-06 18:24:12
+Epochs 1 to 101 done, took 6.169393s
+Training loss: 0.0197
+
+2017-04-06 18:24:18
+Epochs 101 to 201 done, took 6.017745s
+Training loss: 0.0148
+
+## Run 2/10
+
+2017-04-06 18:24:18
+Epochs 1 to 1 done, took 0.044039s
+Training loss: 0.0313
+# Evaluation
+- Episode length stats:
+ Mean: 9.350000 std: 0.726292
+- Return from initial stats:
+ Mean: -0.919529 std: 0.006728
+
+2017-04-06 18:24:24
+Epochs 1 to 101 done, took 5.980285s
+Training loss: 0.0255
+
+2017-04-06 18:24:30
+Epochs 101 to 201 done, took 6.007333s
+Training loss: 0.0186
+
+## Run 3/10
+
+2017-04-06 18:24:30
+Epochs 1 to 1 done, took 0.046181s
+Training loss: 0.0303
+# Evaluation
+- Episode length stats:
+ Mean: 9.050000 std: 0.668954
+- Return from initial stats:
+ Mean: -0.922302 std: 0.006202
+
+2017-04-06 18:24:36
+Epochs 1 to 101 done, took 6.148360s
+Training loss: 0.0220
+
+2017-04-06 18:24:42
+Epochs 101 to 201 done, took 5.881276s
+Training loss: 0.0151
+
+## Run 4/10
+
+2017-04-06 18:24:42
+Epochs 1 to 1 done, took 0.046175s
+Training loss: 0.0452
+# Evaluation
+- Episode length stats:
+ Mean: 143.200000 std: 36.307850
+- Return from initial stats:
+ Mean: -0.255208 std: 0.086951
+
+2017-04-06 18:25:04
+Epochs 1 to 101 done, took 21.632325s
+Training loss: 0.0242
+
+2017-04-06 18:25:10
+Epochs 101 to 201 done, took 6.053700s
+Training loss: 0.0172
+
+## Run 5/10
+
+2017-04-06 18:25:10
+Epochs 1 to 1 done, took 0.045180s
+Training loss: 0.0304
+# Evaluation
+- Episode length stats:
+ Mean: 9.550000 std: 0.668954
+- Return from initial stats:
+ Mean: -0.917679 std: 0.006174
+
+2017-04-06 18:25:16
+Epochs 1 to 101 done, took 6.119525s
+Training loss: 0.0214
+
+2017-04-06 18:25:22
+Epochs 101 to 201 done, took 6.031857s
+Training loss: 0.0159
+
+## Run 6/10
+
+2017-04-06 18:25:23
+Epochs 1 to 1 done, took 0.045039s
+Training loss: 0.0290
+# Evaluation
+- Episode length stats:
+ Mean: 25.950000 std: 4.964625
+- Return from initial stats:
+ Mean: -0.779174 std: 0.038475
+
+2017-04-06 18:25:28
+Epochs 1 to 101 done, took 5.912662s
+Training loss: 0.0201
+
+2017-04-06 18:25:34
+Epochs 101 to 201 done, took 5.383186s
+Training loss: 0.0137
+
+## Run 7/10
+
+2017-04-06 18:25:34
+Epochs 1 to 1 done, took 0.044154s
+Training loss: 0.0337
+# Evaluation
+- Episode length stats:
+ Mean: 73.450000 std: 27.791141
+- Return from initial stats:
+ Mean: -0.497857 std: 0.100092
+
+2017-04-06 18:25:42
+Epochs 1 to 101 done, took 8.038505s
+Training loss: 0.0235
+
+2017-04-06 18:25:48
+Epochs 101 to 201 done, took 5.873276s
+Training loss: 0.0167
+
+## Run 8/10
+
+2017-04-06 18:25:48
+Epochs 1 to 1 done, took 0.048829s
+Training loss: 0.0458
+# Evaluation
+- Episode length stats:
+ Mean: 43.200000 std: 13.592645
+- Return from initial stats:
+ Mean: -0.660229 std: 0.084897
+
+2017-04-06 18:25:59
+Epochs 1 to 101 done, took 10.783893s
+Training loss: 0.0235
+
+2017-04-06 18:26:05
+Epochs 101 to 201 done, took 6.061879s
+Training loss: 0.0167
+
+## Run 9/10
+
+2017-04-06 18:26:05
+Epochs 1 to 1 done, took 0.044443s
+Training loss: 0.0349
+# Evaluation
+- Episode length stats:
+ Mean: 9.400000 std: 0.583095
+- Return from initial stats:
+ Mean: -0.919058 std: 0.005392
+
+2017-04-06 18:26:11
+Epochs 1 to 101 done, took 5.931301s
+Training loss: 0.0243
+
+2017-04-06 18:26:17
+Epochs 101 to 201 done, took 6.028045s
+Training loss: 0.0171
+
+## Run 10/10
+
+2017-04-06 18:26:17
+Epochs 1 to 1 done, took 0.044823s
+Training loss: 0.0309
+# Evaluation
+- Episode length stats:
+ Mean: 9.300000 std: 0.900000
+- Return from initial stats:
+ Mean: -0.920004 std: 0.008330
+
+2017-04-06 18:26:23
+Epochs 1 to 101 done, took 6.112258s
+Training loss: 0.0207
+
+2017-04-06 18:26:30
+Epochs 101 to 201 done, took 6.200686s
+Training loss: 0.0135
+(67, 4)
+
+
+###################################
+#### Learning rate 0.001000
+###################################
+
+## Run 1/10
+
+2017-04-06 18:26:30
+Epochs 1 to 1 done, took 0.043539s
+Training loss: 0.0289I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:0) -> (device: 0, name: Tesla P100-SXM2-16GB, pci bus id: 0000:05:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:1) -> (device: 1, name: Tesla P100-SXM2-16GB, pci bus id: 0000:06:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:2) -> (device: 2, name: Tesla P100-SXM2-16GB, pci bus id: 0000:84:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:3) -> (device: 3, name: Tesla P100-SXM2-16GB, pci bus id: 0000:85:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:0) -> (device: 0, name: Tesla P100-SXM2-16GB, pci bus id: 0000:05:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:1) -> (device: 1, name: Tesla P100-SXM2-16GB, pci bus id: 0000:06:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:2) -> (device: 2, name: Tesla P100-SXM2-16GB, pci bus id: 0000:84:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:3) -> (device: 3, name: Tesla P100-SXM2-16GB, pci bus id: 0000:85:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:0) -> (device: 0, name: Tesla P100-SXM2-16GB, pci bus id: 0000:05:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:1) -> (device: 1, name: Tesla P100-SXM2-16GB, pci bus id: 0000:06:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:2) -> (device: 2, name: Tesla P100-SXM2-16GB, pci bus id: 0000:84:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:3) -> (device: 3, name: Tesla P100-SXM2-16GB, pci bus id: 0000:85:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:0) -> (device: 0, name: Tesla P100-SXM2-16GB, pci bus id: 0000:05:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:1) -> (device: 1, name: Tesla P100-SXM2-16GB, pci bus id: 0000:06:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:2) -> (device: 2, name: Tesla P100-SXM2-16GB, pci bus id: 0000:84:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:3) -> (device: 3, name: Tesla P100-SXM2-16GB, pci bus id: 0000:85:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:0) -> (device: 0, name: Tesla P100-SXM2-16GB, pci bus id: 0000:05:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:1) -> (device: 1, name: Tesla P100-SXM2-16GB, pci bus id: 0000:06:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:2) -> (device: 2, name: Tesla P100-SXM2-16GB, pci bus id: 0000:84:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:3) -> (device: 3, name: Tesla P100-SXM2-16GB, pci bus id: 0000:85:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:0) -> (device: 0, name: Tesla P100-SXM2-16GB, pci bus id: 0000:05:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:1) -> (device: 1, name: Tesla P100-SXM2-16GB, pci bus id: 0000:06:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:2) -> (device: 2, name: Tesla P100-SXM2-16GB, pci bus id: 0000:84:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:3) -> (device: 3, name: Tesla P100-SXM2-16GB, pci bus id: 0000:85:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:0) -> (device: 0, name: Tesla P100-SXM2-16GB, pci bus id: 0000:05:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:1) -> (device: 1, name: Tesla P100-SXM2-16GB, pci bus id: 0000:06:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:2) -> (device: 2, name: Tesla P100-SXM2-16GB, pci bus id: 0000:84:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:3) -> (device: 3, name: Tesla P100-SXM2-16GB, pci bus id: 0000:85:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:0) -> (device: 0, name: Tesla P100-SXM2-16GB, pci bus id: 0000:05:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:1) -> (device: 1, name: Tesla P100-SXM2-16GB, pci bus id: 0000:06:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:2) -> (device: 2, name: Tesla P100-SXM2-16GB, pci bus id: 0000:84:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:3) -> (device: 3, name: Tesla P100-SXM2-16GB, pci bus id: 0000:85:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:0) -> (device: 0, name: Tesla P100-SXM2-16GB, pci bus id: 0000:05:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:1) -> (device: 1, name: Tesla P100-SXM2-16GB, pci bus id: 0000:06:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:2) -> (device: 2, name: Tesla P100-SXM2-16GB, pci bus id: 0000:84:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:3) -> (device: 3, name: Tesla P100-SXM2-16GB, pci bus id: 0000:85:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:0) -> (device: 0, name: Tesla P100-SXM2-16GB, pci bus id: 0000:05:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:1) -> (device: 1, name: Tesla P100-SXM2-16GB, pci bus id: 0000:06:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:2) -> (device: 2, name: Tesla P100-SXM2-16GB, pci bus id: 0000:84:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:3) -> (device: 3, name: Tesla P100-SXM2-16GB, pci bus id: 0000:85:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:0) -> (device: 0, name: Tesla P100-SXM2-16GB, pci bus id: 0000:05:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:1) -> (device: 1, name: Tesla P100-SXM2-16GB, pci bus id: 0000:06:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:2) -> (device: 2, name: Tesla P100-SXM2-16GB, pci bus id: 0000:84:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:3) -> (device: 3, name: Tesla P100-SXM2-16GB, pci bus id: 0000:85:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:0) -> (device: 0, name: Tesla P100-SXM2-16GB, pci bus id: 0000:05:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:1) -> (device: 1, name: Tesla P100-SXM2-16GB, pci bus id: 0000:06:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:2) -> (device: 2, name: Tesla P100-SXM2-16GB, pci bus id: 0000:84:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:3) -> (device: 3, name: Tesla P100-SXM2-16GB, pci bus id: 0000:85:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:0) -> (device: 0, name: Tesla P100-SXM2-16GB, pci bus id: 0000:05:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:1) -> (device: 1, name: Tesla P100-SXM2-16GB, pci bus id: 0000:06:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:2) -> (device: 2, name: Tesla P100-SXM2-16GB, pci bus id: 0000:84:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:3) -> (device: 3, name: Tesla P100-SXM2-16GB, pci bus id: 0000:85:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:0) -> (device: 0, name: Tesla P100-SXM2-16GB, pci bus id: 0000:05:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:1) -> (device: 1, name: Tesla P100-SXM2-16GB, pci bus id: 0000:06:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:2) -> (device: 2, name: Tesla P100-SXM2-16GB, pci bus id: 0000:84:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:3) -> (device: 3, name: Tesla P100-SXM2-16GB, pci bus id: 0000:85:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:0) -> (device: 0, name: Tesla P100-SXM2-16GB, pci bus id: 0000:05:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:1) -> (device: 1, name: Tesla P100-SXM2-16GB, pci bus id: 0000:06:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:2) -> (device: 2, name: Tesla P100-SXM2-16GB, pci bus id: 0000:84:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:3) -> (device: 3, name: Tesla P100-SXM2-16GB, pci bus id: 0000:85:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:0) -> (device: 0, name: Tesla P100-SXM2-16GB, pci bus id: 0000:05:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:1) -> (device: 1, name: Tesla P100-SXM2-16GB, pci bus id: 0000:06:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:2) -> (device: 2, name: Tesla P100-SXM2-16GB, pci bus id: 0000:84:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:3) -> (device: 3, name: Tesla P100-SXM2-16GB, pci bus id: 0000:85:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:0) -> (device: 0, name: Tesla P100-SXM2-16GB, pci bus id: 0000:05:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:1) -> (device: 1, name: Tesla P100-SXM2-16GB, pci bus id: 0000:06:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:2) -> (device: 2, name: Tesla P100-SXM2-16GB, pci bus id: 0000:84:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:3) -> (device: 3, name: Tesla P100-SXM2-16GB, pci bus id: 0000:85:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:0) -> (device: 0, name: Tesla P100-SXM2-16GB, pci bus id: 0000:05:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:1) -> (device: 1, name: Tesla P100-SXM2-16GB, pci bus id: 0000:06:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:2) -> (device: 2, name: Tesla P100-SXM2-16GB, pci bus id: 0000:84:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:3) -> (device: 3, name: Tesla P100-SXM2-16GB, pci bus id: 0000:85:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:0) -> (device: 0, name: Tesla P100-SXM2-16GB, pci bus id: 0000:05:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:1) -> (device: 1, name: Tesla P100-SXM2-16GB, pci bus id: 0000:06:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:2) -> (device: 2, name: Tesla P100-SXM2-16GB, pci bus id: 0000:84:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:3) -> (device: 3, name: Tesla P100-SXM2-16GB, pci bus id: 0000:85:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:0) -> (device: 0, name: Tesla P100-SXM2-16GB, pci bus id: 0000:05:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:1) -> (device: 1, name: Tesla P100-SXM2-16GB, pci bus id: 0000:06:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:2) -> (device: 2, name: Tesla P100-SXM2-16GB, pci bus id: 0000:84:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:3) -> (device: 3, name: Tesla P100-SXM2-16GB, pci bus id: 0000:85:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:0) -> (device: 0, name: Tesla P100-SXM2-16GB, pci bus id: 0000:05:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:1) -> (device: 1, name: Tesla P100-SXM2-16GB, pci bus id: 0000:06:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:2) -> (device: 2, name: Tesla P100-SXM2-16GB, pci bus id: 0000:84:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:3) -> (device: 3, name: Tesla P100-SXM2-16GB, pci bus id: 0000:85:00.0)
+
+# Evaluation
+- Episode length stats:
+ Mean: 9.050000 std: 0.864581
+- Return from initial stats:
+ Mean: -0.922316 std: 0.008002
+
+2017-04-06 18:26:36
+Epochs 1 to 101 done, took 6.172985s
+Training loss: 0.0038
+
+2017-04-06 18:26:42
+Epochs 101 to 201 done, took 5.770451s
+Training loss: 0.0027
+
+## Run 2/10
+
+2017-04-06 18:26:42
+Epochs 1 to 1 done, took 0.043041s
+Training loss: 0.0301
+# Evaluation
+- Episode length stats:
+ Mean: 28.950000 std: 15.229823
+- Return from initial stats:
+ Mean: -0.763489 std: 0.107559
+
+2017-04-06 18:26:48
+Epochs 1 to 101 done, took 5.962285s
+Training loss: 0.0034
+
+2017-04-06 18:26:54
+Epochs 101 to 201 done, took 5.897004s
+Training loss: 0.0027
+
+## Run 3/10
+
+2017-04-06 18:26:54
+Epochs 1 to 1 done, took 0.044926s
+Training loss: 0.0285
+# Evaluation
+- Episode length stats:
+ Mean: 9.250000 std: 0.536190
+- Return from initial stats:
+ Mean: -0.920442 std: 0.004959
+
+2017-04-06 18:27:00
+Epochs 1 to 101 done, took 6.053741s
+Training loss: 0.0037
+
+2017-04-06 18:27:06
+Epochs 101 to 201 done, took 5.906991s
+Training loss: 0.0026
+
+## Run 4/10
+
+2017-04-06 18:27:06
+Epochs 1 to 1 done, took 0.041735s
+Training loss: 0.0280
+# Evaluation
+- Episode length stats:
+ Mean: 126.550000 std: 36.277369
+- Return from initial stats:
+ Mean: -0.301725 std: 0.103367
+
+2017-04-06 18:27:13
+Epochs 1 to 101 done, took 7.037365s
+Training loss: 0.0041
+
+2017-04-06 18:27:19
+Epochs 101 to 201 done, took 5.999006s
+Training loss: 0.0029
+
+## Run 5/10
+
+2017-04-06 18:27:19
+Epochs 1 to 1 done, took 0.044147s
+Training loss: 0.0312
+# Evaluation
+- Episode length stats:
+ Mean: 9.350000 std: 0.792149
+- Return from initial stats:
+ Mean: -0.919534 std: 0.007324
+
+2017-04-06 18:27:25
+Epochs 1 to 101 done, took 5.966433s
+Training loss: 0.0025
+
+2017-04-06 18:27:31
+Epochs 101 to 201 done, took 5.858314s
+Training loss: 0.0020
+
+## Run 6/10
+
+2017-04-06 18:27:31
+Epochs 1 to 1 done, took 0.045247s
+Training loss: 0.0308
+# Evaluation
+- Episode length stats:
+ Mean: 9.250000 std: 0.766485
+- Return from initial stats:
+ Mean: -0.920456 std: 0.007103
+
+2017-04-06 18:27:37
+Epochs 1 to 101 done, took 6.103291s
+Training loss: 0.0040
+
+2017-04-06 18:27:43
+Epochs 101 to 201 done, took 5.960778s
+Training loss: 0.0028
+
+## Run 7/10
+
+2017-04-06 18:27:43
+Epochs 1 to 1 done, took 0.046428s
+Training loss: 0.0299
+# Evaluation
+- Episode length stats:
+ Mean: 9.500000 std: 0.806226
+- Return from initial stats:
+ Mean: -0.918150 std: 0.007440
+
+2017-04-06 18:27:49
+Epochs 1 to 101 done, took 5.977628s
+Training loss: 0.0043
+
+2017-04-06 18:27:55
+Epochs 101 to 201 done, took 5.966683s
+Training loss: 0.0028
+
+## Run 8/10
+
+2017-04-06 18:27:56
+Epochs 1 to 1 done, took 0.043785s
+Training loss: 0.0385
+# Evaluation
+- Episode length stats:
+ Mean: 173.000000 std: 25.612497
+- Return from initial stats:
+ Mean: -0.183627 std: 0.048546
+
+2017-04-06 18:28:03
+Epochs 1 to 101 done, took 7.491792s
+Training loss: 0.0031
+
+2017-04-06 18:28:09
+Epochs 101 to 201 done, took 5.695455s
+Training loss: 0.0020
+
+## Run 9/10
+
+2017-04-06 18:28:09
+Epochs 1 to 1 done, took 0.044260s
+Training loss: 0.0300
+# Evaluation
+- Episode length stats:
+ Mean: 11.700000 std: 4.495553
+- Return from initial stats:
+ Mean: -0.898935 std: 0.039042
+
+2017-04-06 18:28:15
+Epochs 1 to 101 done, took 5.658408s
+Training loss: 0.0043
+
+2017-04-06 18:28:21
+Epochs 101 to 201 done, took 5.958074s
+Training loss: 0.0028
+
+## Run 10/10
+
+2017-04-06 18:28:21
+Epochs 1 to 1 done, took 0.045674s
+Training loss: 0.0284
+# Evaluation
+- Episode length stats:
+ Mean: 9.300000 std: 0.640312
+- Return from initial stats:
+ Mean: -0.919986 std: 0.005927
+
+2017-04-06 18:28:27
+Epochs 1 to 101 done, took 5.994831s
+Training loss: 0.0041
+
+2017-04-06 18:28:33
+Epochs 101 to 201 done, took 5.932243s
+Training loss: 0.0027
+(67, 4)
+
+
+###################################
+#### Learning rate 0.010000
+###################################
+
+## Run 1/10
+
+2017-04-06 18:28:33
+Epochs 1 to 1 done, took 0.046643s
+Training loss: 0.0254
+# Evaluation
+- Episode length stats:
+ Mean: 9.300000 std: 0.714143
+- Return from initial stats:
+ Mean: -0.919990 std: 0.006615
+
+2017-04-06 18:28:41
+Epochs 1 to 101 done, took 8.218859s
+Training loss: 0.0035
+
+2017-04-06 18:28:51
+Epochs 101 to 201 done, took 9.987998s
+Training loss: 0.0035
+
+## Run 2/10
+
+2017-04-06 18:28:51
+Epochs 1 to 1 done, took 0.044837s
+Training loss: 0.0263
+# Evaluation
+- Episode length stats:
+ Mean: 9.650000 std: 0.572276
+- Return from initial stats:
+ Mean: -0.916751 std: 0.005270
+
+2017-04-06 18:29:00
+Epochs 1 to 101 done, took 8.900959s
+Training loss: 0.0035
+
+2017-04-06 18:29:09
+Epochs 101 to 201 done, took 8.702679s
+Training loss: 0.0035
+
+## Run 3/10
+
+2017-04-06 18:29:09
+Epochs 1 to 1 done, took 0.044723s
+Training loss: 0.0307
+# Evaluation
+- Episode length stats:
+ Mean: 9.350000 std: 0.852936
+- Return from initial stats:
+ Mean: -0.919538 std: 0.007891
+
+2017-04-06 18:29:17
+Epochs 1 to 101 done, took 7.659713s
+Training loss: 0.0036
+
+2017-04-06 18:29:26
+Epochs 101 to 201 done, took 9.424003s
+Training loss: 0.0035
+
+## Run 4/10
+
+2017-04-06 18:29:26
+Epochs 1 to 1 done, took 0.041862s
+Training loss: 0.0248
+# Evaluation
+- Episode length stats:
+ Mean: 9.100000 std: 0.768115
+- Return from initial stats:
+ Mean: -0.921845 std: 0.007121
+
+2017-04-06 18:29:34
+Epochs 1 to 101 done, took 7.614145s
+Training loss: 0.0036
+
+2017-04-06 18:29:42
+Epochs 101 to 201 done, took 8.607922s
+Training loss: 0.0035
+
+## Run 5/10
+
+2017-04-06 18:29:43
+Epochs 1 to 1 done, took 0.043665s
+Training loss: 0.0282
+# Evaluation
+- Episode length stats:
+ Mean: 9.600000 std: 0.663325
+- Return from initial stats:
+ Mean: -0.917218 std: 0.006122
+
+2017-04-06 18:29:51
+Epochs 1 to 101 done, took 8.100750s
+Training loss: 0.0036
+
+2017-04-06 18:30:01
+Epochs 101 to 201 done, took 10.319675s
+Training loss: 0.0035
+
+## Run 6/10
+
+2017-04-06 18:30:01
+Epochs 1 to 1 done, took 0.043696s
+Training loss: 0.0273
+# Evaluation
+- Episode length stats:
+ Mean: 9.500000 std: 0.741620
+- Return from initial stats:
+ Mean: -0.918145 std: 0.006853
+
+2017-04-06 18:30:09
+Epochs 1 to 101 done, took 8.120142s
+Training loss: 0.0035
+
+2017-04-06 18:30:19
+Epochs 101 to 201 done, took 9.708255s
+Training loss: 0.0035
+
+## Run 7/10
+
+2017-04-06 18:30:19
+Epochs 1 to 1 done, took 0.046703s
+Training loss: 0.0333
+# Evaluation
+- Episode length stats:
+ Mean: 9.350000 std: 0.909670
+- Return from initial stats:
+ Mean: -0.919543 std: 0.008405
+
+2017-04-06 18:30:27
+Epochs 1 to 101 done, took 8.327257s
+Training loss: 0.0035
+
+2017-04-06 18:30:37
+Epochs 101 to 201 done, took 9.239684s
+Training loss: 0.0035
+
+## Run 8/10
+
+2017-04-06 18:30:37
+Epochs 1 to 1 done, took 0.050734s
+Training loss: 0.0259
+# Evaluation
+- Episode length stats:
+ Mean: 9.350000 std: 0.653835
+- Return from initial stats:
+ Mean: -0.919524 std: 0.006053
+
+2017-04-06 18:30:46
+Epochs 1 to 101 done, took 9.137989s
+Training loss: 0.0035
+
+2017-04-06 18:30:56
+Epochs 101 to 201 done, took 9.750846s
+Training loss: 0.0035
+
+## Run 9/10
+
+2017-04-06 18:30:56
+Epochs 1 to 1 done, took 0.045693s
+Training loss: 0.0254
+# Evaluation
+- Episode length stats:
+ Mean: 9.400000 std: 0.969536
+- Return from initial stats:
+ Mean: -0.919086 std: 0.008936
+
+2017-04-06 18:31:05
+Epochs 1 to 101 done, took 8.709933s
+Training loss: 0.0035
+
+2017-04-06 18:31:14
+Epochs 101 to 201 done, took 8.867703s
+Training loss: 0.0035
+
+## Run 10/10
+
+2017-04-06 18:31:14
+Epochs 1 to 1 done, took 0.042925s
+Training loss: 0.0259
+# Evaluation
+- Episode length stats:
+ Mean: 16.100000 std: 6.898551
+- Return from initial stats:
+ Mean: -0.861245 std: 0.058974
+
+2017-04-06 18:31:22
+Epochs 1 to 101 done, took 8.445280s
+Training loss: 0.0036
+
+2017-04-06 18:31:31
+Epochs 101 to 201 done, took 9.140002s
+Training loss: 0.0035
+(67, 4)
+
+
+###################################
+#### Learning rate 0.100000
+###################################
+
+## Run 1/10
+
+2017-04-06 18:31:32
+Epochs 1 to 1 done, took 0.045409s
+Training loss: 0.0528
+# Evaluation
+- Episode length stats:
+ Mean: 12.900000 std: 2.844293
+- Return from initial stats:
+ Mean: -0.887636 std: 0.025036
+
+2017-04-06 18:31:42
+Epochs 1 to 101 done, took 10.472092s
+Training loss: 0.7234
+
+2017-04-06 18:31:51
+Epochs 101 to 201 done, took 8.530653s
+Training loss: 0.0115
+
+## Run 2/10
+
+2017-04-06 18:31:51
+Epochs 1 to 1 done, took 0.043730sI tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:0) -> (device: 0, name: Tesla P100-SXM2-16GB, pci bus id: 0000:05:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:1) -> (device: 1, name: Tesla P100-SXM2-16GB, pci bus id: 0000:06:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:2) -> (device: 2, name: Tesla P100-SXM2-16GB, pci bus id: 0000:84:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:3) -> (device: 3, name: Tesla P100-SXM2-16GB, pci bus id: 0000:85:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:0) -> (device: 0, name: Tesla P100-SXM2-16GB, pci bus id: 0000:05:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:1) -> (device: 1, name: Tesla P100-SXM2-16GB, pci bus id: 0000:06:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:2) -> (device: 2, name: Tesla P100-SXM2-16GB, pci bus id: 0000:84:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:3) -> (device: 3, name: Tesla P100-SXM2-16GB, pci bus id: 0000:85:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:0) -> (device: 0, name: Tesla P100-SXM2-16GB, pci bus id: 0000:05:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:1) -> (device: 1, name: Tesla P100-SXM2-16GB, pci bus id: 0000:06:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:2) -> (device: 2, name: Tesla P100-SXM2-16GB, pci bus id: 0000:84:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:3) -> (device: 3, name: Tesla P100-SXM2-16GB, pci bus id: 0000:85:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:0) -> (device: 0, name: Tesla P100-SXM2-16GB, pci bus id: 0000:05:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:1) -> (device: 1, name: Tesla P100-SXM2-16GB, pci bus id: 0000:06:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:2) -> (device: 2, name: Tesla P100-SXM2-16GB, pci bus id: 0000:84:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:3) -> (device: 3, name: Tesla P100-SXM2-16GB, pci bus id: 0000:85:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:0) -> (device: 0, name: Tesla P100-SXM2-16GB, pci bus id: 0000:05:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:1) -> (device: 1, name: Tesla P100-SXM2-16GB, pci bus id: 0000:06:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:2) -> (device: 2, name: Tesla P100-SXM2-16GB, pci bus id: 0000:84:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:3) -> (device: 3, name: Tesla P100-SXM2-16GB, pci bus id: 0000:85:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:0) -> (device: 0, name: Tesla P100-SXM2-16GB, pci bus id: 0000:05:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:1) -> (device: 1, name: Tesla P100-SXM2-16GB, pci bus id: 0000:06:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:2) -> (device: 2, name: Tesla P100-SXM2-16GB, pci bus id: 0000:84:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:3) -> (device: 3, name: Tesla P100-SXM2-16GB, pci bus id: 0000:85:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:0) -> (device: 0, name: Tesla P100-SXM2-16GB, pci bus id: 0000:05:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:1) -> (device: 1, name: Tesla P100-SXM2-16GB, pci bus id: 0000:06:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:2) -> (device: 2, name: Tesla P100-SXM2-16GB, pci bus id: 0000:84:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:3) -> (device: 3, name: Tesla P100-SXM2-16GB, pci bus id: 0000:85:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:0) -> (device: 0, name: Tesla P100-SXM2-16GB, pci bus id: 0000:05:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:1) -> (device: 1, name: Tesla P100-SXM2-16GB, pci bus id: 0000:06:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:2) -> (device: 2, name: Tesla P100-SXM2-16GB, pci bus id: 0000:84:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:3) -> (device: 3, name: Tesla P100-SXM2-16GB, pci bus id: 0000:85:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:0) -> (device: 0, name: Tesla P100-SXM2-16GB, pci bus id: 0000:05:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:1) -> (device: 1, name: Tesla P100-SXM2-16GB, pci bus id: 0000:06:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:2) -> (device: 2, name: Tesla P100-SXM2-16GB, pci bus id: 0000:84:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:3) -> (device: 3, name: Tesla P100-SXM2-16GB, pci bus id: 0000:85:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:0) -> (device: 0, name: Tesla P100-SXM2-16GB, pci bus id: 0000:05:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:1) -> (device: 1, name: Tesla P100-SXM2-16GB, pci bus id: 0000:06:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:2) -> (device: 2, name: Tesla P100-SXM2-16GB, pci bus id: 0000:84:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:3) -> (device: 3, name: Tesla P100-SXM2-16GB, pci bus id: 0000:85:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:0) -> (device: 0, name: Tesla P100-SXM2-16GB, pci bus id: 0000:05:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:1) -> (device: 1, name: Tesla P100-SXM2-16GB, pci bus id: 0000:06:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:2) -> (device: 2, name: Tesla P100-SXM2-16GB, pci bus id: 0000:84:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:3) -> (device: 3, name: Tesla P100-SXM2-16GB, pci bus id: 0000:85:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:0) -> (device: 0, name: Tesla P100-SXM2-16GB, pci bus id: 0000:05:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:1) -> (device: 1, name: Tesla P100-SXM2-16GB, pci bus id: 0000:06:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:2) -> (device: 2, name: Tesla P100-SXM2-16GB, pci bus id: 0000:84:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:3) -> (device: 3, name: Tesla P100-SXM2-16GB, pci bus id: 0000:85:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:0) -> (device: 0, name: Tesla P100-SXM2-16GB, pci bus id: 0000:05:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:1) -> (device: 1, name: Tesla P100-SXM2-16GB, pci bus id: 0000:06:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:2) -> (device: 2, name: Tesla P100-SXM2-16GB, pci bus id: 0000:84:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:3) -> (device: 3, name: Tesla P100-SXM2-16GB, pci bus id: 0000:85:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:0) -> (device: 0, name: Tesla P100-SXM2-16GB, pci bus id: 0000:05:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:1) -> (device: 1, name: Tesla P100-SXM2-16GB, pci bus id: 0000:06:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:2) -> (device: 2, name: Tesla P100-SXM2-16GB, pci bus id: 0000:84:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:3) -> (device: 3, name: Tesla P100-SXM2-16GB, pci bus id: 0000:85:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:0) -> (device: 0, name: Tesla P100-SXM2-16GB, pci bus id: 0000:05:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:1) -> (device: 1, name: Tesla P100-SXM2-16GB, pci bus id: 0000:06:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:2) -> (device: 2, name: Tesla P100-SXM2-16GB, pci bus id: 0000:84:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:3) -> (device: 3, name: Tesla P100-SXM2-16GB, pci bus id: 0000:85:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:0) -> (device: 0, name: Tesla P100-SXM2-16GB, pci bus id: 0000:05:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:1) -> (device: 1, name: Tesla P100-SXM2-16GB, pci bus id: 0000:06:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:2) -> (device: 2, name: Tesla P100-SXM2-16GB, pci bus id: 0000:84:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:3) -> (device: 3, name: Tesla P100-SXM2-16GB, pci bus id: 0000:85:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:0) -> (device: 0, name: Tesla P100-SXM2-16GB, pci bus id: 0000:05:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:1) -> (device: 1, name: Tesla P100-SXM2-16GB, pci bus id: 0000:06:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:2) -> (device: 2, name: Tesla P100-SXM2-16GB, pci bus id: 0000:84:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:3) -> (device: 3, name: Tesla P100-SXM2-16GB, pci bus id: 0000:85:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:0) -> (device: 0, name: Tesla P100-SXM2-16GB, pci bus id: 0000:05:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:1) -> (device: 1, name: Tesla P100-SXM2-16GB, pci bus id: 0000:06:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:2) -> (device: 2, name: Tesla P100-SXM2-16GB, pci bus id: 0000:84:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:3) -> (device: 3, name: Tesla P100-SXM2-16GB, pci bus id: 0000:85:00.0)
+
+Training loss: 0.0640
+# Evaluation
+- Episode length stats:
+ Mean: 125.000000 std: 57.181291
+- Return from initial stats:
+ Mean: -0.353500 std: 0.273704
+
+2017-04-06 18:32:01
+Epochs 1 to 101 done, took 10.566859s
+Training loss: 0.6539
+
+2017-04-06 18:32:11
+Epochs 101 to 201 done, took 9.571696s
+Training loss: 0.0106
+
+## Run 3/10
+
+2017-04-06 18:32:11
+Epochs 1 to 1 done, took 0.045705s
+Training loss: 0.0425
+# Evaluation
+- Episode length stats:
+ Mean: 9.350000 std: 0.572276
+- Return from initial stats:
+ Mean: -0.919520 std: 0.005292
+
+2017-04-06 18:32:23
+Epochs 1 to 101 done, took 11.595316s
+Training loss: 0.0109
+
+2017-04-06 18:32:32
+Epochs 101 to 201 done, took 9.543916s
+Training loss: 0.0411
+
+## Run 4/10
+
+2017-04-06 18:32:32
+Epochs 1 to 1 done, took 0.044296s
+Training loss: 0.0742
+# Evaluation
+- Episode length stats:
+ Mean: 60.300000 std: 21.487438
+- Return from initial stats:
+ Mean: -0.562278 std: 0.099372
+
+2017-04-06 18:32:43
+Epochs 1 to 101 done, took 10.921803s
+Training loss: 0.7186
+
+2017-04-06 18:32:52
+Epochs 101 to 201 done, took 9.205220s
+Training loss: 0.0129
+
+## Run 5/10
+
+2017-04-06 18:32:53
+Epochs 1 to 1 done, took 0.043285s
+Training loss: 0.0675
+# Evaluation
+- Episode length stats:
+ Mean: 9.250000 std: 0.766485
+- Return from initial stats:
+ Mean: -0.920456 std: 0.007103
+
+2017-04-06 18:33:01
+Epochs 1 to 101 done, took 8.705873s
+Training loss: 0.0244
+
+2017-04-06 18:33:11
+Epochs 101 to 201 done, took 9.998579s
+Training loss: 0.3005
+
+## Run 6/10
+
+2017-04-06 18:33:11
+Epochs 1 to 1 done, took 0.042866s
+Training loss: 0.0558
+# Evaluation
+- Episode length stats:
+ Mean: 33.350000 std: 2.850877
+- Return from initial stats:
+ Mean: -0.722729 std: 0.020488
+
+2017-04-06 18:33:21
+Epochs 1 to 101 done, took 9.557445s
+Training loss: 0.5126
+
+2017-04-06 18:33:30
+Epochs 101 to 201 done, took 8.823314s
+Training loss: 0.0102
+
+## Run 7/10
+
+2017-04-06 18:33:30
+Epochs 1 to 1 done, took 0.043899s
+Training loss: 0.0417
+# Evaluation
+- Episode length stats:
+ Mean: 9.350000 std: 0.726292
+- Return from initial stats:
+ Mean: -0.919529 std: 0.006709
+
+2017-04-06 18:33:39
+Epochs 1 to 101 done, took 9.197620s
+Training loss: 0.0548
+
+2017-04-06 18:33:49
+Epochs 101 to 201 done, took 9.734381s
+Training loss: 0.0092
+
+## Run 8/10
+
+2017-04-06 18:33:49
+Epochs 1 to 1 done, took 0.044649s
+Training loss: 0.0595
+# Evaluation
+- Episode length stats:
+ Mean: 36.000000 std: 5.932959
+- Return from initial stats:
+ Mean: -0.704697 std: 0.041906
+
+2017-04-06 18:33:59
+Epochs 1 to 101 done, took 9.940631s
+Training loss: 0.3947
+
+2017-04-06 18:34:08
+Epochs 101 to 201 done, took 9.063484s
+Training loss: 0.0375
+
+## Run 9/10
+
+2017-04-06 18:34:08
+Epochs 1 to 1 done, took 0.047079s
+Training loss: 0.0442
+# Evaluation
+- Episode length stats:
+ Mean: 9.750000 std: 0.536190
+- Return from initial stats:
+ Mean: -0.915829 std: 0.004937
+
+2017-04-06 18:34:17
+Epochs 1 to 101 done, took 8.891816s
+Training loss: 0.4395
+
+2017-04-06 18:34:27
+Epochs 101 to 201 done, took 9.491622s
+Training loss: 0.0093
+
+## Run 10/10
+
+2017-04-06 18:34:27
+Epochs 1 to 1 done, took 0.045460s
+Training loss: 0.0781
+# Evaluation
+- Episode length stats:
+ Mean: 9.100000 std: 0.700000
+- Return from initial stats:
+ Mean: -0.921841 std: 0.006469
+
+2017-04-06 18:34:36
+Epochs 1 to 101 done, took 9.409320s
+Training loss: 0.0091
+
+2017-04-06 18:34:45
+Epochs 101 to 201 done, took 9.201726s
+Training loss: 0.7740
+(67, 4)
+
+
+###################################
+#### Learning rate 0.500000
+###################################
+
+## Run 1/10
+
+2017-04-06 18:34:46
+Epochs 1 to 1 done, took 0.043999s
+Training loss: 0.2877
+# Evaluation
+- Episode length stats:
+ Mean: 23.750000 std: 4.897704
+- Return from initial stats:
+ Mean: -0.796574 std: 0.039121
+
+2017-04-06 18:34:56
+Epochs 1 to 101 done, took 9.929060s
+Training loss: 0.0367
+
+2017-04-06 18:35:05
+Epochs 101 to 201 done, took 9.599758s
+Training loss: 0.1191
+
+## Run 2/10
+
+2017-04-06 18:35:05
+Epochs 1 to 1 done, took 0.043494s
+Training loss: 0.7091
+# Evaluation
+- Episode length stats:
+ Mean: 9.300000 std: 0.640312
+- Return from initial stats:
+ Mean: -0.919986 std: 0.005927
+
+2017-04-06 18:35:14
+Epochs 1 to 101 done, took 8.452325s
+Training loss: 0.0812
+
+2017-04-06 18:35:22
+Epochs 101 to 201 done, took 8.017922s
+Training loss: 0.0952
+
+## Run 3/10
+
+2017-04-06 18:35:22
+Epochs 1 to 1 done, took 0.044015s
+Training loss: 0.4511
+# Evaluation
+- Episode length stats:
+ Mean: 9.450000 std: 0.864581
+- Return from initial stats:
+ Mean: -0.918616 std: 0.008001
+
+2017-04-06 18:35:29
+Epochs 1 to 101 done, took 7.410589s
+Training loss: 0.2171
+
+2017-04-06 18:35:36
+Epochs 101 to 201 done, took 6.864116s
+Training loss: 0.0730
+
+## Run 4/10
+
+2017-04-06 18:35:36
+Epochs 1 to 1 done, took 0.044400s
+Training loss: 0.3490
+# Evaluation
+- Episode length stats:
+ Mean: 9.500000 std: 0.806226
+- Return from initial stats:
+ Mean: -0.918150 std: 0.007440
+
+2017-04-06 18:35:45
+Epochs 1 to 101 done, took 8.448879s
+Training loss: 0.0611
+
+2017-04-06 18:35:53
+Epochs 101 to 201 done, took 8.529583s
+Training loss: 40.3800
+
+## Run 5/10
+
+2017-04-06 18:35:54
+Epochs 1 to 1 done, took 0.044439s
+Training loss: 0.4379
+# Evaluation
+- Episode length stats:
+ Mean: 9.150000 std: 0.653835
+- Return from initial stats:
+ Mean: -0.921375 std: 0.006058
+
+2017-04-06 18:36:02
+Epochs 1 to 101 done, took 8.411835s
+Training loss: 0.0338
+
+2017-04-06 18:36:10
+Epochs 101 to 201 done, took 8.005259s
+Training loss: 0.1417
+
+## Run 6/10
+
+2017-04-06 18:36:10
+Epochs 1 to 1 done, took 0.044700s
+Training loss: 0.3886
+# Evaluation
+- Episode length stats:
+ Mean: 9.500000 std: 0.670820
+- Return from initial stats:
+ Mean: -0.918140 std: 0.006211
+
+2017-04-06 18:36:19
+Epochs 1 to 101 done, took 9.237585s
+Training loss: 0.0455
+
+2017-04-06 18:36:29
+Epochs 101 to 201 done, took 9.203882s
+Training loss: 0.1027
+
+## Run 7/10
+
+2017-04-06 18:36:29
+Epochs 1 to 1 done, took 0.046673s
+Training loss: 0.4188
+# Evaluation
+- Episode length stats:
+ Mean: 9.200000 std: 0.748331
+- Return from initial stats:
+ Mean: -0.920918 std: 0.006935
+
+2017-04-06 18:36:38
+Epochs 1 to 101 done, took 9.040725s
+Training loss: 0.0360
+
+2017-04-06 18:36:46
+Epochs 101 to 201 done, took 8.623714s
+Training loss: 0.1762
+
+## Run 8/10
+
+2017-04-06 18:36:47
+Epochs 1 to 1 done, took 0.042931s
+Training loss: 0.4534
+# Evaluation
+- Episode length stats:
+ Mean: 9.400000 std: 0.800000
+- Return from initial stats:
+ Mean: -0.919072 std: 0.007397
+
+2017-04-06 18:36:56
+Epochs 1 to 101 done, took 9.307541s
+Training loss: 0.0366
+
+2017-04-06 18:37:05
+Epochs 101 to 201 done, took 8.769593s
+Training loss: 0.2521
+
+## Run 9/10
+
+2017-04-06 18:37:05
+Epochs 1 to 1 done, took 0.043505s
+Training loss: 0.5175
+# Evaluation
+- Episode length stats:
+ Mean: 9.450000 std: 0.668954
+- Return from initial stats:
+ Mean: -0.918602 std: 0.006193
+
+2017-04-06 18:37:14
+Epochs 1 to 101 done, took 9.063458s
+Training loss: 37.6954
+
+2017-04-06 18:37:22
+Epochs 101 to 201 done, took 8.228456s
+Training loss: 0.0449
+
+## Run 10/10
+
+2017-04-06 18:37:22
+Epochs 1 to 1 done, took 0.044682s
+Training loss: 0.4349
+# Evaluation
+- Episode length stats:
+ Mean: 9.550000 std: 0.589491
+- Return from initial stats:
+ Mean: -0.917674 std: 0.005452
+
+2017-04-06 18:37:31
+Epochs 1 to 101 done, took 8.439597s
+Training loss: 0.7881
+
+2017-04-06 18:37:39
+Epochs 101 to 201 done, took 7.820323s
+Training loss: 0.1041
+(67, 4)
