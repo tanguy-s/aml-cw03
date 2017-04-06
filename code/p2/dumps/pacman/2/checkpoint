@@ -1,5 +1,0 @@
-model_checkpoint_path: "pacman-150000"
-all_model_checkpoint_paths: "pacman-0"
-all_model_checkpoint_paths: "pacman-50000"
-all_model_checkpoint_paths: "pacman-100000"
-all_model_checkpoint_paths: "pacman-150000"
