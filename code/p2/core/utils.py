@@ -30,6 +30,7 @@ def evaluate(env,
 
     res = np.zeros([num_episodes, 2])
     for i_episode in range(num_episodes):
+        print('Episode %d/%d' % (i_episode, num_episodes))
         #Observation Buffer
         observation_buffer = list()
 

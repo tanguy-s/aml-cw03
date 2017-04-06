@@ -12,6 +12,7 @@ import gym
 from models.models import AtariModel
 from core.buffers import ExperienceReplayBuffer
 from core.qlearning import do_online_qlearning
+from core.testing import do_testing
 
 #from core.running import run_multiple_trials
 
@@ -46,6 +47,9 @@ if __name__ == '__main__':
     parser.add_argument('-e', '--env', nargs='?', type=str,
                       help='Select environment to train')
     parser.add_argument('--train', nargs='?', const=True, type=bool,
+                      default=False,
+                      help='If true, train model with fixed learning rate.')
+    parser.add_argument('--test', nargs='?', const=True, type=bool,
                       default=False,
                       help='If true, train model with fixed learning rate.')
 
@@ -91,5 +95,13 @@ if __name__ == '__main__':
 
             np.savetxt(losses_file, loss, delimiter=',')
             np.savetxt(results_file, means, delimiter=',')
+
+    elif FLAGS.test:
+        dpaths = [os.path.join(main_dumps_dir, '1'), 
+            os.path.join(main_dumps_dir, '1', '%s.meta' % FLAGS.env)]
+        do_testing(env,
+                    model=AtariModel(env.action_space.n), 
+                    target_model=AtariModel(env.action_space.n, varscope='target'),
+                    dpaths=dpaths)
 
 
