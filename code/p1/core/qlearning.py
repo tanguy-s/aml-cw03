@@ -1,3 +1,4 @@
+import sys
 import time
 
 import numpy as np
@@ -85,10 +86,10 @@ def do_batch_qlearning(env, history_buffer, model, learning_rate):
             losses.append(loss)
 
             if epoch % LOG_EPOCHS == 0:
-                print('')
-                print(time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()))
-                print("Epochs {} to {} done, took {:2f}s".format(max(1, epoch + 1 - LOG_EPOCHS),epoch+1,time.time()-start_time))
-                print("Training loss: {:.4f}".format(loss))
+                print('\n', time.strftime('%Y-%m-%d %H:%M:%S', time.localtime()))
+                print('Epoch %d -> %d Done (%.3fs) ... ' % 
+                    (max(1, epoch + 1 - LOG_EPOCHS), epoch+1, time.time() - start_time))
+                print('- Training loss: %.4f' % loss)
                 start_time = time.time()
 
             if epoch % EVAL_EPOCHS == 0:
@@ -98,6 +99,9 @@ def do_batch_qlearning(env, history_buffer, model, learning_rate):
 
                 # Save means
                 means.append(cur_means)
+
+            # Force flush for nohup
+            sys.stdout.flush()
 
 
     # Return Q-learning Experience results
@@ -272,10 +276,10 @@ def do_online_qlearning(env,
             losses.append(epi_loss)
 
             if i_episode % LOG_EPOCHS == 0:
-                print('')
-                print(time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()))
-                print("Epochs {} to {} done, took {:2f}s".format(max(1, i_episode + 1 - LOG_EPOCHS),i_episode+1,time.time()-start_time))
-                print("Training loss: {:.4f}".format(epi_loss))
+                print('\n', time.strftime('%Y-%m-%d %H:%M:%S', time.localtime()))
+                print('Episodes %d -> %d Done (%.3fs) ... ' % 
+                    (max(1, i_episode + 1 - LOG_EPOCHS), i_episode+1, time.time() - start_time))
+                print('- Training loss: %.4f' % epi_loss)
                 start_time = time.time()
 
             if i_episode % EVAL_EPOCHS == 0:
@@ -285,6 +289,9 @@ def do_online_qlearning(env,
 
                 # Save means
                 means.append(cur_means)
+
+            # Force flush for nohup
+            sys.stdout.flush()
 
     # Save models
     if dpaths is not None:
