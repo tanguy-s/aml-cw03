@@ -54,7 +54,7 @@ if __name__ == '__main__':
         if FLAGS.train:
             history_buffer = HistoryBuffer(env, 2000, 300, 100)
             model = LinearValueFunctionApprox(4, 2)
-            run_multiple_trials(env, history_buffer, model, learning_rates, 10, dumps_dir)
+            run_multiple_trials_batch(env, history_buffer, model, learning_rates, 10, dpaths)
 
         elif FLAGS.test:
             pass
