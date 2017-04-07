@@ -9,10 +9,10 @@ from core.utils import evaluate, reward_value
 GAMMA = 0.99
 NUM_EPOCHS = 201
 LOG_EPOCHS = 100
-EVAL_EPOCHS = 3
+EVAL_EPOCHS = 4
 TARGET_UPDATE = 5
 
-def do_batch_qlearning(env, history_buffer, model, learning_rate):
+def do_batch_qlearning(env, history_buffer, model, learning_rate, dpaths=None):
 
     tf.reset_default_graph()
 
@@ -48,8 +48,10 @@ def do_batch_qlearning(env, history_buffer, model, learning_rate):
     # init all variables
     init_op = tf.global_variables_initializer()
 
+    config = tf.ConfigProto()
+    config.gpu_options.allow_growth = True
     # Start Session
-    with tf.Session() as sess:
+    with tf.Session(config=config) as sess:
         sess.run(init_op)
 
         start_time = time.time()
@@ -62,7 +64,7 @@ def do_batch_qlearning(env, history_buffer, model, learning_rate):
             loss = 0
             for batch in range(history_buffer.num_batch):
 
-                prev_states, next_states, actions, rewards = history_buffer.next_batch()
+                prev_states, next_states, actions, rewards, term_state = history_buffer.next_batch()
 
                 q_out = sess.run(q_output, 
                     feed_dict={
@@ -70,7 +72,7 @@ def do_batch_qlearning(env, history_buffer, model, learning_rate):
 
                 q_out_max = np.amax(q_out, axis=1)
 
-                q_target = rewards + (1 + np.transpose(rewards)) * GAMMA * q_out_max
+                q_target = rewards + (1 - np.transpose(term_state)) * GAMMA * q_out_max
 
                 # Run training Op
                 l, _ = sess.run([loss_op, train_op], 
@@ -103,6 +105,10 @@ def do_batch_qlearning(env, history_buffer, model, learning_rate):
             # Force flush for nohup
             sys.stdout.flush()
 
+    # Save models
+    if dpaths is not None:
+        print('## Saved model !')
+        saver.save(sess, dpaths[1])
 
     # Return Q-learning Experience results
     return losses, means
@@ -135,11 +141,11 @@ def do_online_qlearning(env,
     if target_model:
         q_target_net = target_model.graph(states_pl)
 
-        trainvars = tf.trainable_variables()
-        ntrainvars = len(trainvars)
+        tf_train = tf.trainable_variables()
+        num_tf_train = len(tf_train)
         target_net_vars = []
-        for idx,var in enumerate(trainvars[0:ntrainvars//2]):
-            target_net_vars.append(trainvars[idx+ntrainvars//2].assign(var.value()))
+        for i, var in enumerate(tf_train[0:num_tf_train // 2]):
+            target_net_vars.append(tf_train[i + num_tf_train // 2].assign(var.value()))
 
     # Compute Q from current q_output and one hot actions
     Q = tf.reduce_sum(
@@ -166,7 +172,10 @@ def do_online_qlearning(env,
     init_op = tf.global_variables_initializer()
 
     # Start Session
-    with tf.Session() as sess:
+    config = tf.ConfigProto()
+    config.gpu_options.allow_growth = True
+
+    with tf.Session(config=config) as sess:
         sess.run(init_op)
 
         start_time = time.time()
@@ -230,7 +239,7 @@ def do_online_qlearning(env,
                                 })
 
                         q_out_max = np.amax(q_out, axis=1)
-                        b_q_target = b_reward + (1 + np.transpose(b_term_state)) * GAMMA * q_out_max
+                        b_q_target = b_reward + (1 - np.transpose(b_term_state)) * GAMMA * q_out_max
 
                         # Run training Op on batch of replay experience
                         loss, _ = sess.run([loss_op, train_op], 
@@ -247,7 +256,7 @@ def do_online_qlearning(env,
                                     })
 
                     q_out_max = np.amax(q_out, axis=1)
-                    q_target = reward + (1 + np.transpose(reward)) * GAMMA * q_out_max
+                    q_target = reward + (1 - np.transpose(done)) * GAMMA * q_out_max
 
                     # Run training Op
                     loss, _ = sess.run([loss_op, train_op], 
@@ -295,7 +304,8 @@ def do_online_qlearning(env,
 
     # Save models
     if dpaths is not None:
-        saver.save(sess, dpaths)
+        print('## Saved model !')
+        saver.save(sess, dpaths[1])
 
     # Return Q-learning Experience results
     return losses, means
@@ -356,7 +366,10 @@ def do_online_double_qlearning(env,
     init_op = tf.global_variables_initializer()
 
     # Start Session
-    with tf.Session() as sess:
+    config = tf.ConfigProto()
+    config.gpu_options.allow_growth = True
+    
+    with tf.Session(config=config) as sess:
         sess.run(init_op)
 
         start_time = time.time()
@@ -458,7 +471,7 @@ def do_online_double_qlearning(env,
                                     })
 
                     q_out_max = np.amax(q_out, axis=1)
-                    q_target = reward + (1 + np.transpose(reward)) * GAMMA * q_out_max
+                    q_target = reward + (1 - np.transpose(done)) * GAMMA * q_out_max
 
                     # Run training Op
                     loss, _ = sess.run([loss_op, train_op], 
@@ -501,7 +514,8 @@ def do_online_double_qlearning(env,
 
     # Save models
     if dpaths is not None:
-        saver.save(sess, dpaths)
+        print('## Saved model !')
+        saver.save(sess, dpaths[1])
 
     # Return Q-learning Experience results
     return losses, means

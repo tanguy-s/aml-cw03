@@ -21,8 +21,10 @@ from core.qlearning import (
     do_online_qlearning, 
     do_online_double_qlearning
 )
-
-from core.running import run_multiple_trials
+from core.running import (
+    run_multiple_trials_batch, 
+    run_multiple_trials_online
+)
 
 if __name__ == '__main__':
 
@@ -45,31 +47,48 @@ if __name__ == '__main__':
     learning_rates = [0.00001, 0.0001, 0.001, 0.01, 0.1, 0.5]
 
     if FLAGS.model == 'A31':
+
+        dpaths = [os.path.join(dumps_dir, FLAGS.model), 
+            os.path.join(dumps_dir, FLAGS.model, FLAGS.model)]
+
         if FLAGS.train:
             history_buffer = HistoryBuffer(env, 2000, 300, 100)
             model = LinearValueFunctionApprox(4, 2)
             run_multiple_trials(env, history_buffer, model, learning_rates, 10, dumps_dir)
 
+        elif FLAGS.test:
+            pass
+
     elif FLAGS.model == 'A32':
+
+        dpaths = [os.path.join(dumps_dir, FLAGS.model), 
+            os.path.join(dumps_dir, FLAGS.model, FLAGS.model)]
+
         if FLAGS.train:
             history_buffer = HistoryBuffer(env, 2000, 300, 100)
             model = HiddenValueFunctionApprox(4, 2, 100)
-            run_multiple_trials(env, history_buffer, model, learning_rates, 10, dumps_dir)
+            run_multiple_trials_batch(env, history_buffer, model, learning_rates, 10, dpaths)
+
+        elif FLAGS.test:
+            pass
 
     elif FLAGS.model in MODELS_LIST:
+
+        dpaths = [os.path.join(dumps_dir, FLAGS.model), 
+            os.path.join(dumps_dir, FLAGS.model, FLAGS.model)]
+
         if FLAGS.train:
             main_model = MODELS_LIST[FLAGS.model]
-            do_online_qlearning(env, 
-                                model=main_model.model, 
-                                learning_rate=main_model.learning_rate,
-                                epsilon_s=main_model.epsilon_s, 
-                                num_episodes=main_model.num_episodes,
-                                len_episodes=main_model.len_episodes,
-                                target_model=main_model.target_model,
-                                replay_buffer=main_model.replay_buffer,
-                                dpaths=)
+            run_multiple_trials_online(env, main_model, 20, dpaths)
+
+        elif FLAGS.test:
+            pass
 
     elif FLAGS.model == 'A8':
+
+        dpaths = [os.path.join(dumps_dir, FLAGS.model), 
+            os.path.join(dumps_dir, FLAGS.model, FLAGS.model)]
+
         if FLAGS.train:
             main_model = A8DoubleQNet()
             do_online_double_qlearning(env, 
@@ -81,7 +100,10 @@ if __name__ == '__main__':
                                     len_episodes=main_model.len_episodes,
                                     target_model=main_model.target_model,
                                     replay_buffer=main_model.replay_buffer,
-                                    dpaths=)
+                                    dpaths=dpaths)
+
+        elif FLAGS.test:
+            pass
 
     else:
         print('No corresponding models')

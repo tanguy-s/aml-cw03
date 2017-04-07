@@ -13,7 +13,7 @@ class HistoryBuffer(object):
         self.num_episodes = num_episodes
         self.len_episodes = len_episodes
         self.batch_size = batch_size
-        self.states, self.actions, self.rewards = None, None, None
+        self.states, self.actions, self.rewards, self.term_state = None, None, None
 
         # Properties
         self.num_batch = int(num_episodes / self.batch_size)
@@ -39,7 +39,8 @@ class HistoryBuffer(object):
         return self.states[b_start:b_end], \
                 self.states[b_start + 1:b_end + 1], \
                 self.actions[b_start:b_end], \
-                self.rewards[b_start:b_end]
+                self.rewards[b_start:b_end], \
+                self.term_state[b_start:b_end]
 
 
     def get_history_buffer(self):
@@ -49,6 +50,7 @@ class HistoryBuffer(object):
         states = list()
         actions = list()
         rewards = list()
+        term_state = list()
 
         for i_episode in range(self.num_episodes):
 
@@ -60,6 +62,7 @@ class HistoryBuffer(object):
             epi_sta = list()
             epi_act = list()
             epi_rwd = list()
+            epi_tst = list()
 
             for t in range(self.len_episodes):
                 #self.env.render()
@@ -76,11 +79,14 @@ class HistoryBuffer(object):
 
                 # Save current reward
                 epi_rwd.append(reward)
+                # Save terminal state
+                epi_tst.append(done)
 
                 if done:
                     states.append(np.array(epi_sta))
                     actions.append(np.array(epi_act))
                     rewards.append(np.array(epi_rwd))
+                    term_state.append(np.array(epi_tst))
                     break
 
             if i_episode % 500 == 0:
@@ -92,6 +98,8 @@ class HistoryBuffer(object):
             [actions[i] for i in range(self.num_episodes)], axis=0)
         self.rewards = np.concatenate(
             [rewards[i] for i in range(self.num_episodes)], axis=0)
+        self.term_state = np.concatenate(
+            [term_state[i] for i in range(self.num_episodes)], axis=0)
 
 
 class ExperienceReplayBuffer(object):
