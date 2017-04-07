@@ -12,6 +12,7 @@ LOG_EPOCHS = 100
 EVAL_EPOCHS = 4
 TARGET_UPDATE = 5
 
+
 def do_batch_qlearning(env, history_buffer, model, learning_rate, dpaths=None):
 
     tf.reset_default_graph()

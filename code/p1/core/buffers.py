@@ -13,7 +13,7 @@ class HistoryBuffer(object):
         self.num_episodes = num_episodes
         self.len_episodes = len_episodes
         self.batch_size = batch_size
-        self.states, self.actions, self.rewards, self.term_state = None, None, None
+        self.states, self.actions, self.rewards, self.term_state = None, None, None, None
 
         # Properties
         self.num_batch = int(num_episodes / self.batch_size)

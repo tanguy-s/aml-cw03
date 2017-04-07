@@ -108,5 +108,12 @@ if __name__ == '__main__':
     else:
         print('No corresponding models')
 
+# nohup python main.py -m A31 --train &> log_a31.out &
+# nohup python main.py -m A32 --train &> log_a32.out &
+# nohup python main.py -m A4 --train &> log_a4.out &
+# nohup python main.py -m A51 --train &> log_a51.out &
+# nohup python main.py -m A52 --train &> log_a52.out &
+# nohup python main.py -m A6 --train &> log_a6.out &
+# nohup python main.py -m A8 --train &> log_a8.out &
 
 
