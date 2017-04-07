@@ -35,8 +35,7 @@ def run_multiple_trials_batch(env,
         r_losses = list()
         r_means = list()
 
-        dpaths[1] = os.path.join(
-            dpaths[1], i)
+        dpaths[1] = os.path.join(dpaths[1], str(i))
         i += 1
 
         # Average results over multiple runs
