@@ -1,28 +1,14 @@
-import gym
-env = gym.make('CartPole-v0')
+import numpy as np
 
 
-print(env.action_space)
-print(env.observation_space)
+a = [1, 2, 3, 4, 5]
+b = [6, 7, 8, 9, 10]
 
-print(env.observation_space.high)
-print(env.observation_space.low)
+a = np.array(a).reshape([-1, 1])
+b = np.array(b).reshape([-1, 1])
 
-NUM_EPISODES = 2000
-EPISODE_LENGTH = 300
+print(a)
+print(b)
+print(np.concatenate([a, b], axis=1))
 
 
-for i_episode in range(NUM_EPISODES):
-
-    # Reset environement
-    observation = env.reset()
-
-    for t in range(EPISODE_LENGTH):
-        env.render()
-        print(observation)
-        action = env.action_space.sample()
-        observation, reward, done, info = env.step(action)
-        if done:
-            print("Episode finished after {} timesteps".format(t+1))
-            print('Reward is %f' % reward)
-            break

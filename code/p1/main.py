@@ -7,13 +7,20 @@ import argparse
 
 import gym
 
-from models.models import MODELS_LIST
+from models.models import (
+    MODELS_LIST,
+    A8DoubleQNet
+)
 from models.base import (
     LinearValueFunctionApprox, 
     HiddenValueFunctionApprox
 )
 from core.buffers import HistoryBuffer
-from core.qlearning import do_batch_qlearning, do_online_qlearning
+from core.qlearning import (
+    do_batch_qlearning, 
+    do_online_qlearning, 
+    do_online_double_qlearning
+)
 
 from core.running import run_multiple_trials
 
@@ -59,7 +66,22 @@ if __name__ == '__main__':
                                 num_episodes=main_model.num_episodes,
                                 len_episodes=main_model.len_episodes,
                                 target_model=main_model.target_model,
-                                replay_buffer=main_model.replay_buffer)
+                                replay_buffer=main_model.replay_buffer,
+                                dpaths=)
+
+    elif FLAGS.model == 'A8':
+        if FLAGS.train:
+            main_model = A8DoubleQNet()
+            do_online_double_qlearning(env, 
+                                    model_1=main_model.model_1, 
+                                    model_2=main_model.model_2, 
+                                    learning_rate=main_model.learning_rate,
+                                    epsilon_s=main_model.epsilon_s, 
+                                    num_episodes=main_model.num_episodes,
+                                    len_episodes=main_model.len_episodes,
+                                    target_model=main_model.target_model,
+                                    replay_buffer=main_model.replay_buffer,
+                                    dpaths=)
 
     else:
         print('No corresponding models')
