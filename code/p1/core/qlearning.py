@@ -106,10 +106,10 @@ def do_batch_qlearning(env, history_buffer, model, learning_rate, dpaths=None):
             # Force flush for nohup
             sys.stdout.flush()
 
-    # Save models
-    if dpaths is not None:
-        print('## Saved model !')
-        saver.save(sess, dpaths[1])
+        # Save models
+        if dpaths is not None:
+            print('## Saved model !')
+            saver.save(sess, dpaths[1])
 
     # Return Q-learning Experience results
     return losses, means
@@ -303,10 +303,10 @@ def do_online_qlearning(env,
             # Force flush for nohup
             sys.stdout.flush()
 
-    # Save models
-    if dpaths is not None:
-        print('## Saved model !')
-        saver.save(sess, dpaths[1])
+        # Save models
+        if dpaths is not None:
+            print('## Saved model !')
+            saver.save(sess, dpaths[1])
 
     # Return Q-learning Experience results
     return losses, means
@@ -513,10 +513,10 @@ def do_online_double_qlearning(env,
             # Force flush for nohup
             sys.stdout.flush()
 
-    # Save models
-    if dpaths is not None:
-        print('## Saved model !')
-        saver.save(sess, dpaths[1])
+        # Save models
+        if dpaths is not None:
+            print('## Saved model !')
+            saver.save(sess, dpaths[1])
 
     # Return Q-learning Experience results
     return losses, means
