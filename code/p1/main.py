@@ -46,10 +46,12 @@ if __name__ == '__main__':
     env = gym.make('CartPole-v0')
     learning_rates = [0.00001, 0.0001, 0.001, 0.01, 0.1, 0.5]
 
-    if FLAGS.model == 'A31':
+    dpaths = [os.path.join(dumps_dir, FLAGS.model), 
+                os.path.join(dumps_dir, FLAGS.model, FLAGS.model)]
+    if not os.path.exists(dpaths[0]):
+        os.mkdir(dpaths[0])
 
-        dpaths = [os.path.join(dumps_dir, FLAGS.model), 
-            os.path.join(dumps_dir, FLAGS.model, FLAGS.model)]
+    if FLAGS.model == 'A31':
 
         if FLAGS.train:
             history_buffer = HistoryBuffer(env, 2000, 300, 100)
@@ -61,9 +63,6 @@ if __name__ == '__main__':
 
     elif FLAGS.model == 'A32':
 
-        dpaths = [os.path.join(dumps_dir, FLAGS.model), 
-            os.path.join(dumps_dir, FLAGS.model, FLAGS.model)]
-
         if FLAGS.train:
             history_buffer = HistoryBuffer(env, 2000, 300, 100)
             model = HiddenValueFunctionApprox(4, 2, 100)
@@ -74,9 +73,6 @@ if __name__ == '__main__':
 
     elif FLAGS.model in MODELS_LIST:
 
-        dpaths = [os.path.join(dumps_dir, FLAGS.model), 
-            os.path.join(dumps_dir, FLAGS.model, FLAGS.model)]
-
         if FLAGS.train:
             main_model = MODELS_LIST[FLAGS.model]
             run_multiple_trials_online(env, main_model, 20, dpaths)
@@ -85,9 +81,6 @@ if __name__ == '__main__':
             pass
 
     elif FLAGS.model == 'A8':
-
-        dpaths = [os.path.join(dumps_dir, FLAGS.model), 
-            os.path.join(dumps_dir, FLAGS.model, FLAGS.model)]
 
         if FLAGS.train:
             main_model = A8DoubleQNet()
