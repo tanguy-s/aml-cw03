@@ -17,13 +17,12 @@ def run_multiple_trials_batch(env,
                                 num_runs, 
                                 dpaths):
     
+    base_path = dpaths[0]
     losses = None
-    losses_file = os.path.join(
-        dpaths[0], 'losses.csv')
+    losses_file = os.path.join(dpaths[0], 'losses.csv')
 
     results = None
-    results_file = os.path.join(
-            dpaths[0], 'results.csv')
+    results_file = os.path.join(dpaths[0], 'results.csv')
 
     # Loop over learning rates
     i = 1
@@ -35,7 +34,12 @@ def run_multiple_trials_batch(env,
         r_losses = list()
         r_means = list()
 
-        dpaths[1] = os.path.join(dpaths[1], str(i))
+        dpaths[0] = os.path.join(base_path, str(i))
+        dpaths[1] = os.path.join(dpaths[0], dpaths[2])
+
+        if not os.path.exists(dpaths[0]):
+            os.mkdir(dpaths[0])
+
         i += 1
 
         # Average results over multiple runs

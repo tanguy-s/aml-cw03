@@ -53,6 +53,7 @@ if __name__ == '__main__':
 
     if FLAGS.model == 'A31':
 
+        dpaths.append(FLAGS.model)
         if FLAGS.train:
             history_buffer = HistoryBuffer(env, 2000, 300, 100)
             model = LinearValueFunctionApprox(4, 2)
@@ -63,6 +64,7 @@ if __name__ == '__main__':
 
     elif FLAGS.model == 'A32':
 
+        dpaths.append(FLAGS.model)
         if FLAGS.train:
             history_buffer = HistoryBuffer(env, 2000, 300, 100)
             model = HiddenValueFunctionApprox(4, 2, 100)
