@@ -101,9 +101,26 @@ def run_multiple_trials_online(env, main_model, num_runs, dpaths):
         r_losses.append(cur_losses)
         r_means.append(cur_means)
 
+    # Save LR specific results
+    r_losses_mean = np.mean(np.array(r_losses), axis=0).reshape([-1, 1])
+    if losses is None:
+        losses = r_losses_mean
+    else:
+        losses = np.concatenate([losses, r_losses_mean], axis=1)   
+
+    # r_results = np.concatenate([
+    #     np.mean(np.array(r_means), axis=0), 
+    #     np.std(np.array(r_means), axis=0)], axis=1)[:, [0,2,1,3]]
+
+    r_results = np.mean(np.array(r_means), axis=0) 
+    if results is None:
+        results = r_results
+    else:
+        results = np.concatenate([results, r_results], axis=1)
+
     # Handle file saving
-    np.savetxt(losses_file, r_losses, delimiter=',')
-    np.savetxt(results_file, r_means, delimiter=',')
+    np.savetxt(losses_file, losses, delimiter=',')
+    np.savetxt(results_file, results, delimiter=',')
 
 
     

@@ -75,7 +75,7 @@ if __name__ == '__main__':
 
         if FLAGS.train:
             main_model = MODELS_LIST[FLAGS.model]
-            run_multiple_trials_online(env, main_model, 20, dpaths)
+            run_multiple_trials_online(env, main_model, 2, dpaths)
 
         elif FLAGS.test:
             pass
