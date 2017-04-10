@@ -26,7 +26,8 @@ def do_online_qlearning(env,
                         gpu_device,
                         target_model=None, 
                         replay_buffer=None,
-                        dpaths=None):
+                        dpaths=None,
+                        training=True):
 
     tf.reset_default_graph()
 
@@ -82,6 +83,11 @@ def do_online_qlearning(env,
     # Start Session
     with tf.Session(config=config) as sess:
         sess.run(init_op)
+
+        # Performance from untrained Q-learning
+        if not training:
+            return evaluate(test_env, sess, prediction, 
+                                states_pl, 100, GAMMA, False)
 
         start_time = time.time()
 
@@ -148,26 +154,20 @@ def do_online_qlearning(env,
                 # If replay buffer is ready to be sampled
                 if replay_buffer.ready:
                     # Train model on replay buffer
-                    transitions = replay_buffer.get_rand_transitions()
-
-                    states_batch = np.stack([transitions[i][0] for i in range(len(transitions))], axis=0).astype('float32')
-                    actions_batch = np.stack([transitions[i][1] for i in range(len(transitions))], axis=0).reshape((-1))
-                    r_batch = np.stack([transitions[i][2] for i in range(len(transitions))], axis=0).reshape((-1))
-                    next_state_batch = np.stack([transitions[i][3] for i in range(len(transitions))], axis=0).astype('float32')
-                    terminal_state_batch = np.stack([transitions[i][4] for i in range(len(transitions))], axis=0)
+                    b_states, b_actions, b_reward, b_next_state, b_term_state = replay_buffer.next_transitions()
 
                     # Run training on batch
                     q_out = sess.run(q_target_net, feed_dict={
-                            states_pl: next_state_batch
+                            states_pl: b_next_state
                         })
                     q_out_max = np.amax(q_out, axis=1)
-                    q_target = r_batch + GAMMA * (1 - terminal_state_batch) * q_out_max
+                    q_target = b_reward + GAMMA * (1 - b_term_state) * q_out_max
 
                     # Run training Op on batch of replay experience
                     loss, _ = sess.run([loss_op, train_op], 
                         feed_dict={
-                            states_pl: states_batch,
-                            actions_pl: actions_batch,
+                            states_pl: b_states,
+                            actions_pl: b_actions,
                             targets_pl: q_target.astype('float32')
                         })
     

@@ -13,8 +13,7 @@ from models.models import AtariModel
 from core.buffers import ExperienceReplayBuffer
 from core.qlearning import do_online_qlearning
 from core.testing import do_testing
-
-#from core.running import run_multiple_trials
+from core.utils import evaluate_random
 
 NUM_RUNS = 1
 
@@ -53,6 +52,12 @@ if __name__ == '__main__':
                       default=False,
                       help='If true, train model with fixed learning rate.')
     parser.add_argument('--render', nargs='?', const=True, type=bool,
+                      default=False,
+                      help='If true, train model with fixed learning rate.')
+    parser.add_argument('--notraining', nargs='?', const=True, type=bool,
+                      default=False,
+                      help='If true, train model with fixed learning rate.')
+    parser.add_argument('--random', nargs='?', const=True, type=bool,
                       default=False,
                       help='If true, train model with fixed learning rate.')
 
@@ -107,5 +112,24 @@ if __name__ == '__main__':
                     target_model=AtariModel(env.action_space.n, varscope='target'),
                     dpaths=dpaths, 
                     render=FLAGS.render)
+
+    elif FLAGS.notraining:
+        do_online_qlearning(env, test_env,
+                            model=AtariModel(env.action_space.n), 
+                            learning_rate=tenv['learning_rate'],
+                            epsilon_s=epsilon_s, 
+                            gpu_device=tenv['gpu_device'],
+                            target_model=AtariModel(env.action_space.n, varscope='target'),
+                            replay_buffer=ExperienceReplayBuffer(500000, 64),
+                            dpaths=None,
+                            training=False)
+
+    elif FLAGS.random:
+        evaluate_random(env,
+                num_episodes=100, 
+                gamma=0.99, 
+                silent=False,
+                render=FLAGS.render)
+
 
 
