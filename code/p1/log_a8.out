@@ -4,7 +4,7 @@ I tensorflow/stream_executor/dso_loader.cc:135] successfully opened CUDA library
 I tensorflow/stream_executor/dso_loader.cc:135] successfully opened CUDA library libcufft.so.8.0 locally
 I tensorflow/stream_executor/dso_loader.cc:135] successfully opened CUDA library libcuda.so.1 locally
 I tensorflow/stream_executor/dso_loader.cc:135] successfully opened CUDA library libcurand.so.8.0 locally
-[2017-04-09 12:31:46,198] Making new env: CartPole-v0
+[2017-04-10 06:02:31,458] Making new env: CartPole-v0
 W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE3 instructions, but these are available on your machine and could speed up CPU computations.
 W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.1 instructions, but these are available on your machine and could speed up CPU computations.
 W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.2 instructions, but these are available on your machine and could speed up CPU computations.
@@ -16,28 +16,28 @@ name: Tesla P100-SXM2-16GB
 major: 6 minor: 0 memoryClockRate (GHz) 1.4805
 pciBusID 0000:05:00.0
 Total memory: 15.89GiB
-Free memory: 15.61GiB
-W tensorflow/stream_executor/cuda/cuda_driver.cc:590] creating context when one is currently active; existing: 0x3cc7720
+Free memory: 13.90GiB
+W tensorflow/stream_executor/cuda/cuda_driver.cc:590] creating context when one is currently active; existing: 0x2544f80
 I tensorflow/core/common_runtime/gpu/gpu_device.cc:885] Found device 1 with properties: 
 name: Tesla P100-SXM2-16GB
 major: 6 minor: 0 memoryClockRate (GHz) 1.4805
 pciBusID 0000:06:00.0
 Total memory: 15.89GiB
-Free memory: 15.61GiB
-W tensorflow/stream_executor/cuda/cuda_driver.cc:590] creating context when one is currently active; existing: 0x3ccb5a0
+Free memory: 14.21GiB
+W tensorflow/stream_executor/cuda/cuda_driver.cc:590] creating context when one is currently active; existing: 0x2548e00
 I tensorflow/core/common_runtime/gpu/gpu_device.cc:885] Found device 2 with properties: 
 name: Tesla P100-SXM2-16GB
 major: 6 minor: 0 memoryClockRate (GHz) 1.4805
 pciBusID 0000:84:00.0
 Total memory: 15.89GiB
-Free memory: 15.61GiB
-W tensorflow/stream_executor/cuda/cuda_driver.cc:590] creating context when one is currently active; existing: 0x3cefd40
+Free memory: 14.21GiB
+W tensorflow/stream_executor/cuda/cuda_driver.cc:590] creating context when one is currently active; existing: 0x256d5a0
 I tensorflow/core/common_runtime/gpu/gpu_device.cc:885] Found device 3 with properties: 
 name: Tesla P100-SXM2-16GB
 major: 6 minor: 0 memoryClockRate (GHz) 1.4805
 pciBusID 0000:85:00.0
 Total memory: 15.89GiB
-Free memory: 15.61GiB
+Free memory: 14.21GiB
 I tensorflow/core/common_runtime/gpu/gpu_device.cc:906] DMA: 0 1 2 3 
 I tensorflow/core/common_runtime/gpu/gpu_device.cc:916] 0:   Y Y Y Y 
 I tensorflow/core/common_runtime/gpu/gpu_device.cc:916] 1:   Y Y Y Y 
@@ -48,192 +48,11 @@ I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow devi
 I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:2) -> (device: 2, name: Tesla P100-SXM2-16GB, pci bus id: 0000:84:00.0)
 I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:3) -> (device: 3, name: Tesla P100-SXM2-16GB, pci bus id: 0000:85:00.0)
 
- 2017-04-09 12:31:53
-Episodes 1 -> 1 Done (0.804s) ... 
+ 2017-04-10 06:02:34
+Episodes 1 -> 1 Done (0.275s) ... 
 - Training loss: 0.0000
 # Evaluation
 - Episode length stats:
- Mean: 9.400000 std: 0.734847
+ Mean: 9.200000 std: 0.812404
 - Return from initial stats:
- Mean: -0.919068 std: 0.006807
-
- 2017-04-09 12:32:02
-Episodes 1 -> 101 Done (9.235s) ... 
-- Training loss: 0.5184
-# Evaluation
-- Episode length stats:
- Mean: 38.050000 std: 19.087889
-- Return from initial stats:
- Mean: -0.699756 std: 0.103328
-
- 2017-04-09 12:35:20
-Episodes 101 -> 201 Done (197.497s) ... 
-- Training loss: 7.5729
-# Evaluation
-- Episode length stats:
- Mean: 9.350000 std: 0.726292
-- Return from initial stats:
- Mean: -0.919529 std: 0.006709
-
- 2017-04-09 12:37:16
-Episodes 201 -> 301 Done (116.507s) ... 
-- Training loss: 183.6542
-# Evaluation
-- Episode length stats:
- Mean: 121.750000 std: 18.354495
-- Return from initial stats:
- Mean: -0.302148 std: 0.054515
-
- 2017-04-09 12:39:04
-Episodes 301 -> 401 Done (107.590s) ... 
-- Training loss: 46.3712
-# Evaluation
-- Episode length stats:
- Mean: 300.000000 std: 0.000000
-- Return from initial stats:
- Mean: -0.049536 std: 0.000000
-
- 2017-04-09 12:42:40
-Episodes 401 -> 501 Done (215.618s) ... 
-- Training loss: 84.8874
-# Evaluation
-- Episode length stats:
- Mean: 300.000000 std: 0.000000
-- Return from initial stats:
- Mean: -0.049536 std: 0.000000
-
- 2017-04-09 12:46:02
-Episodes 501 -> 601 Done (202.044s) ... 
-- Training loss: 26.8422
-# Evaluation
-- Episode length stats:
- Mean: 185.000000 std: 11.853270
-- Return from initial stats:
- Mean: -0.158448 std: 0.018246
-
- 2017-04-09 12:49:31
-Episodes 601 -> 701 Done (209.039s) ... 
-- Training loss: 1.6374
-# Evaluation
-- Episode length stats:
- Mean: 146.450000 std: 8.789056
-- Return from initial stats:
- Mean: -0.232701 std: 0.019931
-
- 2017-04-09 12:51:43
-Episodes 701 -> 801 Done (132.298s) ... 
-- Training loss: 7.3134
-# Evaluation
-- Episode length stats:
- Mean: 199.700000 std: 10.630616
-- Return from initial stats:
- Mean: -0.136522 std: 0.014696
-
- 2017-04-09 12:54:43
-Episodes 801 -> 901 Done (180.163s) ... 
-- Training loss: 1144.8975
-# Evaluation
-- Episode length stats:
- Mean: 10.500000 std: 0.921954
-- Return from initial stats:
- Mean: -0.908977 std: 0.008423
-
- 2017-04-09 12:57:34
-Episodes 901 -> 1001 Done (171.357s) ... 
-- Training loss: 56.3208
-# Evaluation
-- Episode length stats:
- Mean: 300.000000 std: 0.000000
-- Return from initial stats:
- Mean: -0.049536 std: 0.000000
-
- 2017-04-09 13:00:26
-Episodes 1001 -> 1101 Done (171.131s) ... 
-- Training loss: 66.4988
-# Evaluation
-- Episode length stats:
- Mean: 234.150000 std: 13.965225
-- Return from initial stats:
- Mean: -0.096954 std: 0.013353
-
- 2017-04-09 13:04:29
-Episodes 1101 -> 1201 Done (242.978s) ... 
-- Training loss: 9.8709
-# Evaluation
-- Episode length stats:
- Mean: 300.000000 std: 0.000000
-- Return from initial stats:
- Mean: -0.049536 std: 0.000000
-
- 2017-04-09 13:07:36
-Episodes 1201 -> 1301 Done (187.255s) ... 
-- Training loss: 727.9478
-# Evaluation
-- Episode length stats:
- Mean: 300.000000 std: 0.000000
-- Return from initial stats:
- Mean: -0.049536 std: 0.000000
-
- 2017-04-09 13:10:10
-Episodes 1301 -> 1401 Done (154.426s) ... 
-- Training loss: 2752.7077
-# Evaluation
-- Episode length stats:
- Mean: 12.150000 std: 0.909670
-- Return from initial stats:
- Mean: -0.894027 std: 0.008200
-
- 2017-04-09 13:12:26
-Episodes 1401 -> 1501 Done (136.138s) ... 
-- Training loss: 535.3347
-# Evaluation
-- Episode length stats:
- Mean: 127.000000 std: 4.711688
-- Return from initial stats:
- Mean: -0.282176 std: 0.013281
-
- 2017-04-09 13:16:01
-Episodes 1501 -> 1601 Done (214.913s) ... 
-- Training loss: 3.5583
-# Evaluation
-- Episode length stats:
- Mean: 300.000000 std: 0.000000
-- Return from initial stats:
- Mean: -0.049536 std: 0.000000
-
- 2017-04-09 13:19:29
-Episodes 1601 -> 1701 Done (207.631s) ... 
-- Training loss: 69.9355
-# Evaluation
-- Episode length stats:
- Mean: 217.850000 std: 7.465085
-- Return from initial stats:
- Mean: -0.113425 std: 0.008478
-
- 2017-04-09 13:23:24
-Episodes 1701 -> 1801 Done (234.993s) ... 
-- Training loss: 2799.7179
-# Evaluation
-- Episode length stats:
- Mean: 100.900000 std: 18.721378
-- Return from initial stats:
- Mean: -0.374914 std: 0.103887
-
- 2017-04-09 13:26:18
-Episodes 1801 -> 1901 Done (173.674s) ... 
-- Training loss: 14.4023
-# Evaluation
-- Episode length stats:
- Mean: 261.800000 std: 8.594184
-- Return from initial stats:
- Mean: -0.072994 std: 0.006366
-
- 2017-04-09 13:29:37
-Episodes 1901 -> 2001 Done (199.792s) ... 
-- Training loss: 12.8866
-# Evaluation
-- Episode length stats:
- Mean: 238.900000 std: 11.144057
-- Return from initial stats:
- Mean: -0.092111 std: 0.010174
-## Saved model !
+ Mean: -0.920923 std: 0.007531
