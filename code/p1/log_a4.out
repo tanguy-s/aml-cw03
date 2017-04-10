@@ -67,3 +67,371 @@ Episodes 1 -> 101 Done (23.771s) ...
  Mean: 18.150000 std: 5.588157
 - Return from initial stats:
  Mean: -0.842983 std: 0.046337
+
+ 2017-04-10 06:03:43
+Episodes 101 -> 201 Done (55.935s) ... 
+- Training loss: 0.7204
+# Evaluation
+- Episode length stats:
+ Mean: 300.000000 std: 0.000000
+- Return from initial stats:
+ Mean: -0.049536 std: 0.000000
+
+ 2017-04-10 06:06:28
+Episodes 201 -> 301 Done (165.267s) ... 
+- Training loss: 0.6127
+# Evaluation
+- Episode length stats:
+ Mean: 300.000000 std: 0.000000
+- Return from initial stats:
+ Mean: -0.049536 std: 0.000000
+
+ 2017-04-10 06:08:58
+Episodes 301 -> 401 Done (150.216s) ... 
+- Training loss: 0.0622
+# Evaluation
+- Episode length stats:
+ Mean: 300.000000 std: 0.000000
+- Return from initial stats:
+ Mean: -0.049536 std: 0.000000
+
+ 2017-04-10 06:11:32
+Episodes 401 -> 501 Done (153.676s) ... 
+- Training loss: 0.0755
+# Evaluation
+- Episode length stats:
+ Mean: 146.850000 std: 18.025745
+- Return from initial stats:
+ Mean: -0.234505 std: 0.039465
+
+ 2017-04-10 06:13:56
+Episodes 501 -> 601 Done (144.124s) ... 
+- Training loss: 0.5384
+# Evaluation
+- Episode length stats:
+ Mean: 299.200000 std: 3.487119
+- Return from initial stats:
+ Mean: -0.049968 std: 0.001883
+
+ 2017-04-10 06:17:01
+Episodes 601 -> 701 Done (184.889s) ... 
+- Training loss: 0.2402
+# Evaluation
+- Episode length stats:
+ Mean: 300.000000 std: 0.000000
+- Return from initial stats:
+ Mean: -0.049536 std: 0.000000
+
+ 2017-04-10 06:19:55
+Episodes 701 -> 801 Done (174.016s) ... 
+- Training loss: 0.6186
+# Evaluation
+- Episode length stats:
+ Mean: 288.150000 std: 9.040326
+- Return from initial stats:
+ Mean: -0.056035 std: 0.005183
+
+ 2017-04-10 06:22:33
+Episodes 801 -> 901 Done (158.157s) ... 
+- Training loss: 0.0557
+# Evaluation
+- Episode length stats:
+ Mean: 158.400000 std: 4.872371
+- Return from initial stats:
+ Mean: -0.205826 std: 0.010098
+
+ 2017-04-10 06:25:11
+Episodes 901 -> 1001 Done (158.003s) ... 
+- Training loss: 0.0375
+# Evaluation
+- Episode length stats:
+ Mean: 300.000000 std: 0.000000
+- Return from initial stats:
+ Mean: -0.049536 std: 0.000000
+
+ 2017-04-10 06:28:13
+Episodes 1001 -> 1101 Done (181.754s) ... 
+- Training loss: 0.1671
+# Evaluation
+- Episode length stats:
+ Mean: 130.450000 std: 5.286540
+- Return from initial stats:
+ Mean: -0.272639 std: 0.014436
+
+ 2017-04-10 06:31:16
+Episodes 1101 -> 1201 Done (183.476s) ... 
+- Training loss: 0.3489
+# Evaluation
+- Episode length stats:
+ Mean: 300.000000 std: 0.000000
+- Return from initial stats:
+ Mean: -0.049536 std: 0.000000
+
+ 2017-04-10 06:34:28
+Episodes 1201 -> 1301 Done (191.161s) ... 
+- Training loss: 0.1970
+# Evaluation
+- Episode length stats:
+ Mean: 168.450000 std: 4.283398
+- Return from initial stats:
+ Mean: -0.186001 std: 0.007981
+
+ 2017-04-10 06:36:58
+Episodes 1301 -> 1401 Done (150.040s) ... 
+- Training loss: 0.7612
+# Evaluation
+- Episode length stats:
+ Mean: 108.900000 std: 2.861818
+- Return from initial stats:
+ Mean: -0.338234 std: 0.009793
+
+ 2017-04-10 06:39:25
+Episodes 1401 -> 1501 Done (147.685s) ... 
+- Training loss: 0.1527
+# Evaluation
+- Episode length stats:
+ Mean: 163.800000 std: 3.009983
+- Return from initial stats:
+ Mean: -0.194808 std: 0.005841
+
+ 2017-04-10 06:41:55
+Episodes 1501 -> 1601 Done (149.874s) ... 
+- Training loss: 0.0166
+# Evaluation
+- Episode length stats:
+ Mean: 121.600000 std: 4.066940
+- Return from initial stats:
+ Mean: -0.297827 std: 0.012005
+
+ 2017-04-10 06:44:13
+Episodes 1601 -> 1701 Done (138.251s) ... 
+- Training loss: 0.0512
+# Evaluation
+- Episode length stats:
+ Mean: 215.300000 std: 5.158488
+- Return from initial stats:
+ Mean: -0.116197 std: 0.005876
+
+ 2017-04-10 06:47:20
+Episodes 1701 -> 1801 Done (186.375s) ... 
+- Training loss: 0.2284
+# Evaluation
+- Episode length stats:
+ Mean: 69.500000 std: 3.185906
+- Return from initial stats:
+ Mean: -0.502613 std: 0.016147
+
+ 2017-04-10 06:50:21
+Episodes 1801 -> 1901 Done (181.692s) ... 
+- Training loss: 0.2419
+# Evaluation
+- Episode length stats:
+ Mean: 300.000000 std: 0.000000
+- Return from initial stats:
+ Mean: -0.049536 std: 0.000000
+
+ 2017-04-10 06:53:09
+Episodes 1901 -> 2001 Done (167.200s) ... 
+- Training loss: 0.2788
+# Evaluation
+- Episode length stats:
+ Mean: 34.300000 std: 6.116371
+- Return from initial stats:
+ Mean: -0.716920 std: 0.043913
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:0) -> (device: 0, name: Tesla P100-SXM2-16GB, pci bus id: 0000:05:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:1) -> (device: 1, name: Tesla P100-SXM2-16GB, pci bus id: 0000:06:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:2) -> (device: 2, name: Tesla P100-SXM2-16GB, pci bus id: 0000:84:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:3) -> (device: 3, name: Tesla P100-SXM2-16GB, pci bus id: 0000:85:00.0)
+## Saved model !
+
+## Run 2/2
+
+ 2017-04-10 06:53:09
+Episodes 1 -> 1 Done (0.055s) ... 
+- Training loss: 1.1853
+# Evaluation
+- Episode length stats:
+ Mean: 9.550000 std: 0.668954
+- Return from initial stats:
+ Mean: -0.917679 std: 0.006174
+
+ 2017-04-10 06:53:33
+Episodes 1 -> 101 Done (23.854s) ... 
+- Training loss: 0.2169
+# Evaluation
+- Episode length stats:
+ Mean: 9.400000 std: 0.663325
+- Return from initial stats:
+ Mean: -0.919063 std: 0.006140
+
+ 2017-04-10 06:54:33
+Episodes 101 -> 201 Done (59.304s) ... 
+- Training loss: 0.1085
+# Evaluation
+- Episode length stats:
+ Mean: 12.650000 std: 1.061838
+- Return from initial stats:
+ Mean: -0.889559 std: 0.009507
+
+ 2017-04-10 06:56:42
+Episodes 201 -> 301 Done (129.391s) ... 
+- Training loss: 0.3175
+# Evaluation
+- Episode length stats:
+ Mean: 214.550000 std: 8.517482
+- Return from initial stats:
+ Mean: -0.117343 std: 0.009780
+
+ 2017-04-10 06:59:09
+Episodes 301 -> 401 Done (147.437s) ... 
+- Training loss: 0.7890
+# Evaluation
+- Episode length stats:
+ Mean: 300.000000 std: 0.000000
+- Return from initial stats:
+ Mean: -0.049536 std: 0.000000
+
+ 2017-04-10 07:01:25
+Episodes 401 -> 501 Done (135.808s) ... 
+- Training loss: 0.1016
+# Evaluation
+- Episode length stats:
+ Mean: 154.450000 std: 12.435735
+- Return from initial stats:
+ Mean: -0.215547 std: 0.026131
+
+ 2017-04-10 07:03:31
+Episodes 501 -> 601 Done (125.677s) ... 
+- Training loss: 0.1983
+# Evaluation
+- Episode length stats:
+ Mean: 209.700000 std: 4.723346
+- Return from initial stats:
+ Mean: -0.122901 std: 0.005842
+
+ 2017-04-10 07:06:02
+Episodes 601 -> 701 Done (150.928s) ... 
+- Training loss: 0.0379
+# Evaluation
+- Episode length stats:
+ Mean: 300.000000 std: 0.000000
+- Return from initial stats:
+ Mean: -0.049536 std: 0.000000
+
+ 2017-04-10 07:08:43
+Episodes 701 -> 801 Done (160.734s) ... 
+- Training loss: 0.4799
+# Evaluation
+- Episode length stats:
+ Mean: 300.000000 std: 0.000000
+- Return from initial stats:
+ Mean: -0.049536 std: 0.000000
+
+ 2017-04-10 07:10:48
+Episodes 801 -> 901 Done (125.412s) ... 
+- Training loss: 0.0053
+# Evaluation
+- Episode length stats:
+ Mean: 184.050000 std: 11.603771
+- Return from initial stats:
+ Mean: -0.159919 std: 0.017978
+
+ 2017-04-10 07:13:40
+Episodes 901 -> 1001 Done (171.599s) ... 
+- Training loss: 0.2051
+# Evaluation
+- Episode length stats:
+ Mean: 300.000000 std: 0.000000
+- Return from initial stats:
+ Mean: -0.049536 std: 0.000000
+
+ 2017-04-10 07:15:37
+Episodes 1001 -> 1101 Done (117.137s) ... 
+- Training loss: 0.0864
+# Evaluation
+- Episode length stats:
+ Mean: 137.650000 std: 7.233775
+- Return from initial stats:
+ Mean: -0.253918 std: 0.018398
+
+ 2017-04-10 07:18:03
+Episodes 1101 -> 1201 Done (146.239s) ... 
+- Training loss: 0.0187
+# Evaluation
+- Episode length stats:
+ Mean: 18.500000 std: 11.808895
+- Return from initial stats:
+ Mean: -0.844365 std: 0.093109
+
+ 2017-04-10 07:21:05
+Episodes 1201 -> 1301 Done (181.944s) ... 
+- Training loss: 0.2440
+# Evaluation
+- Episode length stats:
+ Mean: 300.000000 std: 0.000000
+- Return from initial stats:
+ Mean: -0.049536 std: 0.000000
+
+ 2017-04-10 07:23:25
+Episodes 1301 -> 1401 Done (139.936s) ... 
+- Training loss: 0.2879
+# Evaluation
+- Episode length stats:
+ Mean: 300.000000 std: 0.000000
+- Return from initial stats:
+ Mean: -0.049536 std: 0.000000
+
+ 2017-04-10 07:26:16
+Episodes 1401 -> 1501 Done (171.539s) ... 
+- Training loss: 0.1370
+# Evaluation
+- Episode length stats:
+ Mean: 142.900000 std: 4.581484
+- Return from initial stats:
+ Mean: -0.240487 std: 0.010976
+
+ 2017-04-10 07:28:06
+Episodes 1501 -> 1601 Done (109.936s) ... 
+- Training loss: 0.0455
+# Evaluation
+- Episode length stats:
+ Mean: 295.700000 std: 7.963040
+- Return from initial stats:
+ Mean: -0.051897 std: 0.004431
+
+ 2017-04-10 07:30:30
+Episodes 1601 -> 1701 Done (143.409s) ... 
+- Training loss: 0.2920
+# Evaluation
+- Episode length stats:
+ Mean: 300.000000 std: 0.000000
+- Return from initial stats:
+ Mean: -0.049536 std: 0.000000
+
+ 2017-04-10 07:32:50
+Episodes 1701 -> 1801 Done (139.803s) ... 
+- Training loss: 0.2786
+# Evaluation
+- Episode length stats:
+ Mean: 300.000000 std: 0.000000
+- Return from initial stats:
+ Mean: -0.049536 std: 0.000000
+
+ 2017-04-10 07:34:46
+Episodes 1801 -> 1901 Done (116.405s) ... 
+- Training loss: 0.1596
+# Evaluation
+- Episode length stats:
+ Mean: 300.000000 std: 0.000000
+- Return from initial stats:
+ Mean: -0.049536 std: 0.000000
+
+ 2017-04-10 07:37:00
+Episodes 1901 -> 2001 Done (133.707s) ... 
+- Training loss: 0.1451
+# Evaluation
+- Episode length stats:
+ Mean: 264.100000 std: 31.414805
+- Return from initial stats:
+ Mean: -0.074628 std: 0.022957
+## Saved model !
