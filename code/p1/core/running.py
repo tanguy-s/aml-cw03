@@ -1,5 +1,6 @@
 import os
 import time
+import pickle
 
 import numpy as np
 import tensorflow as tf
@@ -20,9 +21,11 @@ def run_multiple_trials_batch(env,
     base_path = dpaths[0]
     losses = None
     losses_file = os.path.join(dpaths[0], 'losses.csv')
+    losses_pkl = os.path.join(dpaths[0], 'losses.pkl')
 
     results = None
     results_file = os.path.join(dpaths[0], 'results.csv')
+    results_pkl = os.path.join(dpaths[0], 'results.pkl')
 
     # Loop over learning rates
     i = 1
@@ -36,6 +39,9 @@ def run_multiple_trials_batch(env,
 
         dpaths[0] = os.path.join(base_path, str(i))
         dpaths[1] = os.path.join(dpaths[0], dpaths[2])
+
+        cur_losses_file = os.path.join(dpaths[0], 'losses.csv')
+        cur_results_file = os.path.join(dpaths[0], 'results.csv')
 
         if not os.path.exists(dpaths[0]):
             os.mkdir(dpaths[0])
@@ -57,17 +63,28 @@ def run_multiple_trials_batch(env,
         if losses is None:
             losses = r_losses_mean
         else:
-            losses = np.concatenate([losses, r_losses_mean], axis=1)   
+            losses = np.concatenate([losses, r_losses_mean], axis=1)  
 
-        # r_results = np.concatenate([
-        #     np.mean(np.array(r_means), axis=0), 
-        #     np.std(np.array(r_means), axis=0)], axis=1)[:, [0,2,1,3]]
+        np.savetxt(cur_losses_file, losses, delimiter=',')
 
-        r_results = np.mean(np.array(r_means), axis=0) 
+        r_results = np.concatenate([
+            np.mean(np.array(r_means), axis=0), 
+            np.std(np.array(r_means), axis=0)], axis=1)[:, [0,2,1,3]]
+
+        #r_results = np.mean(np.array(r_means), axis=0) 
         if results is None:
             results = r_results
         else:
             results = np.concatenate([results, r_results], axis=1)
+
+        np.savetxt(cur_results_file, results, delimiter=',')
+
+
+    with open(losses_pkl, 'wb') as f:
+        pickle.dump(losses, f)
+
+    with open(results_pkl, 'wb') as f:
+        pickle.dump(results, f)
 
     # Handle file saving
     np.savetxt(losses_file, losses, delimiter=',')
@@ -79,10 +96,12 @@ def run_multiple_trials_online(env, main_model, num_runs, dpaths):
     losses = None
     losses_file = os.path.join(
         dpaths[0], 'losses.csv')
+    losses_pkl = os.path.join(dpaths[0], 'losses.pkl')
 
     results = None
     results_file = os.path.join(
             dpaths[0], 'results.csv')
+    results_pkl = os.path.join(dpaths[0], 'results.pkl')
 
     r_losses = list()
     r_means = list()
@@ -112,15 +131,21 @@ def run_multiple_trials_online(env, main_model, num_runs, dpaths):
     else:
         losses = np.concatenate([losses, r_losses_mean], axis=1)   
 
-    # r_results = np.concatenate([
-    #     np.mean(np.array(r_means), axis=0), 
-    #     np.std(np.array(r_means), axis=0)], axis=1)[:, [0,2,1,3]]
+    r_results = np.concatenate([
+        np.mean(np.array(r_means), axis=0), 
+        np.std(np.array(r_means), axis=0)], axis=1)[:, [0,2,1,3]]
 
-    r_results = np.mean(np.array(r_means), axis=0) 
+    #r_results = np.mean(np.array(r_means), axis=0) 
     if results is None:
         results = r_results
     else:
         results = np.concatenate([results, r_results], axis=1)
+
+    with open(losses_pkl, 'wb') as f:
+        pickle.dump(losses, f)
+
+    with open(results_pkl, 'wb') as f:
+        pickle.dump(results, f)
 
     # Handle file saving
     np.savetxt(losses_file, losses, delimiter=',')
