@@ -25,15 +25,21 @@ from core.running import (
     run_multiple_trials_batch, 
     run_multiple_trials_online
 )
+from core.testing import do_testing
 
 if __name__ == '__main__':
 
     parser = argparse.ArgumentParser()
     parser.add_argument('-m', '--model', nargs='?', type=str,
                       help='Select model to train')
-    parser.add_argument('--train', nargs='?', const=True, type=bool,
+    parser.add_argument('--training', nargs='?', const=True, type=bool,
                   default=False,
                   help='If true, train model with fixed learning rate.')
+    parser.add_argument('--test', nargs='?', const=True, type=bool,
+                  default=False,
+                  help='If true, train model with fixed learning rate.')
+    parser.add_argument('--lr', nargs='?', type=int,
+                      help='Learning rate')
 
     FLAGS, _ = parser.parse_known_args()
 
@@ -53,39 +59,45 @@ if __name__ == '__main__':
 
     if FLAGS.model == 'A31':
 
+        model = LinearValueFunctionApprox(4, 2)
         dpaths.append(FLAGS.model)
-        if FLAGS.train:
+        if FLAGS.training:
             history_buffer = HistoryBuffer(env, 2000, 300, 100)
-            model = LinearValueFunctionApprox(4, 2)
             run_multiple_trials_batch(env, history_buffer, model, learning_rates, 10, dpaths)
 
         elif FLAGS.test:
-            pass
+            if FLAGS.lr and FLAGS.lr in [1,2,3,4,5,6]:
+                dpaths[0] = os.path.join(dpaths[0], str(FLAGS.lr))
+                dpaths[1] = os.path.join(dpaths[0], dpaths[2])
+                do_testing(env, model, 100, 300, dpaths)
 
     elif FLAGS.model == 'A32':
 
+        model = HiddenValueFunctionApprox(4, 2, 100)
         dpaths.append(FLAGS.model)
-        if FLAGS.train:
+        if FLAGS.training:
             history_buffer = HistoryBuffer(env, 2000, 300, 100)
-            model = HiddenValueFunctionApprox(4, 2, 100)
             run_multiple_trials_batch(env, history_buffer, model, learning_rates, 10, dpaths)
 
         elif FLAGS.test:
-            pass
+            if FLAGS.lr and FLAGS.lr in [1,2,3,4,5,6]:
+                dpaths[0] = os.path.join(dpaths[0], str(FLAGS.lr))
+                dpaths[1] = os.path.join(dpaths[0], dpaths[2])
+                do_testing(env, model, 100, 300, dpaths)
 
     elif FLAGS.model in MODELS_LIST:
 
-        if FLAGS.train:
-            main_model = MODELS_LIST[FLAGS.model]
+        main_model = MODELS_LIST[FLAGS.model]
+        if FLAGS.training:    
             run_multiple_trials_online(env, main_model, 10, dpaths)
 
         elif FLAGS.test:
-            pass
+            do_testing(env, main_model.model, 100, 300, dpaths)
 
     elif FLAGS.model == 'A8':
 
-        if FLAGS.train:
-            main_model = A8DoubleQNet()
+        main_model = A8DoubleQNet()
+        if FLAGS.training:
             do_online_double_qlearning(env, 
                                     model_1=main_model.model_1, 
                                     model_2=main_model.model_2, 
@@ -98,7 +110,7 @@ if __name__ == '__main__':
                                     dpaths=dpaths)
 
         elif FLAGS.test:
-            pass
+            do_testing(env, main_model.model_1, 100, 300, dpaths)
 
     else:
         print('No corresponding models')

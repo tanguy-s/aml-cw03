@@ -45,11 +45,11 @@ def do_online_qlearning(env,
         # Build target network
         q_target_net = target_model.graph(states_pl)
 
-        trainvars = tf.trainable_variables()
-        ntrainvars = len(trainvars)
+        tf_train = tf.trainable_variables()
+        num_tf_train = len(tf_train)
         target_net_vars = []
-        for idx,var in enumerate(trainvars[0:ntrainvars//2]):
-            target_net_vars.append(trainvars[idx+ntrainvars//2].assign(var.value()))
+        for i, var in enumerate(tf_train[0:num_tf_train // 2]):
+            target_net_vars.append(tf_train[i + num_tf_train // 2].assign(var.value()))
 
         # Compute Q from current q_output and one hot actions
         Q = tf.reduce_sum(
@@ -188,10 +188,10 @@ def do_online_qlearning(env,
                 losses.append(loss)
 
             if step % LOG_STEPS == 0:
-                print('')
-                print(time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()))
-                print("Steps {} to {} done, took {:.2f}s".format(max(0,step+1-LOG_STEPS),step,time.time()-start_time))
-                print(" Train loss: {:.4f}".format(loss))
+                print('\n', time.strftime('%Y-%m-%d %H:%M:%S', time.localtime()))
+                print('Episodes %d -> %d Done (%.3fs) ... ' % 
+                    (max(1, step + 1 - LOG_EPOCHS), step+1, time.time() - start_time))
+                print('- Training loss: %.4f' % loss)
                 start_time = time.time()
 
                 # Force flush for nohup

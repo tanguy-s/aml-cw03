@@ -60,6 +60,8 @@ if __name__ == '__main__':
     parser.add_argument('--random', nargs='?', const=True, type=bool,
                       default=False,
                       help='If true, train model with fixed learning rate.')
+    parser.add_argument('--episodes', nargs='?', type=int,
+                      help='Number of episodes for testing')
 
     FLAGS, _ = parser.parse_known_args()
 
@@ -107,11 +109,18 @@ if __name__ == '__main__':
     elif FLAGS.test:
         dpaths = [os.path.join(main_dumps_dir, '1'), 
             os.path.join(main_dumps_dir, '1', '%s.meta' % FLAGS.env)]
+
+        if not FLAGS.episodes:
+            num_episodes = 100
+        else:
+            num_episodes = FLAGS.episodes
+
         do_testing(env,
                     model=AtariModel(env.action_space.n), 
                     target_model=AtariModel(env.action_space.n, varscope='target'),
                     dpaths=dpaths, 
-                    render=FLAGS.render)
+                    render=FLAGS.render, 
+                    num_episodes=num_episodes)
 
     elif FLAGS.notraining:
         do_online_qlearning(env, test_env,

@@ -14,7 +14,7 @@ FRAME_HEIGHT = 84
 FRAME_BUFFER_SIZE = 4
 
 
-def do_testing(env, model, target_model=None, dpaths=None, render=False):
+def do_testing(env, model, target_model=None, dpaths=None, render=False, num_episodes=100):
 
     tf.reset_default_graph()
 
@@ -61,7 +61,7 @@ def do_testing(env, model, target_model=None, dpaths=None, render=False):
             new_saver.restore(sess, tf.train.latest_checkpoint(dpaths[0]))
 
             means, stds = evaluate(env, sess, prediction, 
-                                    states_pl, TEST_STEPS, GAMMA, False, render)
+                                    states_pl, num_episodes, GAMMA, False, render)
 
             # Save means
             print(means)
