@@ -16,7 +16,7 @@ pip install -r aml-cw03/requirements.txt
 
 ```
 cd aml-cw03/code/p1
-``
+```
 
 Training:
 ```
@@ -47,7 +47,7 @@ python main.py -m A8 --test (--render)[optional]
 
 ```
 cd aml-cw03/code/p2
-``
+```
 
 Training:
 
